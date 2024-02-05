@@ -1,0 +1,436 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4EFC693F-1889-404A-B163-DF462EEE98C9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UIForm</RootNamespace>
+    <AssemblyName>UIForm</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TrackFileAccess>false</TrackFileAccess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\DLL\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>..\..\DLL\UIForm.XML</DocumentationFile>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\DLL\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="C1.C1Report.2, Version=2.6.20122.54513, Culture=neutral, PublicKeyToken=594a0605db190bb9, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Ref_Dll\C1.C1Report.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Chart.2, Version=2.0.20122.22187, Culture=neutral, PublicKeyToken=a22e16972c085838, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Ref_Dll\C1.Win.C1Chart.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Command.2, Version=2.0.20122.19520, Culture=neutral, PublicKeyToken=e808566f358766d8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Ref_Dll\C1.Win.C1Command.2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="C1.Win.C1Input.2, Version=2.0.20122.33281, Culture=neutral, PublicKeyToken=7e7ff60f0c214f9a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Ref_Dll\C1.Win.C1Input.2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="C1.Win.C1List.2, Version=2.1.20122.204, Culture=neutral, PublicKeyToken=6b24f8f981dbd7bc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Ref_Dll\C1.Win.C1List.2.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="C1.Win.C1Report.2, Version=2.6.20122.54513, Culture=neutral, PublicKeyToken=41780e2fc605e636, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Ref_Dll\C1.Win.C1Report.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1ReportDesigner.2, Version=2.6.20122.54513, Culture=neutral, PublicKeyToken=fb528571dbff5bd2, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Ref_Dll\C1.Win.C1ReportDesigner.2.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=12.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Ref_Dll\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=12.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Ref_Dll\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=12.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Ref_Dll\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=12.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Ref_Dll\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.CalcEngine, Version=6.0.3502.2008, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Ref_Dll\FarPoint.CalcEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Excel, Version=6.0.3502.2008, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Ref_Dll\FarPoint.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.PDF, Version=6.0.3502.2008, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Ref_Dll\FarPoint.PDF.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.PluginCalendar.WinForms, Version=6.0.3502.2008, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Ref_Dll\FarPoint.PluginCalendar.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win, Version=6.0.3502.2008, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Ref_Dll\FarPoint.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win.Chart, Version=6.0.3502.2008, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Ref_Dll\FarPoint.Win.Chart.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win.Chart.Design, Version=6.0.3502.2008, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Ref_Dll\FarPoint.Win.Chart.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win.Design, Version=6.0.3502.2008, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Ref_Dll\FarPoint.Win.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win.Spread, Version=6.0.3502.2008, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Ref_Dll\FarPoint.Win.Spread.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win.Spread.Design, Version=6.0.3502.2008, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Ref_Dll\FarPoint.Win.Spread.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Excel">
+      <HintPath>..\..\DLL\Ref_Dll\Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Interop.Microsoft.Office.Interop.Excel">
+      <HintPath>..\..\Documents\Visual Studio 2013\Projects\E2Max-MTMS\DLL\Ref_Dll\Interop.Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Interop.VBIDE">
+      <HintPath>..\..\Documents\Visual Studio 2013\Projects\E2Max-MTMS\DLL\Ref_Dll\Interop.VBIDE.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office15\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Vbe.Interop, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\DLL\Ref_Dll\Microsoft.Vbe.Interop.dll</HintPath>
+    </Reference>
+    <Reference Include="Office, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>C:\Program Files (x86)\Microsoft Visual Studio\Shared\Visual Studio Tools for Office\PIA\Office15\Office.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Buttons.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Buttons.designer.cs">
+      <DependentUpon>Buttons.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomGroup.cs" />
+    <Compile Include="ExcelDown.cs" />
+    <Compile Include="ExcelProges.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExcelProges.designer.cs">
+      <DependentUpon>ExcelProges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Extension.cs" />
+    <Compile Include="FileUpDown.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FileUpDown.Designer.cs">
+      <DependentUpon>FileUpDown.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FindText.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FindText.Designer.cs">
+      <DependentUpon>FindText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Picture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Picture.Designer.cs">
+      <DependentUpon>Picture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PRINT10.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PRINT10.Designer.cs">
+      <DependentUpon>PRINT10.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Roading.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Roading.Designer.cs">
+      <DependentUpon>Roading.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FPCOMM1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FPCOMM1.designer.cs">
+      <DependentUpon>FPCOMM1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FPCOMM2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FPCOMM2.designer.cs">
+      <DependentUpon>FPCOMM2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FPCOMM3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FPCOMM3.designer.cs">
+      <DependentUpon>FPCOMM3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FPMake.cs" />
+    <Compile Include="FPPOPUP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FPPOPUP.designer.cs">
+      <DependentUpon>FPPOPUP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InsertRow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsertRow.designer.cs">
+      <DependentUpon>InsertRow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopUpSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopUpSP.Designer.cs">
+      <DependentUpon>PopUpSP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="TabFPMake.cs" />
+    <Compile Include="TabGridHead.cs" />
+    <Compile Include="TreeView.cs" />
+    <Compile Include="FPCOMM2_2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FPCOMM2_2.designer.cs">
+      <DependentUpon>FPCOMM2_2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="VkExcel.cs" />
+    <Compile Include="ExcelWaiting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ExcelWaiting.designer.cs">
+      <DependentUpon>ExcelWaiting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FPCOMM1T.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FPCOMM1T.designer.cs">
+      <DependentUpon>FPCOMM1T.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FPCOMM2T.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FPCOMM2T.designer.cs">
+      <DependentUpon>FPCOMM2T.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TREE_FPCOMM1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TREE_FPCOMM1.designer.cs">
+      <DependentUpon>TREE_FPCOMM1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FPCOMM2_2T.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FPCOMM2_2T.designer.cs">
+      <DependentUpon>FPCOMM2_2T.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App.ico" />
+    <Content Include="Resources\ExcelError.gif" />
+    <Content Include="Resources\ExcelUpload.gif" />
+    <Content Include="Resources\uExcelError.gif" />
+    <Content Include="Resources\uExcelUpload.gif" />
+    <None Include="Resources\uSearch.gif" />
+    <None Include="Resources\uSave.gif" />
+    <None Include="Resources\uRDelete.gif" />
+    <None Include="Resources\uRCopy.gif" />
+    <None Include="Resources\uRAdd.gif" />
+    <None Include="Resources\uPrint.gif" />
+    <None Include="Resources\uNew.gif" />
+    <None Include="Resources\uHelp.gif" />
+    <None Include="Resources\uFcls.gif" />
+    <None Include="Resources\uExcel.gif" />
+    <None Include="Resources\uDelete.gif" />
+    <None Include="Resources\uCancel.gif" />
+    <None Include="Resources\Search.gif" />
+    <None Include="Resources\Save.gif" />
+    <None Include="Resources\RDelete.gif" />
+    <None Include="Resources\RCopy.gif" />
+    <None Include="Resources\RAdd.gif" />
+    <None Include="Resources\Print.gif" />
+    <None Include="Resources\New.gif" />
+    <None Include="Resources\Help.gif" />
+    <None Include="Resources\Fcls.gif" />
+    <None Include="Resources\Excel.gif" />
+    <None Include="Resources\dSearch.gif" />
+    <None Include="Resources\dSave.gif" />
+    <None Include="Resources\dRDelete.gif" />
+    <None Include="Resources\dRCopy.gif" />
+    <None Include="Resources\dRAdd.gif" />
+    <None Include="Resources\dPrint.gif" />
+    <None Include="Resources\dNew.gif" />
+    <None Include="Resources\dHelp.gif" />
+    <None Include="Resources\dFcls.gif" />
+    <None Include="Resources\dExcel.gif" />
+    <None Include="Resources\Delete.gif" />
+    <None Include="Resources\dDelete.gif" />
+    <None Include="Resources\dCancel.gif" />
+    <None Include="Resources\Cancel.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Buttons.resx">
+      <DependentUpon>Buttons.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExcelProges.resx">
+      <DependentUpon>ExcelProges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FileUpDown.resx">
+      <DependentUpon>FileUpDown.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FindText.resx">
+      <DependentUpon>FindText.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Picture.resx">
+      <DependentUpon>Picture.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PRINT10.resx">
+      <DependentUpon>PRINT10.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Roading.resx">
+      <DependentUpon>Roading.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FPCOMM1.resx">
+      <DependentUpon>FPCOMM1.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FPCOMM2.resx">
+      <DependentUpon>FPCOMM2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FPCOMM3.resx">
+      <DependentUpon>FPCOMM3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FPPOPUP.resx">
+      <DependentUpon>FPPOPUP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsertRow.resx">
+      <DependentUpon>InsertRow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopUpSP.resx">
+      <DependentUpon>PopUpSP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FPCOMM2_2.resx">
+      <DependentUpon>FPCOMM2_2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ExcelWaiting.resx">
+      <DependentUpon>ExcelWaiting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FPCOMM1T.resx">
+      <DependentUpon>FPCOMM1T.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FPCOMM2T.resx">
+      <DependentUpon>FPCOMM2T.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TREE_FPCOMM1.resx">
+      <DependentUpon>TREE_FPCOMM1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FPCOMM2_2T.resx">
+      <DependentUpon>FPCOMM2_2T.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="VBIDE">
+      <Guid>{0002E157-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>5</VersionMajor>
+      <VersionMinor>3</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SystemBase\SystemBase.csproj">
+      <Project>{45841e94-e806-4573-a93b-26d50a07ea9c}</Project>
+      <Name>SystemBase</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

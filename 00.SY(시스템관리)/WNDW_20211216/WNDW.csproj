@@ -1,0 +1,514 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C9088CA0-829D-4845-80C7-CCC057823B75}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WNDW</RootNamespace>
+    <AssemblyName>WNDW</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TrackFileAccess>false</TrackFileAccess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\DLL\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
+    <DocumentationFile>..\..\DLL\WNDW.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\DLL\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="C1.Win.C1Command.2, Version=2.0.20122.19520, Culture=neutral, PublicKeyToken=e808566f358766d8, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Ref_Dll\C1.Win.C1Command.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1Input.2, Version=2.0.20122.33281, Culture=neutral, PublicKeyToken=7e7ff60f0c214f9a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Ref_Dll\C1.Win.C1Input.2.dll</HintPath>
+    </Reference>
+    <Reference Include="C1.Win.C1List.2, Version=2.1.20122.204, Culture=neutral, PublicKeyToken=6b24f8f981dbd7bc, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Ref_Dll\C1.Win.C1List.2.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.CalcEngine, Version=6.0.3505.2008, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Ref_Dll\FarPoint.CalcEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Excel, Version=6.0.3505.2008, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Ref_Dll\FarPoint.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.PDF, Version=6.0.3505.2008, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Ref_Dll\FarPoint.PDF.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.PluginCalendar.WinForms, Version=6.0.3505.2008, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Ref_Dll\FarPoint.PluginCalendar.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win, Version=6.0.3505.2008, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Ref_Dll\FarPoint.Win.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win.Chart, Version=6.0.3505.2008, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Ref_Dll\FarPoint.Win.Chart.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win.Chart.Design, Version=6.0.3505.2008, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Ref_Dll\FarPoint.Win.Chart.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win.Design, Version=6.0.3505.2008, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Ref_Dll\FarPoint.Win.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win.Spread, Version=6.0.3505.2008, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Ref_Dll\FarPoint.Win.Spread.dll</HintPath>
+    </Reference>
+    <Reference Include="FarPoint.Win.Spread.Design, Version=6.0.3505.2008, Culture=neutral, PublicKeyToken=327c3516b1b18457, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\Ref_Dll\FarPoint.Win.Spread.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Interop.Excel">
+      <HintPath>..\..\DLL\Ref_Dll\Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.Microsoft.Office.Core">
+      <HintPath>..\..\DLL\Ref_Dll\Interop.Microsoft.Office.Core.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.Microsoft.Office.Interop.Excel">
+      <HintPath>..\..\DLL\Ref_Dll\Interop.Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.VBIDE">
+      <HintPath>..\..\DLL\Ref_Dll\Interop.VBIDE.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="SystemBase, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\SystemBase.dll</HintPath>
+    </Reference>
+    <Reference Include="UIForm, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\DLL\UIForm.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="WNDW042.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW042.Designer.cs">
+      <DependentUpon>WNDW042.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW041.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW041.Designer.cs">
+      <DependentUpon>WNDW041.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW013.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW013.Designer.cs">
+      <DependentUpon>WNDW013.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW005.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW005.Designer.cs">
+      <DependentUpon>WNDW005.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW002.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW002.Designer.cs">
+      <DependentUpon>WNDW002.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW001.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW001.Designer.cs">
+      <DependentUpon>WNDW001.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WNDW007.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW007.Designer.cs">
+      <DependentUpon>WNDW007.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW003.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW003.Designer.cs">
+      <DependentUpon>WNDW003.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW006.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW006.Designer.cs">
+      <DependentUpon>WNDW006.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW008.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW008.Designer.cs">
+      <DependentUpon>WNDW008.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW009.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW009.Designer.cs">
+      <DependentUpon>WNDW009.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW010.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW010.Designer.cs">
+      <DependentUpon>WNDW010.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW011.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW011.Designer.cs">
+      <DependentUpon>WNDW011.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW012.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW012.Designer.cs">
+      <DependentUpon>WNDW012.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW014.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW014.Designer.cs">
+      <DependentUpon>WNDW014.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW015.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW015.Designer.cs">
+      <DependentUpon>WNDW015.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW016.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW016.Designer.cs">
+      <DependentUpon>WNDW016.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW017.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW017.Designer.cs">
+      <DependentUpon>WNDW017.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW018.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW018.Designer.cs">
+      <DependentUpon>WNDW018.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW019.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW019.Designer.cs">
+      <DependentUpon>WNDW019.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW020.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW020.Designer.cs">
+      <DependentUpon>WNDW020.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW021.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW021.Designer.cs">
+      <DependentUpon>WNDW021.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW022.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW022.Designer.cs">
+      <DependentUpon>WNDW022.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW023.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW023.Designer.cs">
+      <DependentUpon>WNDW023.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW024.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW024.Designer.cs">
+      <DependentUpon>WNDW024.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW025.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW025.Designer.cs">
+      <DependentUpon>WNDW025.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW026.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW026.designer.cs">
+      <DependentUpon>WNDW026.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW027.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW027.Designer.cs">
+      <DependentUpon>WNDW027.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW028.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW028.Designer.cs">
+      <DependentUpon>WNDW028.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW029.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW029.Designer.cs">
+      <DependentUpon>WNDW029.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW030.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW030.Designer.cs">
+      <DependentUpon>WNDW030.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW031.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW031.Designer.cs">
+      <DependentUpon>WNDW031.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW032.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW032.Designer.cs">
+      <DependentUpon>WNDW032.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW033.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW033.Designer.cs">
+      <DependentUpon>WNDW033.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW034.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW034.designer.cs">
+      <DependentUpon>WNDW034.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW035.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW035.designer.cs">
+      <DependentUpon>WNDW035.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW036.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW036.Designer.cs">
+      <DependentUpon>WNDW036.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW037.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW037.Designer.cs">
+      <DependentUpon>WNDW037.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW038.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW038.designer.cs">
+      <DependentUpon>WNDW038.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW039.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW039.Designer.cs">
+      <DependentUpon>WNDW039.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WNDW040.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WNDW040.Designer.cs">
+      <DependentUpon>WNDW040.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="WNDW042.resx">
+      <DependentUpon>WNDW042.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW041.resx">
+      <DependentUpon>WNDW041.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW013.resx">
+      <DependentUpon>WNDW013.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW001.resx">
+      <DependentUpon>WNDW001.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW002.resx">
+      <DependentUpon>WNDW002.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW005.resx">
+      <DependentUpon>WNDW005.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW007.resx">
+      <DependentUpon>WNDW007.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW003.resx">
+      <DependentUpon>WNDW003.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW006.resx">
+      <DependentUpon>WNDW006.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW008.resx">
+      <DependentUpon>WNDW008.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW009.resx">
+      <DependentUpon>WNDW009.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW010.resx">
+      <DependentUpon>WNDW010.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW011.resx">
+      <DependentUpon>WNDW011.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW012.resx">
+      <DependentUpon>WNDW012.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW014.resx">
+      <DependentUpon>WNDW014.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW015.resx">
+      <DependentUpon>WNDW015.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW016.resx">
+      <DependentUpon>WNDW016.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW017.resx">
+      <DependentUpon>WNDW017.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW018.resx">
+      <DependentUpon>WNDW018.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW019.resx">
+      <DependentUpon>WNDW019.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW020.resx">
+      <DependentUpon>WNDW020.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW021.resx">
+      <DependentUpon>WNDW021.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW022.resx">
+      <DependentUpon>WNDW022.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW023.resx">
+      <DependentUpon>WNDW023.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW024.resx">
+      <DependentUpon>WNDW024.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW025.resx">
+      <DependentUpon>WNDW025.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW026.resx">
+      <DependentUpon>WNDW026.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW027.resx">
+      <DependentUpon>WNDW027.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW028.resx">
+      <DependentUpon>WNDW028.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW029.resx">
+      <DependentUpon>WNDW029.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW030.resx">
+      <DependentUpon>WNDW030.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW031.resx">
+      <DependentUpon>WNDW031.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW032.resx">
+      <DependentUpon>WNDW032.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW033.resx">
+      <DependentUpon>WNDW033.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW034.resx">
+      <DependentUpon>WNDW034.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW035.resx">
+      <DependentUpon>WNDW035.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW036.resx">
+      <DependentUpon>WNDW036.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW037.resx">
+      <DependentUpon>WNDW037.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW038.resx">
+      <DependentUpon>WNDW038.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW039.resx">
+      <DependentUpon>WNDW039.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WNDW040.resx">
+      <DependentUpon>WNDW040.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\EDocument\EDocument.csproj">
+      <Project>{B1B37F89-5678-4B8F-953A-75E814A2FA3E}</Project>
+      <Name>EDocument</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

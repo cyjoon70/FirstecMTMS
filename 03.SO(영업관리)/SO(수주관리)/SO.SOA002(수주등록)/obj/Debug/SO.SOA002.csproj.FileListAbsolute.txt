@@ -1,0 +1,10 @@
+D:\Project\Firstec\Source\FIRSTEC\DLL\SO.SOA002.dll
+D:\Project\Firstec\Source\FIRSTEC\DLL\SO.SOA002.pdb
+D:\Project\Firstec\Source\FIRSTEC\03.SO(영업관리)\SO(수주관리)\SO.SOA002(수주등록)\obj\Debug\SO.SOA002.SOA002.resources
+D:\Project\Firstec\Source\FIRSTEC\03.SO(영업관리)\SO(수주관리)\SO.SOA002(수주등록)\obj\Debug\SO.SOA002.csproj.GenerateResource.cache
+D:\Project\Firstec\Source\FIRSTEC\03.SO(영업관리)\SO(수주관리)\SO.SOA002(수주등록)\obj\Debug\SO.SOA002.dll.licenses
+D:\Project\Firstec\Source\FIRSTEC\03.SO(영업관리)\SO(수주관리)\SO.SOA002(수주등록)\obj\Debug\SO.SOA002.csproj.CopyComplete
+D:\Project\Firstec\Source\FIRSTEC\03.SO(영업관리)\SO(수주관리)\SO.SOA002(수주등록)\obj\Debug\SO.SOA002.dll
+D:\Project\Firstec\Source\FIRSTEC\03.SO(영업관리)\SO(수주관리)\SO.SOA002(수주등록)\obj\Debug\SO.SOA002.pdb
+D:\Project\Firstec\Source\FIRSTEC\03.SO(영업관리)\SO(수주관리)\SO.SOA002(수주등록)\obj\Debug\SO.SOA002.csproj.CoreCompileInputs.cache
+D:\Project\Firstec\Source\FIRSTEC\03.SO(영업관리)\SO(수주관리)\SO.SOA002(수주등록)\obj\Debug\SO.SOA002.csproj.AssemblyReference.cache

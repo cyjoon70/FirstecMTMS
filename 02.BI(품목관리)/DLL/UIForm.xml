@@ -1,0 +1,537 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>UIForm</name>
+    </assembly>
+    <members>
+        <member name="F:UIForm.Buttons.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:UIForm.Buttons.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:UIForm.Buttons.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:UIForm.ExcelProges.FormID">
+            <summary>
+            필수 디자이너 변수입니다.
+            </summary>
+        </member>
+        <member name="F:UIForm.ExcelProges.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:UIForm.ExcelProges.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:UIForm.ExcelProges.InitializeComponent">
+            <summary>
+            디자이너 지원에 필요한 메서드입니다.
+            이 메서드의 내용을 코드 편집기로 수정하지 마십시오.
+            </summary>
+        </member>
+        <member name="T:UIForm.Extension.FpSpread.FpSpreadExtension">
+            <summary>
+            FpSpread의 확장기능입니다.
+            </summary>
+        </member>
+        <member name="M:UIForm.Extension.FpSpread.FpSpreadExtension.ToggleCheckAll(FarPoint.Win.Spread.SheetView,System.Int32)">
+            <summary>
+            전체선택 체크박스의 체크상태를 토글합니다.
+            </summary>
+            <param name="sheet">시트</param>
+            <param name="col">토글할 열 인덱스</param>
+            <returns>토글이 성공했는지 여부</returns>
+        </member>
+        <member name="F:UIForm.FileUpDown.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:UIForm.FileUpDown.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:UIForm.FileUpDown.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:UIForm.FindText.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:UIForm.FindText.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:UIForm.FindText.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:UIForm.Picture.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:UIForm.Picture.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:UIForm.Picture.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:UIForm.PRINT10.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:UIForm.PRINT10.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:UIForm.PRINT10.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:UIForm.Roading.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:UIForm.Roading.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:UIForm.Roading.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="F:UIForm.FPCOMM1.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:UIForm.FPCOMM1.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="F:UIForm.FPCOMM2.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:UIForm.FPCOMM2.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:UIForm.FPCOMM2.InitializeComponent">
+            <summary>
+            디자이너 지원에 필요한 메서드입니다.
+            이 메서드의 내용을 코드 편집기로 수정하지 마십시오.
+            </summary>
+        </member>
+        <member name="F:UIForm.FPCOMM3.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:UIForm.FPCOMM3.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:UIForm.FPCOMM3.InitializeComponent">
+            <summary>
+            디자이너 지원에 필요한 메서드입니다.
+            이 메서드의 내용을 코드 편집기로 수정하지 마십시오.
+            </summary>
+        </member>
+        <member name="F:UIForm.FPPOPUP.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:UIForm.FPPOPUP.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:UIForm.FPPOPUP.InitializeComponent">
+            <summary>
+            디자이너 지원에 필요한 메서드입니다.
+            이 메서드의 내용을 코드 편집기로 수정하지 마십시오.
+            </summary>
+        </member>
+        <member name="M:UIForm.InsertRow.#ctor(System.Windows.Forms.TextBox)">
+            <summary>
+            필수 디자이너 변수입니다.
+            </summary>
+        </member>
+        <member name="F:UIForm.InsertRow.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:UIForm.InsertRow.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:UIForm.InsertRow.InitializeComponent">
+            <summary>
+            디자이너 지원에 필요한 메서드입니다.
+            이 메서드의 내용을 코드 편집기로 수정하지 마십시오.
+            </summary>
+        </member>
+        <member name="F:UIForm.PopUpSP.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:UIForm.PopUpSP.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:UIForm.PopUpSP.InitializeComponent">
+            <summary>
+            디자이너 지원에 필요한 메서드입니다.
+            이 메서드의 내용을 코드 편집기로 수정하지 마십시오.
+            </summary>
+        </member>
+        <member name="T:UIForm.Properties.Resources">
+            <summary>
+              지역화된 문자열 등을 찾기 위한 강력한 형식의 리소스 클래스입니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.ResourceManager">
+            <summary>
+              이 클래스에서 사용하는 캐시된 ResourceManager 인스턴스를 반환합니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.Culture">
+            <summary>
+              이 강력한 형식의 리소스 클래스를 사용하여 모든 리소스 조회에 대한 현재 스레드의 CurrentUICulture
+              속성을 재정의합니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.Cancel">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.dCancel">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.dDelete">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.Delete">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.dExcel">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.dFcls">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.dHelp">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.dNew">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.dPrint">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.dRAdd">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.dRCopy">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.dRDelete">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.dSave">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.dSearch">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.Excel">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.Fcls">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.Help">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.New">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.Print">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.RAdd">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.RCopy">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.RDelete">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.Save">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.Search">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.uCancel">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.uDelete">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.uExcel">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.uFcls">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.uHelp">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.uNew">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.uPrint">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.uRAdd">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.uRCopy">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.uRDelete">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.uSave">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:UIForm.Properties.Resources.uSearch">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="T:UIForm.TreeView">
+            <summary>
+            TreeView에 대한 요약 설명입니다.
+            </summary>
+        </member>
+        <member name="F:UIForm.FPCOMM2_2.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:UIForm.FPCOMM2_2.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:UIForm.FPCOMM2_2.InitializeComponent">
+            <summary>
+            디자이너 지원에 필요한 메서드입니다.
+            이 메서드의 내용을 코드 편집기로 수정하지 마십시오.
+            </summary>
+        </member>
+        <member name="F:UIForm.ExcelWaiting.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:UIForm.ExcelWaiting.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:UIForm.ExcelWaiting.InitializeComponent">
+            <summary>
+            디자이너 지원에 필요한 메서드입니다.
+            이 메서드의 내용을 코드 편집기로 수정하지 마십시오.
+            </summary>
+        </member>
+        <member name="F:UIForm.FPCOMM1T.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:UIForm.FPCOMM1T.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="F:UIForm.FPCOMM2T.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:UIForm.FPCOMM2T.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:UIForm.FPCOMM2T.InitializeComponent">
+            <summary>
+            디자이너 지원에 필요한 메서드입니다.
+            이 메서드의 내용을 코드 편집기로 수정하지 마십시오.
+            </summary>
+        </member>
+        <member name="F:UIForm.TREE_FPCOMM1.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:UIForm.TREE_FPCOMM1.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="F:UIForm.FPCOMM2_2T.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:UIForm.FPCOMM2_2T.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:UIForm.FPCOMM2_2T.InitializeComponent">
+            <summary>
+            디자이너 지원에 필요한 메서드입니다.
+            이 메서드의 내용을 코드 편집기로 수정하지 마십시오.
+            </summary>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,247 @@
+<VisualStudioProject>
+    <CSHARP
+        ProjectType = "Local"
+        ProductVersion = "7.10.3077"
+        SchemaVersion = "2.0"
+        ProjectGuid = "{842781EB-1843-4426-90A7-519EA3321541}"
+    >
+        <Build>
+            <Settings
+                ApplicationIcon = ""
+                AssemblyKeyContainerName = ""
+                AssemblyName = "PUA101"
+                AssemblyOriginatorKeyFile = ""
+                DefaultClientScript = "JScript"
+                DefaultHTMLPageLayout = "Grid"
+                DefaultTargetSchema = "IE50"
+                DelaySign = "false"
+                OutputType = "Library"
+                PreBuildEvent = ""
+                PostBuildEvent = ""
+                RootNamespace = "PUA101"
+                RunPostBuildEvent = "OnBuildSuccess"
+                StartupObject = ""
+            >
+                <Config
+                    Name = "Debug"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "DEBUG;TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "true"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    NoStdLib = "false"
+                    NoWarn = ""
+                    Optimize = "false"
+                    OutputPath = "bin\Debug\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+                <Config
+                    Name = "Release"
+                    AllowUnsafeBlocks = "false"
+                    BaseAddress = "285212672"
+                    CheckForOverflowUnderflow = "false"
+                    ConfigurationOverrideFile = ""
+                    DefineConstants = "TRACE"
+                    DocumentationFile = ""
+                    DebugSymbols = "false"
+                    FileAlignment = "4096"
+                    IncrementalBuild = "false"
+                    NoStdLib = "false"
+                    NoWarn = ""
+                    Optimize = "true"
+                    OutputPath = "bin\Release\"
+                    RegisterForComInterop = "false"
+                    RemoveIntegerChecks = "false"
+                    TreatWarningsAsErrors = "false"
+                    WarningLevel = "4"
+                />
+            </Settings>
+            <References>
+                <Reference
+                    Name = "System"
+                    AssemblyName = "System"
+                    HintPath = "..\..\..\..\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.dll"
+                />
+                <Reference
+                    Name = "System.Data"
+                    AssemblyName = "System.Data"
+                    HintPath = "..\..\..\..\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Data.dll"
+                />
+                <Reference
+                    Name = "System.XML"
+                    AssemblyName = "System.Xml"
+                    HintPath = "..\..\..\..\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.XML.dll"
+                />
+                <Reference
+                    Name = "System.Drawing"
+                    AssemblyName = "System.Drawing"
+                    HintPath = "..\..\..\..\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Drawing.dll"
+                />
+                <Reference
+                    Name = "System.Windows.Forms"
+                    AssemblyName = "System.Windows.Forms"
+                    HintPath = "..\..\..\..\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Windows.Forms.dll"
+                />
+                <Reference
+                    Name = "FarPoint.CalcEngine"
+                    AssemblyName = "FarPoint.CalcEngine"
+                    HintPath = "..\..\..\..\Program Files\FarPoint Technologies\Spread.WinForms.v25\v2.5.1008\Bin\FarPoint.CalcEngine.dll"
+                    AssemblyFolderKey = "hklm\dn\farpoint spread for windows forms 2.5.1008.2002"
+                />
+                <Reference
+                    Name = "FarPoint.Excel"
+                    AssemblyName = "FarPoint.Excel"
+                    HintPath = "..\..\..\..\Program Files\FarPoint Technologies\Spread.WinForms.v25\v2.5.1008\Bin\FarPoint.Excel.dll"
+                    AssemblyFolderKey = "hklm\dn\farpoint spread for windows forms 2.5.1008.2002"
+                />
+                <Reference
+                    Name = "FarPoint.Win.Spread"
+                    AssemblyName = "FarPoint.Win.Spread"
+                    HintPath = "..\..\..\..\Program Files\FarPoint Technologies\Spread.WinForms.v25\v2.5.1008\Bin\FarPoint.Win.Spread.dll"
+                    AssemblyFolderKey = "hklm\dn\farpoint spread for windows forms 2.5.1008.2002"
+                />
+                <Reference
+                    Name = "FarPoint.PluginCalendar.WinForms"
+                    AssemblyName = "FarPoint.PluginCalendar.WinForms"
+                    HintPath = "..\..\..\..\Program Files\FarPoint Technologies\Spread.WinForms.v25\v2.5.1008\Bin\FarPoint.PluginCalendar.WinForms.dll"
+                    AssemblyFolderKey = "hklm\dn\farpoint spread for windows forms 2.5.1008.2002"
+                />
+                <Reference
+                    Name = "FarPoint.Win"
+                    AssemblyName = "FarPoint.Win"
+                    HintPath = "..\..\..\..\Program Files\FarPoint Technologies\Spread.WinForms.v25\v2.5.1008\Bin\FarPoint.Win.dll"
+                    AssemblyFolderKey = "hklm\dn\farpoint spread for windows forms 2.5.1008.2002"
+                />
+                <Reference
+                    Name = "C1.Win.C1Command"
+                    AssemblyName = "C1.Win.C1Command"
+                    HintPath = "..\..\..\..\Program Files\ComponentOne Studio.NET\bin\C1.Win.C1Command.dll"
+                    AssemblyFolderKey = "hklm\dn\c1studio"
+                />
+                <Reference
+                    Name = "System.Design"
+                    AssemblyName = "System.Design"
+                    HintPath = "..\..\..\..\WINDOWS\Microsoft.NET\Framework\v1.1.4322\System.Design.dll"
+                />
+                <Reference
+                    Name = "C1.Common"
+                    AssemblyName = "C1.Common"
+                    HintPath = "..\..\..\..\Program Files\ComponentOne Studio.NET\bin\C1.Common.dll"
+                    AssemblyFolderKey = "hklm\dn\c1studio"
+                />
+                <Reference
+                    Name = "C1.Win.C1Input"
+                    AssemblyName = "C1.Win.C1Input"
+                    HintPath = "..\..\..\..\Program Files\ComponentOne Studio.NET\bin\C1.Win.C1Input.dll"
+                    AssemblyFolderKey = "hklm\dn\c1studio"
+                />
+                <Reference
+                    Name = "SystemBase"
+                    Project = "{CFC6BD7B-D240-45A4-8865-EF3DD1DE84E6}"
+                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
+                />
+                <Reference
+                    Name = "UIForm"
+                    Project = "{2A2C4AD2-F9CB-4945-B055-507D07E8E590}"
+                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
+                />
+                <Reference
+                    Name = "WNDW002"
+                    Project = "{2595D280-5D4D-4184-8D95-4C14989A2639}"
+                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
+                />
+                <Reference
+                    Name = "WNDW003"
+                    Project = "{2FBC951D-CB8D-4FFC-BF66-9D47CC9A34C3}"
+                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
+                />
+                <Reference
+                    Name = "WNDW005"
+                    Project = "{4D6AEE61-7971-4A5F-9EA9-B2DD1A169862}"
+                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
+                />
+                <Reference
+                    Name = "WNDW008"
+                    Project = "{0F0A4A17-8C0A-488F-8CB2-0F17F2F1A97F}"
+                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
+                />
+                <Reference
+                    Name = "WNDW006"
+                    AssemblyName = "WNDW006"
+                    HintPath = "..\..\WNDW\WNDW006 (제조오더번호공통팝업)\bin\Debug\WNDW006.dll"
+                />
+                <Reference
+                    Name = "WNDW009"
+                    Project = "{7F0CB03A-770E-45BC-B6A3-2F7C7BB17134}"
+                    Package = "{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}"
+                />
+            </References>
+        </Build>
+        <Files>
+            <Include>
+                <File
+                    RelPath = "AssemblyInfo.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "BACKWARD.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "licenses.licx"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "MBOPCOPY.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "PUA101.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "PUA101.resx"
+                    DependentUpon = "PUA101.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "PUA101P1.cs"
+                    SubType = "Form"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "PUA101P1.resx"
+                    DependentUpon = "PUA101P1.cs"
+                    BuildAction = "EmbeddedResource"
+                />
+                <File
+                    RelPath = "QUERY.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "RST_UP.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+                <File
+                    RelPath = "SCH_PROG.cs"
+                    SubType = "Code"
+                    BuildAction = "Compile"
+                />
+            </Include>
+        </Files>
+    </CSHARP>
+</VisualStudioProject>
+

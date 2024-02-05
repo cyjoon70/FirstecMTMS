@@ -1,0 +1,11 @@
+D:\Project\Firstec\Source\FIRSTEC\DLL\PC.PCC006.dll
+D:\Project\Firstec\Source\FIRSTEC\DLL\PC.PCC006.pdb
+D:\Project\Firstec\Source\FIRSTEC\04.PR(생산관리)\PC(제조오더관리)\PC.PCC006(작업지시서출력)\obj\Debug\PC.PCC006.PCC006.resources
+D:\Project\Firstec\Source\FIRSTEC\04.PR(생산관리)\PC(제조오더관리)\PC.PCC006(작업지시서출력)\obj\Debug\PC.PCC006.Properties.Resources.resources
+D:\Project\Firstec\Source\FIRSTEC\04.PR(생산관리)\PC(제조오더관리)\PC.PCC006(작업지시서출력)\obj\Debug\PC.PCC006.csproj.GenerateResource.cache
+D:\Project\Firstec\Source\FIRSTEC\04.PR(생산관리)\PC(제조오더관리)\PC.PCC006(작업지시서출력)\obj\Debug\PC.PCC006.dll.licenses
+D:\Project\Firstec\Source\FIRSTEC\04.PR(생산관리)\PC(제조오더관리)\PC.PCC006(작업지시서출력)\obj\Debug\PC.PCC006.csproj.CoreCompileInputs.cache
+D:\Project\Firstec\Source\FIRSTEC\04.PR(생산관리)\PC(제조오더관리)\PC.PCC006(작업지시서출력)\obj\Debug\PC.PCC006.csproj.CopyComplete
+D:\Project\Firstec\Source\FIRSTEC\04.PR(생산관리)\PC(제조오더관리)\PC.PCC006(작업지시서출력)\obj\Debug\PC.PCC006.dll
+D:\Project\Firstec\Source\FIRSTEC\04.PR(생산관리)\PC(제조오더관리)\PC.PCC006(작업지시서출력)\obj\Debug\PC.PCC006.pdb
+D:\Project\Firstec\Source\FIRSTEC\04.PR(생산관리)\PC(제조오더관리)\PC.PCC006(작업지시서출력)\obj\Debug\PC.PCC006.csproj.AssemblyReference.cache

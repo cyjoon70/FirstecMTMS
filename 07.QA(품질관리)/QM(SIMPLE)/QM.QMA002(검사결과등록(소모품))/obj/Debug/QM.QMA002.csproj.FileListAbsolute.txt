@@ -1,0 +1,11 @@
+D:\Project\Firstec\Source\FIRSTEC\07.QA(품질관리)\QM(SIMPLE)\QM.QMA002(검사결과등록(소모품))\obj\Debug\QM.QMA002.Properties.Resources.resources
+D:\Project\Firstec\Source\FIRSTEC\07.QA(품질관리)\QM(SIMPLE)\QM.QMA002(검사결과등록(소모품))\obj\Debug\QM.QMA002.QMA002.resources
+D:\Project\Firstec\Source\FIRSTEC\07.QA(품질관리)\QM(SIMPLE)\QM.QMA002(검사결과등록(소모품))\obj\Debug\QM.QMA002.csproj.GenerateResource.cache
+D:\Project\Firstec\Source\FIRSTEC\07.QA(품질관리)\QM(SIMPLE)\QM.QMA002(검사결과등록(소모품))\obj\Debug\QM.QMA002.dll.licenses
+D:\Project\Firstec\Source\FIRSTEC\07.QA(품질관리)\QM(SIMPLE)\QM.QMA002(검사결과등록(소모품))\obj\Debug\QM.QMA002.csproj.CoreCompileInputs.cache
+D:\Project\Firstec\Source\FIRSTEC\DLL\QM.QMA002.dll
+D:\Project\Firstec\Source\FIRSTEC\DLL\QM.QMA002.pdb
+D:\Project\Firstec\Source\FIRSTEC\07.QA(품질관리)\QM(SIMPLE)\QM.QMA002(검사결과등록(소모품))\obj\Debug\QM.QMA002.csproj.CopyComplete
+D:\Project\Firstec\Source\FIRSTEC\07.QA(품질관리)\QM(SIMPLE)\QM.QMA002(검사결과등록(소모품))\obj\Debug\QM.QMA002.dll
+D:\Project\Firstec\Source\FIRSTEC\07.QA(품질관리)\QM(SIMPLE)\QM.QMA002(검사결과등록(소모품))\obj\Debug\QM.QMA002.pdb
+D:\Project\Firstec\Source\FIRSTEC\07.QA(품질관리)\QM(SIMPLE)\QM.QMA002(검사결과등록(소모품))\obj\Debug\QM.QMA002.csproj.AssemblyReference.cache

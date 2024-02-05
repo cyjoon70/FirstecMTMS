@@ -1,0 +1,11 @@
+D:\Project\Firstec\Source\FIRSTEC\01.BA(기준정보관리)\BC(결재정보)\BC.BBB007(결재경로등록)\obj\Debug\BC.BBB007.BBB007.resources
+D:\Project\Firstec\Source\FIRSTEC\01.BA(기준정보관리)\BC(결재정보)\BC.BBB007(결재경로등록)\obj\Debug\BC.BBB007.Properties.Resources.resources
+D:\Project\Firstec\Source\FIRSTEC\01.BA(기준정보관리)\BC(결재정보)\BC.BBB007(결재경로등록)\obj\Debug\BC.BBB007.csproj.GenerateResource.cache
+D:\Project\Firstec\Source\FIRSTEC\01.BA(기준정보관리)\BC(결재정보)\BC.BBB007(결재경로등록)\obj\Debug\BC.BBB007.dll.licenses
+D:\Project\Firstec\Source\FIRSTEC\01.BA(기준정보관리)\BC(결재정보)\BC.BBB007(결재경로등록)\obj\Debug\BC.BBB007.csproj.CoreCompileInputs.cache
+D:\Project\Firstec\Source\FIRSTEC\DLL\BC.BBB007.dll
+D:\Project\Firstec\Source\FIRSTEC\DLL\BC.BBB007.pdb
+D:\Project\Firstec\Source\FIRSTEC\01.BA(기준정보관리)\BC(결재정보)\BC.BBB007(결재경로등록)\obj\Debug\BC.BBB007.csproj.CopyComplete
+D:\Project\Firstec\Source\FIRSTEC\01.BA(기준정보관리)\BC(결재정보)\BC.BBB007(결재경로등록)\obj\Debug\BC.BBB007.dll
+D:\Project\Firstec\Source\FIRSTEC\01.BA(기준정보관리)\BC(결재정보)\BC.BBB007(결재경로등록)\obj\Debug\BC.BBB007.pdb
+D:\Project\Firstec\Source\FIRSTEC\01.BA(기준정보관리)\BC(결재정보)\BC.BBB007(결재경로등록)\obj\Debug\BC.BBB007.csproj.AssemblyReference.cache

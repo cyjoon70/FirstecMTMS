@@ -1,0 +1,7 @@
+D:\Project\Firstec\Source\FIRSTEC\DLL\SystemBase.XML
+D:\Project\Firstec\Source\FIRSTEC\DLL\SystemBase.dll
+D:\Project\Firstec\Source\FIRSTEC\DLL\SystemBase.pdb
+D:\Project\Firstec\Source\FIRSTEC\00.SY(시스템관리)\SystemBase\obj\Debug\SystemBase.csproj.CopyComplete
+D:\Project\Firstec\Source\FIRSTEC\00.SY(시스템관리)\SystemBase\obj\Debug\SystemBase.dll
+D:\Project\Firstec\Source\FIRSTEC\00.SY(시스템관리)\SystemBase\obj\Debug\SystemBase.pdb
+D:\Project\Firstec\Source\FIRSTEC\00.SY(시스템관리)\SystemBase\obj\Debug\SystemBase.csproj.CoreCompileInputs.cache

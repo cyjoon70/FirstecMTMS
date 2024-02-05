@@ -1,0 +1,9 @@
+D:\Project\Firstec\Source\FIRSTEC\DLL\BA.BAA001.dll
+D:\Project\Firstec\Source\FIRSTEC\DLL\BA.BAA001.pdb
+D:\Project\Firstec\Source\FIRSTEC\01.BA(기준정보관리)\BA(개발자메뉴)\BA.BAA001(메뉴정보등록)\obj\Debug\BA.BAA001.BAA001.resources
+D:\Project\Firstec\Source\FIRSTEC\01.BA(기준정보관리)\BA(개발자메뉴)\BA.BAA001(메뉴정보등록)\obj\Debug\BA.BAA001.csproj.GenerateResource.cache
+D:\Project\Firstec\Source\FIRSTEC\01.BA(기준정보관리)\BA(개발자메뉴)\BA.BAA001(메뉴정보등록)\obj\Debug\BA.BAA001.dll.licenses
+D:\Project\Firstec\Source\FIRSTEC\01.BA(기준정보관리)\BA(개발자메뉴)\BA.BAA001(메뉴정보등록)\obj\Debug\BA.BAA001.csproj.CoreCompileInputs.cache
+D:\Project\Firstec\Source\FIRSTEC\01.BA(기준정보관리)\BA(개발자메뉴)\BA.BAA001(메뉴정보등록)\obj\Debug\BA.BAA001.csproj.CopyComplete
+D:\Project\Firstec\Source\FIRSTEC\01.BA(기준정보관리)\BA(개발자메뉴)\BA.BAA001(메뉴정보등록)\obj\Debug\BA.BAA001.dll
+D:\Project\Firstec\Source\FIRSTEC\01.BA(기준정보관리)\BA(개발자메뉴)\BA.BAA001(메뉴정보등록)\obj\Debug\BA.BAA001.pdb

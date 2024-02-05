@@ -1,0 +1,1244 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>EDocument</name>
+    </assembly>
+    <members>
+        <member name="T:EDocument.Extensions.C1ComboExtension.C1ComboExtension">
+            <summary>
+            C1Combo 컨트롤 확장기능입니다.
+            </summary>
+        </member>
+        <member name="M:EDocument.Extensions.C1ComboExtension.C1ComboExtension.RemoveValue(C1.Win.C1List.C1Combo,System.String)">
+            <summary>
+            Value 값과 일치하는 아이템을 삭제합니다. DataMode 속성이 AddItem 이어야 합니다.
+            </summary>
+            <param name="combo">콤보박스</param>
+            <param name="value"></param>
+        </member>
+        <member name="M:EDocument.Extensions.C1ComboExtension.C1ComboExtension.SetItems(C1.Win.C1List.C1Combo,System.Collections.Generic.Dictionary{System.String,System.String})">
+            <summary>
+            사전의 키-값 요소들로 콤보박스 리스트 아이템을 채웁니다. 요소의 키는 콤보아이템의 value 속성에, 값은 콤보아이템의 text 속성에 치환됩니다.
+            </summary>
+            <param name="combo">콤보박스</param>
+            <param name="items">사전</param>
+        </member>
+        <member name="M:EDocument.Extensions.C1ComboExtension.C1ComboExtension.SetItems(C1.Win.C1List.C1Combo,System.String,System.String[],System.Int32,System.Int32)">
+            <summary>
+            쿼리 결과로 콤보박스 리스트의 아이템을 채웁니다. 콤보박스는 아이템 추가모드로 동작합니다.
+            </summary>
+            <param name="combo">콤보박스</param>
+            <param name="query">쿼리</param>
+            <param name="fieldNames">아이템 값으로 사용할 필드명들</param>
+            <param name="valueCol">값으로 사용할 컬럼 인덱스</param>
+            <param name="displayCol">드롭다운에 표시할 컬럼 인덱스</param>
+        </member>
+        <member name="M:EDocument.Extensions.C1ComboExtension.C1ComboExtension.SetItems(C1.Win.C1List.C1Combo,System.String,System.String[],System.Int32,System.Int32,System.String[])">
+            <summary>
+            쿼리 결과로 콤보박스 리스트의 아이템을 채웁니다. 콤보박스는 아이템 추가모드로 동작합니다.
+            </summary>
+            <param name="combo">콤보박스</param>
+            <param name="query">쿼리</param>
+            <param name="fieldNames">아이템 값으로 사용할 필드명들</param>
+            <param name="displayCol">드롭다운에 표시할 컬럼 인덱스</param>
+            <param name="insertion">최상단에 추가할 아이템 값</param>
+        </member>
+        <member name="T:EDocument.Extensions.FpSpreadExtension.CellAppearance">
+            <summary>
+            행 모양 열거
+            </summary>
+        </member>
+        <member name="F:EDocument.Extensions.FpSpreadExtension.CellAppearance.Normal">
+            <summary>일반</summary>
+        </member>
+        <member name="F:EDocument.Extensions.FpSpreadExtension.CellAppearance.Discard">
+            <summary>폐기됨</summary>
+        </member>
+        <member name="T:EDocument.Extensions.FpSpreadExtension.RowData">
+            <summary>
+            행데이터 클래스
+            </summary>
+        </member>
+        <member name="F:EDocument.Extensions.FpSpreadExtension.RowData.Row">
+            <summary>행 인덱스</summary>
+        </member>
+        <member name="F:EDocument.Extensions.FpSpreadExtension.RowData.Values">
+            <summary>키 목록</summary>
+        </member>
+        <member name="M:EDocument.Extensions.FpSpreadExtension.RowData.#ctor">
+            <summary>
+            행 데이터 인스턴스를 생성합니다.
+            </summary>
+        </member>
+        <member name="M:EDocument.Extensions.FpSpreadExtension.RowData.#ctor(System.Int32,System.String[])">
+            <summary>
+            행 데이터 인스턴스를 생성합니다.
+            </summary>
+            <param name="row">행 번호</param>
+            <param name="values">값 배열</param>
+        </member>
+        <member name="P:EDocument.Extensions.FpSpreadExtension.RowData.KeyCombination">
+            <summary>
+            모든 값을 슬래시로 이어붙인 키 조합입니다.
+            </summary>
+        </member>
+        <member name="M:EDocument.Extensions.FpSpreadExtension.RowData.GetKeyCombination(System.Int32,System.Int32)">
+            <summary>
+            지정한 인덱스 범위의 값을 슬래시로 이어붙인 키 조합을 생성합니다.
+            </summary>
+            <param name="startValueIndex">시작값 인덱스</param>
+            <param name="count">값 갯수</param>
+            <returns></returns>
+        </member>
+        <member name="M:EDocument.Extensions.FpSpreadExtension.RowData.GetKeyCombination(System.Int32)">
+            <summary>
+            지정한 갯수의 값을 슬래시로 이어붙인 키 조합을 생성합니다.
+            </summary>
+            <param name="count">값 갯수</param>
+            <returns></returns>
+        </member>
+        <member name="M:EDocument.Extensions.FpSpreadExtension.RowData.SameWith(EDocument.Extensions.FpSpreadExtension.RowData)">
+            <summary>
+            행 데이터가 같은지 비교합니다.
+            </summary>
+            <param name="rdata">비교할 행 데이터</param>
+            <returns>모든 값이 같을 경우 true. 그렇지 않으면 false.</returns>
+        </member>
+        <member name="T:EDocument.Extensions.FpSpreadExtension.RowDataList">
+            <summary>
+            행데이터 컬렉션
+            </summary>
+        </member>
+        <member name="M:EDocument.Extensions.FpSpreadExtension.RowDataList.Add(EDocument.Extensions.FpSpreadExtension.RowData)">
+            <summary>
+            요소를 추가합니다. 값이 중복되면 추가되지 않습니다.
+            </summary>
+            <param name="rdata"></param>
+        </member>
+        <member name="M:EDocument.Extensions.FpSpreadExtension.RowDataList.Add(EDocument.Extensions.FpSpreadExtension.RowDataList)">
+            <summary>
+            전달된 컬렉션의 모든 요소를 추가합니다. 값이 중복되는 요소는 건너뜁니다.
+            </summary>
+            <param name="list"></param>
+        </member>
+        <member name="M:EDocument.Extensions.FpSpreadExtension.RowDataList.Add(System.Int32,System.String[])">
+            <summary>
+            전달된 값으로 새 요소를 추가합니다. 값이 중복되는 요소는 건너뜁니다.
+            </summary>
+            <param name="row">행 인덱스</param>
+            <param name="values">값 배열</param>
+        </member>
+        <member name="M:EDocument.Extensions.FpSpreadExtension.RowDataList.ContainsData(EDocument.Extensions.FpSpreadExtension.RowData)">
+            <summary>
+            지정한 데이터와 모든 값이 일치하는 요소가 있는지 확인합니다.
+            </summary>
+            <param name="rdata">행 데이터</param>
+            <returns></returns>
+        </member>
+        <member name="T:EDocument.Extensions.FpSpreadExtension.FpSpreadExtension">
+            <summary>
+            FpSpread 컨트롤 확장기능입니다.
+            </summary>
+        </member>
+        <member name="M:EDocument.Extensions.FpSpreadExtension.FpSpreadExtension.ActiveRowCell(FarPoint.Win.Spread.SheetView,System.Int32)">
+            <summary>
+            선택된 행에서 셀을 가져옵니다.
+            </summary>
+            <param name="sheet">시트</param>
+            <param name="col">열 인덱스</param>
+            <returns></returns>
+        </member>
+        <member name="M:EDocument.Extensions.FpSpreadExtension.FpSpreadExtension.CheckEdited(FarPoint.Win.Spread.SheetView)">
+            <summary>
+             시트의 내용이 변경되었는지 확인합니다.
+            </summary>
+            <param name="sheet">시트</param>
+            <returns>변경 여부</returns>
+        </member>
+        <member name="M:EDocument.Extensions.FpSpreadExtension.FpSpreadExtension.CheckRowInserted(FarPoint.Win.Spread.SheetView)">
+            <summary>
+            행추가가 되었는지 확인합니다.
+            </summary>
+            <returns>행추가 여부</returns>
+            <param name="sheet">시트</param>
+        </member>
+        <member name="M:EDocument.Extensions.FpSpreadExtension.FpSpreadExtension.CheckRowDeleted(FarPoint.Win.Spread.SheetView)">
+            <summary>
+            행삭제가 되었는지 확인합니다.
+            </summary>
+            <param name="sheet">시트</param>
+            <returns>행삭제 여부</returns>
+        </member>
+        <member name="M:EDocument.Extensions.FpSpreadExtension.FpSpreadExtension.CheckRowHeaderText(FarPoint.Win.Spread.SheetView,System.String)">
+            <summary>
+            행 해더 텍스트를 확인합니다.
+            </summary>
+            <param name="sheet">시트</param>
+            <param name="text">일치를 확인할 텍스트</param>
+            <returns>일치하는 텍스트가 있는지 여부</returns>
+        </member>
+        <member name="M:EDocument.Extensions.FpSpreadExtension.FpSpreadExtension.CheckRowHeaderText(FarPoint.Win.Spread.SheetView,System.String,System.Boolean)">
+            <summary>
+            행 해더 텍스트를 확인합니다.
+            </summary>
+            <param name="sheet">시트</param>
+            <param name="text">일치를 확인할 텍스트</param>
+            <returns>일치하는 텍스트가 있는지 여부</returns>
+        </member>
+        <member name="M:EDocument.Extensions.FpSpreadExtension.FpSpreadExtension.ResetSelection(FarPoint.Win.Spread.SheetView)">
+            <summary>
+            선택영역과 활성영역을 초기화합니다.
+            </summary>
+            <param name="sheet"></param>
+        </member>
+        <member name="M:EDocument.Extensions.FpSpreadExtension.FpSpreadExtension.EnsureEdited(FarPoint.Win.Spread.SheetView)">
+            <summary>
+            내용이 변경되었다면 무시할 것인지 묻고 진행 여부를 반환합니다.
+            </summary>
+            <param name="sheet">시트</param>
+            <returns>진행해도 되는지 여부</returns>
+        </member>
+        <member name="M:EDocument.Extensions.FpSpreadExtension.FpSpreadExtension.FindHeaderColumnIndex(FarPoint.Win.Spread.FpSpread,System.Int32,System.String)">
+            <summary>
+            헤더명을 찾고 열 인덱스를 반환합니다. 대소문자는 구별하지 않습니다.
+            </summary>
+            <param name="spread">그리드 컨트롤</param>
+            <param name="sheetIndex">시트 인덱스</param>
+            <param name="name">헤더명</param>
+            <returns></returns>
+        </member>
+        <member name="M:EDocument.Extensions.FpSpreadExtension.FpSpreadExtension.FindHeaderColumnIndex(FarPoint.Win.Spread.FpSpread,System.Int32,System.String,System.Boolean)">
+            <summary>
+            헤더명을 찾고 열 인덱스를 반환합니다.
+            </summary>
+            <param name="spread">그리드 컨트롤</param>
+            <param name="sheetIndex">시트 인덱스</param>
+            <param name="name">헤더명</param>
+            <param name="caseSensitive">대소문자 구분 여부</param>
+            <returns></returns>
+        </member>
+        <member name="M:EDocument.Extensions.FpSpreadExtension.FpSpreadExtension.FindHeaderColumnIndex(FarPoint.Win.Spread.SheetView,System.String)">
+            <summary>
+            헤더명을 찾고 열 인덱스를 반환합니다. 대소문자는 구별하지 않습니다.
+            </summary>
+            <param name="sheet">그리드 시트</param>
+            <param name="name">헤더명</param>
+            <returns></returns>
+        </member>
+        <member name="M:EDocument.Extensions.FpSpreadExtension.FpSpreadExtension.FindHeaderColumnIndex(FarPoint.Win.Spread.SheetView,System.String,System.Boolean)">
+            <summary>
+            헤더명을 찾고 열 인덱스를 반환합니다.
+            </summary>
+            <param name="sheet">그리드 시트</param>
+            <param name="name">헤더명</param>
+            <param name="caseSensitive">대소문자 구분 여부</param>
+            <returns></returns>
+        </member>
+        <member name="M:EDocument.Extensions.FpSpreadExtension.FpSpreadExtension.FindCell(FarPoint.Win.Spread.SheetView,System.Int32,System.String)">
+            <summary>
+            행 인덱스와 헤더명으로 셀을 찾습니다.
+            </summary>
+            <param name="sheet">시트</param>
+            <param name="row">행 인덱스</param>
+            <param name="headerName">해더명</param>
+            <returns></returns>
+        </member>
+        <member name="M:EDocument.Extensions.FpSpreadExtension.FpSpreadExtension.FindRowIndex(FarPoint.Win.Spread.SheetView,System.Int32,System.String)">
+            <summary>
+            지정한 열에서 텍스트 값이 일치하는 행을 찾습니다.
+            </summary>
+            <param name="sheet">시트</param>
+            <param name="col">열 인덱스</param>
+            <param name="text">텍스트 값</param>
+            <returns></returns>
+        </member>
+        <member name="M:EDocument.Extensions.FpSpreadExtension.FpSpreadExtension.FindText(FarPoint.Win.Spread.SheetView,System.Int32[],System.String[])">
+            <summary>
+            텍스트 값이 일치하는 행을 찾아 인덱스를 반환합니다.
+            </summary>
+            <param name="sheet">시트</param>
+            <param name="cols">검색할 행 인덱스들</param>
+            <param name="values">비교할 필드값들</param>
+            <returns>일치하는 행의 인덱스. 일치하지 않으면 -1.</returns>
+        </member>
+        <member name="M:EDocument.Extensions.FpSpreadExtension.FpSpreadExtension.GetCheckedRowCount(FarPoint.Win.Spread.SheetView,System.Int32)">
+            <summary>
+            체크값이 true인 행의 갯수를 구합니다.
+            </summary>
+            <param name="sheet">시트</param>
+            <param name="checkCol">체크박스 열 인덱스</param>
+            <returns></returns>
+        </member>
+        <member name="M:EDocument.Extensions.FpSpreadExtension.FpSpreadExtension.GetCheckedRowData(FarPoint.Win.Spread.SheetView,System.Int32[])">
+            <summary>
+            체크된 항목에 대한 값을 가져옵니다.
+            </summary>
+            <param name="sheet">시트</param>
+            <param name="colCheck">체크박스열 인덱스</param>
+            <returns>값 목록</returns>
+        </member>
+        <member name="M:EDocument.Extensions.FpSpreadExtension.FpSpreadExtension.GetCheckedRowData(FarPoint.Win.Spread.SheetView,System.Int32,System.Int32[])">
+            <summary>
+            체크된 항목에 대한 값을 가져옵니다.
+            </summary>
+            <param name="sheet">시트</param>
+            <param name="colCheck">체크박스열 인덱스</param>
+            <param name="valueCols">값을 추출할 열 인덱스</param>
+            <returns>값 목록</returns>
+        </member>
+        <member name="M:EDocument.Extensions.FpSpreadExtension.FpSpreadExtension.GetCheckedRowIndices(FarPoint.Win.Spread.SheetView,System.Int32)">
+            <summary>
+            체크값이 true인 행의 갯수를 구합니다.
+            </summary>
+            <param name="sheet">시트</param>
+            <param name="checkCol">체크박스 열 인덱스</param>
+            <returns></returns>
+        </member>
+        <member name="M:EDocument.Extensions.FpSpreadExtension.FpSpreadExtension.GetDeletedRowData(FarPoint.Win.Spread.SheetView,System.Int32[])">
+            <summary>
+            삭제된 항목에 대한 값을 가져옵니다.
+            </summary>
+            <param name="sheet">시트</param>
+            <param name="valueCols">값을 추출할 열 인덱스</param>
+            <returns>값 목록</returns>
+        </member>
+        <member name="M:EDocument.Extensions.FpSpreadExtension.FpSpreadExtension.Lock(FarPoint.Win.Spread.SheetView,System.Boolean)">
+            <summary>
+            시트의 잠금설정을 변경합니다.
+            </summary>
+            <param name="sheet">시트</param>
+            <param name="locked">잠금여부</param>
+        </member>
+        <member name="M:EDocument.Extensions.FpSpreadExtension.FpSpreadExtension.Lock(FarPoint.Win.Spread.SheetView,System.Boolean,System.Boolean)">
+            <summary>
+            시트의 잠금설정을 변경합니다.
+            </summary>
+            <param name="sheet">시트</param>
+            <param name="locked">잠금여부</param>
+            <param name="bypassCheckbox">체크박스는 건너뛸지 여부</param>
+        </member>
+        <member name="M:EDocument.Extensions.FpSpreadExtension.FpSpreadExtension.ToggleCheckAll(FarPoint.Win.Spread.SheetView,System.Int32)">
+            <summary>
+            전체선택 체크박스의 체크상태를 토글합니다.
+            </summary>
+            <param name="sheet">시트</param>
+            <param name="col">토글할 열 인덱스</param>
+            <returns>토글이 성공했는지 여부</returns>
+        </member>
+        <member name="M:EDocument.Extensions.FpSpreadExtension.FpSpreadExtension.SetApprearance(FarPoint.Win.Spread.Row,EDocument.Extensions.FpSpreadExtension.CellAppearance)">
+            <summary>
+            행의 모양을 지정합니다.
+            </summary>
+            <param name="row">행</param>
+            <param name="appearance">모양</param>
+        </member>
+        <member name="M:EDocument.Extensions.FpSpreadExtension.FpSpreadExtension.SetApprearance(FarPoint.Win.Spread.Cell,EDocument.Extensions.FpSpreadExtension.CellAppearance)">
+            <summary>
+            셀의 모양을 지정합니다.
+            </summary>
+            <param name="cell">셀</param>
+            <param name="appearance">모양</param>
+        </member>
+        <member name="T:EDocument.Forms.FileViewer">
+            <summary>
+            PDF 파일 열람 팝업입니다.
+            </summary>
+        </member>
+        <member name="M:EDocument.Forms.FileViewer.#ctor(System.String)">
+            <summary>
+            PDF 파일 열람 팝업의 인스턴스를 생성합니다.
+            </summary>
+        </member>
+        <member name="P:EDocument.Forms.FileViewer.Filename">
+            <summary>
+            열람할 전체파일명입니다. 확장자가 PDF 형식이어야 합니다.
+            </summary>
+        </member>
+        <member name="P:EDocument.Forms.FileViewer.DisplayFilename">
+            <summary>
+            창에 표시할 파일명입니다.
+            </summary>
+        </member>
+        <member name="P:EDocument.Forms.FileViewer.DocTypeName">
+            <summary>
+            파일의 종류입니다.
+            </summary>
+        </member>
+        <member name="P:EDocument.Forms.FileViewer.DocRevision">
+            <summary>
+            파일의 개정번호입니다.
+            </summary>
+        </member>
+        <member name="P:EDocument.Forms.FileViewer.DocNumber">
+            <summary>
+            문서번호입니다.
+            </summary>
+        </member>
+        <member name="F:EDocument.Forms.FileViewer.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:EDocument.Forms.FileViewer.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:EDocument.Forms.FileViewer.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:EDocument.Network.Ftp">
+            <summary>
+            FTP 관련 라이브러리입니다.
+            </summary>
+        </member>
+        <member name="T:EDocument.Network.Ftp.Account">
+            <summary>
+            접속 계정 정보입니다.
+            </summary>
+        </member>
+        <member name="M:EDocument.Network.Ftp.UrlExists(System.String,EDocument.Network.Ftp.Account,System.Net.WebException@)">
+            <summary>
+            FTP 경로가 존재하는지 확인합니다.
+            </summary>
+            <param name="url">FTP 주소</param>
+            <param name="account">계정정보</param>
+            <param name="e">실패시 오류 정보</param>
+            <returns>1 = 경로가 존재함, 0 = 경로가 존재하지 않음, -1 = 접속할 수 없음</returns>
+        </member>
+        <member name="M:EDocument.Network.Ftp.UrlExists(System.String,System.String,System.String,System.Net.WebException@)">
+            <summary>
+            FTP 경로가 존재하는지 확인합니다.
+            </summary>
+            <param name="url">위치</param>
+            <param name="username">계정명</param>
+            <param name="password">비밀번호</param>
+            <param name="e">실패시 오류 정보</param>
+            <returns>1 = 경로가 존재함, 0 = 경로가 존재하지 않음, -1 = 접속할 수 없음</returns>
+        </member>
+        <member name="M:EDocument.Network.Ftp.CheckDirectory(System.String,EDocument.Network.Ftp.Account,System.Boolean)">
+            <summary>
+            FTP 경로가 존재하는지 확인하고 필요하다면 생성합니다.
+            </summary>
+            <param name="url">FTP 주소</param>
+            <param name="account">접속 정보</param>
+            <param name="createDirectory">디렉토리가 없을 경우 생성할지 여부</param>
+            <returns>경로가 존재하는지(또는 생성되었는지) 여부</returns>
+        </member>
+        <member name="M:EDocument.Network.Ftp.CheckDirectory(System.String,System.String,System.String,System.Boolean)">
+            <summary>
+            FTP 경로가 존재하는지 확인하고 필요하다면 생성합니다.
+            </summary>
+            <param name="url">FTP 경로</param>
+            <param name="username">계정명</param>
+            <param name="password">비밀번호</param>
+            <param name="createDirectory">디렉토리가 없을 경우 생성할지 여부</param>
+            <returns>경로가 존재하는지(또는 생성되었는지) 여부</returns>
+        </member>
+        <member name="M:EDocument.Network.Ftp.DeleteFile(System.String,System.String,System.String,System.Net.FtpStatusCode@,System.String@)">
+            <summary>
+            FTP 서버 경로의 파일을 삭제합니다.
+            </summary>
+            <param name="ftpFilename">삭제할 FTP 파일 주소(예: 'ftp://your.host.name/folder/filename.ext')</param>
+            <param name="ftpId">FTP 접속 아이디</param>
+            <param name="ftpPw">FTP 접속 비밀번호</param>
+            <param name="resultCode">다운로드 결과 코드</param>
+            <param name="resultMessage">다운로드 결과 메시지</param>
+            <returns>삭제 성공 여부</returns>
+        </member>
+        <member name="M:EDocument.Network.Ftp.DeleteFile(System.String,System.String,System.String)">
+            <summary>
+            FTP 서버 경로의 파일을 삭제합니다.
+            </summary>
+            <param name="ftpFilename">삭제할 FTP 파일 주소(예: 'ftp://your.host.name/folder/filename.ext')</param>
+            <param name="ftpId">FTP 접속 아이디</param>
+            <param name="ftpPw">FTP 접속 비밀번호</param>
+            <returns>삭제 성공 여부</returns>
+        </member>
+        <member name="M:EDocument.Network.Ftp.DownloadFileToStream(System.String,System.String,System.String,System.Net.FtpStatusCode@,System.String@)">
+            <summary>
+            FTP 서버로 부터 파일을 다운로드합니다.
+            </summary>
+            <param name="ftpFilename">다운로드할 FTP 파일 주소(예: 'ftp://your.host.name/folder/filename.ext')</param>
+            <param name="ftpId">FTP 접속 아이디</param>
+            <param name="ftpPw">FTP 접속 비밀번호</param>
+            <param name="resultCode">다운로드 결과 코드</param>
+            <param name="resultMessage">다운로드 결과 메시지</param>
+            <returns>다운로드한 컨텐츠의 메모리 스트림</returns>
+        </member>
+        <member name="M:EDocument.Network.Ftp.DownloadFileToStream(System.String,System.String,System.String)">
+            <summary>
+            FTP 서버로 부터 파일을 다운로드합니다.
+            </summary>
+            <param name="ftpFilename">다운로드할 FTP 파일 주소(예: 'ftp://your.host.name/folder/filename.ext')</param>
+            <param name="ftpId">FTP 접속 아이디</param>
+            <param name="ftpPw">FTP 접속 비밀번호</param>
+            <returns>다운로드 성공 여부</returns>
+        </member>
+        <member name="M:EDocument.Network.Ftp.DownloadFile(System.String,System.String,EDocument.Network.Ftp.Account)">
+            <summary>
+            FTP 서버로 부터 파일을 다운로드합니다.
+            </summary>
+            <param name="localFilename">경로를 포함한 다운로드 파일명</param>
+            <param name="ftpFilename">다운로드할 FTP 파일 주소(예: 'ftp://your.host.name/folder/filename.ext')</param>
+            <param name="account">계정정보</param>
+            <returns>다운로드 성공 여부</returns>
+        </member>
+        <member name="M:EDocument.Network.Ftp.DownloadFile(System.String,System.String,EDocument.Network.Ftp.Account,System.String@)">
+            <summary>
+            FTP 서버로 부터 파일을 다운로드합니다.
+            </summary>
+            <param name="localFilename">경로를 포함한 다운로드 파일명</param>
+            <param name="ftpFilename">다운로드할 FTP 파일 주소(예: 'ftp://your.host.name/folder/filename.ext')</param>
+            <param name="account">계정정보</param>
+            <param name="resultMessage">다운로드 결과 메시지</param>
+            <returns>다운로드 성공 여부</returns>
+        </member>
+        <member name="M:EDocument.Network.Ftp.DownloadFile(System.String,System.String,EDocument.Network.Ftp.Account,System.Net.FtpStatusCode@,System.String@)">
+            <summary>
+            FTP 서버로 부터 파일을 다운로드합니다.
+            </summary>
+            <param name="localFilename">경로를 포함한 다운로드 파일명</param>
+            <param name="ftpFilename">다운로드할 FTP 파일 주소(예: 'ftp://your.host.name/folder/filename.ext')</param>
+            <param name="account">계정정보</param>
+            <param name="resultCode">다운로드 결과 코드</param>
+            <param name="resultMessage">다운로드 결과 메시지</param>
+            <returns>다운로드 성공 여부</returns>
+        </member>
+        <member name="M:EDocument.Network.Ftp.DownloadFile(System.String,System.String,System.String,System.String)">
+            <summary>
+            FTP 서버로 부터 파일을 다운로드합니다.
+            </summary>
+            <param name="localFilename">경로를 포함한 다운로드 파일명</param>
+            <param name="ftpFilename">다운로드할 FTP 파일 주소(예: 'ftp://your.host.name/folder/filename.ext')</param>
+            <param name="ftpId">FTP 접속 아이디</param>
+            <param name="ftpPw">FTP 접속 비밀번호</param>
+            <returns>다운로드 성공 여부</returns>
+        </member>
+        <member name="M:EDocument.Network.Ftp.DownloadFile(System.String,System.String,System.String,System.String,System.String@)">
+            <summary>
+            FTP 서버로 부터 파일을 다운로드합니다.
+            </summary>
+            <param name="localFilename">경로를 포함한 다운로드 파일명</param>
+            <param name="ftpFilename">다운로드할 FTP 파일 주소(예: 'ftp://your.host.name/folder/filename.ext')</param>
+            <param name="ftpId">FTP 접속 아이디</param>
+            <param name="ftpPw">FTP 접속 비밀번호</param>
+            <param name="resultMessage">다운로드 결과 메시지</param>
+            <returns>다운로드 성공 여부</returns>
+        </member>
+        <member name="M:EDocument.Network.Ftp.DownloadFile(System.String,System.String,System.String,System.String,System.String,System.String@)">
+            <summary>
+            FTP 서버로 부터 파일을 다운로드합니다.
+            </summary>
+            <param name="localFilename">경로를 포함한 다운로드 파일명</param>
+            <param name="ftpFilename">다운로드할 FTP 파일 주소(예: 'ftp://your.host.name/folder/filename.ext')</param>
+            <param name="ftpId">FTP 접속 아이디</param>
+            <param name="ftpPw">FTP 접속 비밀번호</param>
+            <param name="resultMessage">다운로드 결과 메시지</param>
+            <returns>다운로드 성공 여부</returns>
+        </member>
+        <member name="M:EDocument.Network.Ftp.DownloadFile(System.String,System.String,System.String,System.String,System.Net.FtpStatusCode@,System.String@)">
+            <summary>
+            FTP 서버로 부터 파일을 다운로드합니다.
+            </summary>
+            <param name="localFilename">경로를 포함한 다운로드 파일명</param>
+            <param name="ftpFilename">다운로드할 FTP 파일 주소(예: 'ftp://your.host.name/folder/filename.ext')</param>
+            <param name="ftpId">FTP 접속 아이디</param>
+            <param name="ftpPw">FTP 접속 비밀번호</param>
+            <param name="resultCode">다운로드 결과 코드</param>
+            <param name="resultMessage">다운로드 결과 메시지</param>
+            <returns>다운로드 성공 여부</returns>
+        </member>
+        <member name="M:EDocument.Network.Ftp.UploadFile(System.String,System.String,EDocument.Network.Ftp.Account)">
+            <summary>
+            로컬파일을 FTP 서버에 업로드합니다.
+            </summary>
+            <param name="localFilename">경로를 포함한 로컬 파일명</param>
+            <param name="ftpFilename">FTP 주소(예: 'ftp://my.host.name/folder/filename.ext')</param>
+            <param name="account">계정정보</param>
+            <returns>업로드 성공 여부</returns>
+        </member>
+        <member name="M:EDocument.Network.Ftp.UploadFile(System.String,System.String,EDocument.Network.Ftp.Account,System.String@)">
+            <summary>
+            로컬파일을 FTP 서버에 업로드합니다.
+            </summary>
+            <param name="localFilename">경로를 포함한 로컬 파일명</param>
+            <param name="ftpFilename">FTP 주소(예: 'ftp://my.host.name/folder/filename.ext')</param>
+            <param name="account">계정정보</param>
+            <param name="resultMessage">업로드 결과 메시지</param>
+            <returns>업로드 성공 여부</returns>
+        </member>
+        <member name="M:EDocument.Network.Ftp.UploadFile(System.String,System.String,EDocument.Network.Ftp.Account,System.Net.FtpStatusCode@,System.String@)">
+            <summary>
+            로컬파일을 FTP 서버에 업로드합니다.
+            </summary>
+            <param name="localFilename">경로를 포함한 로컬 파일명</param>
+            <param name="ftpFilename">FTP 주소(예: 'ftp://my.host.name/folder/filename.ext')</param>
+            <param name="account">계정정보</param>
+            <param name="resultCode">업로드 결과 코드</param>
+            <param name="resultMessage">업로드 결과 메시지</param>
+            <returns>업로드 성공 여부</returns>
+        </member>
+        <member name="M:EDocument.Network.Ftp.UploadFile(System.String,System.String,System.String,System.String)">
+            <summary>
+            로컬파일을 FTP 서버에 업로드합니다.
+            </summary>
+            <param name="localFilename">경로를 포함한 로컬 파일명</param>
+            <param name="ftpFilename">FTP 주소(예: 'ftp://my.host.name/folder/filename.ext')</param>
+            <param name="ftpId">FTP 접속 아이디</param>
+            <param name="ftpPw">FTP 접속 비밀번호</param>
+            <returns>업로드 성공 여부</returns>
+        </member>
+        <member name="M:EDocument.Network.Ftp.UploadFile(System.String,System.String,System.String,System.String,System.String@)">
+            <summary>
+            로컬파일을 FTP 서버에 업로드합니다.
+            </summary>
+            <param name="localFilename">경로를 포함한 로컬 파일명</param>
+            <param name="ftpFilename">FTP 주소(예: 'ftp://my.host.name/folder/filename.ext')</param>
+            <param name="ftpId">FTP 접속 아이디</param>
+            <param name="ftpPw">FTP 접속 비밀번호</param>
+            <param name="resultMessage">업로드 결과 메시지</param>
+            <returns>업로드 성공 여부</returns>
+        </member>
+        <member name="M:EDocument.Network.Ftp.UploadFile(System.String,System.String,System.String,System.String,System.Net.FtpStatusCode@,System.String@)">
+            <summary>
+            로컬파일을 FTP 서버에 업로드합니다.
+            </summary>
+            <param name="localFilename">경로를 포함한 로컬 파일명</param>
+            <param name="ftpFilename">업로드할 FTP 파일 주소(예: 'ftp://your.host.name/folder/filename.ext')</param>
+            <param name="ftpId">FTP 접속 아이디</param>
+            <param name="ftpPw">FTP 접속 비밀번호</param>
+            <param name="resultCode">업로드 결과 코드</param>
+            <param name="resultMessage">업로드 결과 메시지</param>
+            <returns>업로드 성공 여부</returns>
+        </member>
+        <member name="T:EDocument.Network.Url">
+            <summary>
+            URL 관련 라이브러리입니다.
+            </summary>
+        </member>
+        <member name="M:EDocument.Network.Url.Combine(System.String,System.String)">
+            <summary>
+            URL 경로를 이어 붙입니다.
+            </summary>
+            <param name="path1">왼쪽에 붙일 URL 경로</param>
+            <param name="path2">오른쪽에 붙일 URL 경로</param>
+            <returns></returns>
+        </member>
+        <member name="T:EDocument.Network.Server">
+            <summary>
+            전자문서 실행환경입니다.
+            </summary>
+        </member>
+        <member name="T:EDocument.Network.Server.UploadResultState">
+            <summary>
+            서버 업로드 결과 상태값
+            </summary>
+        </member>
+        <member name="P:EDocument.Network.Server.HomeUrl">
+            <summary>
+            FTP 홈주소입니다.
+            </summary>
+        </member>
+        <member name="P:EDocument.Network.Server.DocumentUrl">
+            <summary>
+            FTP 문서파일 홈주소입니다.
+            </summary>
+        </member>
+        <member name="P:EDocument.Network.Server.SourceUrl">
+            <summary>
+            FTP 자료파일 홈주소입니다.
+            </summary>
+        </member>
+        <member name="P:EDocument.Network.Server.AccountName">
+            <summary>
+            FTP 접속계정 이름입니다.
+            </summary>
+        </member>
+        <member name="P:EDocument.Network.Server.AccountPassword">
+            <summary>
+            FTP 접속계정 비밀번호입니다.
+            </summary>
+        </member>
+        <member name="P:EDocument.Network.Server.DocumentDirectoryName">
+            <summary>
+            문서파일 루트의 폴더명입니다.
+            </summary>
+        </member>
+        <member name="P:EDocument.Network.Server.SourceDirectoryName">
+            <summary>
+            자료파일 루트의 폴더명입니다.
+            </summary>
+        </member>
+        <member name="M:EDocument.Network.Server.GetServerProperty(System.String)">
+            <summary>
+            서버값을 가져옵니다.
+            </summary>
+            <param name="key">키값</param>
+            <returns></returns>
+        </member>
+        <member name="M:EDocument.Network.Server.UploadDocumentFile(System.String,System.String,System.Int32,System.DateTime,System.String,System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            서버에 첨부문서파일을 업로드하고 첨부파일 정보를 업데이트합니다.
+            </summary>
+            <param name="docCategoryCode">문서카테고리 코드</param>
+            <param name="docCode">문서 코드</param>
+            <param name="docId">문서ID</param>
+            <param name="docDate">문서레코드 생성일</param>
+            <param name="filepath">업로드할 파일명(경로포함)</param>
+            <param name="dbConn">DB 연결</param>
+            <param name="dbTran">DB 트랜젝션</param>
+            <returns>업로드 결과 상태값</returns>
+        </member>
+        <member name="M:EDocument.Network.Server.UploadSourceFile(System.String,System.Int32,System.DateTime,System.String,System.Data.SqlClient.SqlConnection,System.Data.SqlClient.SqlTransaction)">
+            <summary>
+            서버에 자료파일을 업로드하고 첨부파일 정보를 업데이트합니다.
+            </summary>
+            <param name="docCode">문서 코드</param>
+            <param name="srcfId">자료파일ID</param>
+            <param name="docDate">문서레코드 생성일</param>
+            <param name="filepath">업로드할 파일명(경로포함)</param>
+            <param name="dbConn">DB 연결</param>
+            <param name="dbTran">DB 트랜젝션</param>
+            <returns>업로드 결과 상태값</returns>
+        </member>
+        <member name="T:EDocument.Properties.Resource">
+            <summary>
+              지역화된 문자열 등을 찾기 위한 강력한 형식의 리소스 클래스입니다.
+            </summary>
+        </member>
+        <member name="P:EDocument.Properties.Resource.ResourceManager">
+            <summary>
+              이 클래스에서 사용하는 캐시된 ResourceManager 인스턴스를 반환합니다.
+            </summary>
+        </member>
+        <member name="P:EDocument.Properties.Resource.Culture">
+            <summary>
+              이 강력한 형식의 리소스 클래스를 사용하여 모든 리소스 조회에 대한 현재 스레드의 CurrentUICulture
+              속성을 재정의합니다.
+            </summary>
+        </member>
+        <member name="P:EDocument.Properties.Resource.x16_arrow_down">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:EDocument.Properties.Resource.x16_arrow_down_gray">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:EDocument.Properties.Resource.x16_folder_open">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:EDocument.Properties.Resource.x16_folder_open_gray">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:EDocument.Properties.Resource.x16_glass">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="P:EDocument.Properties.Resource.x16_glass_gray">
+            <summary>
+              System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+            </summary>
+        </member>
+        <member name="T:EDocument.Resource.GridButtonImages">
+            <summary>
+            그리드 버튼용 이미지 라이브러리입니다. 크기는 16x16 입니다.
+            </summary>
+        </member>
+        <member name="P:EDocument.Resource.GridButtonImages.Download">
+            <summary>
+            다운로드
+            </summary>
+        </member>
+        <member name="P:EDocument.Resource.GridButtonImages.DownloadDisabled">
+            <summary>
+            다운로드(disabled)
+            </summary>
+        </member>
+        <member name="P:EDocument.Resource.GridButtonImages.FileOpen">
+            <summary>
+            파일 열기
+            </summary>
+        </member>
+        <member name="P:EDocument.Resource.GridButtonImages.FileOpenDisabled">
+            <summary>
+            파일 열기(disabled)
+            </summary>
+        </member>
+        <member name="P:EDocument.Resource.GridButtonImages.Read">
+            <summary>
+            읽기
+            </summary>
+        </member>
+        <member name="P:EDocument.Resource.GridButtonImages.ReadDisabled">
+            <summary>
+            일기(disabled)
+            </summary>
+        </member>
+        <member name="T:EDocument.Spread.RequirementManager">
+            <summary>
+            필수첨부표시 관리자입니다.
+            </summary>
+        </member>
+        <member name="P:EDocument.Spread.RequirementManager.DocCtgCd">
+            <summary>
+            문서코드 카테고리
+            </summary>
+        </member>
+        <member name="P:EDocument.Spread.RequirementManager.DocReqCdsColumn">
+            <summary>
+            필수문서코드 문자열 컬럼
+            </summary>
+        </member>
+        <member name="P:EDocument.Spread.RequirementManager.DocumentColumns">
+            <summary>
+            문서코드 사전(키는 문서코드, 값은 문서종류)
+            </summary>
+        </member>
+        <member name="P:EDocument.Spread.RequirementManager.HideEmptyColumns">
+            <summary>
+            내용이 없는 컬럼을 숨길지 여부
+            </summary>
+        </member>
+        <member name="M:EDocument.Spread.RequirementManager.#ctor(FarPoint.Win.Spread.SheetView,System.String,System.Int32)">
+            <summary>
+            필수문서표시 관리자 인스턴스를 생성합니다.
+            </summary>
+            <param name="sheet">스프레드 시트</param>
+            <param name="docCtgCd">표시할 문서코드 카테고리(빈 문자열은 전체)</param>
+            <param name="docReqCdsCol"></param>
+        </member>
+        <member name="M:EDocument.Spread.RequirementManager.#ctor(FarPoint.Win.Spread.SheetView,System.String,System.String)">
+            <summary>
+            필수문서표시 관리자 인스턴스를 생성합니다.
+            </summary>
+            <param name="sheet">스프레드 시트</param>
+            <param name="displayDocCtgCd">문서카테고리 코드</param>
+            <param name="targetType">대상형식</param>
+            <param name="targetKeyColName">첨부문서 코드문자열 컬럼 헤더명</param>
+        </member>
+        <member name="M:EDocument.Spread.RequirementManager.#ctor(FarPoint.Win.Spread.SheetView,System.String)">
+            <summary>
+            필수문서표시 관리자 인스턴스를 생성합니다.
+            </summary>
+            <param name="sheet">스프레드 시트</param>
+            <param name="targetType">대상형식</param>
+            <param name="targetKeyColName">첨부문서 코드문자열 컬럼 헤더명</param>
+        </member>
+        <member name="M:EDocument.Spread.RequirementManager.AppendColumns">
+            <summary>
+            스프레드에 필수첨부표시 컬럼들을 추가하고 값을 표시합니다.
+            </summary>
+        </member>
+        <member name="M:EDocument.Spread.RequirementManager.GetCellText(System.Int32,System.String)">
+            <summary>
+            지정한 문서코드의 첨부셀에서 텍스트값을 읽어옵니다.
+            </summary>
+            <param name="row">행 인덱스</param>
+            <param name="docCd">문서코드</param>
+            <returns></returns>
+        </member>
+        <member name="M:EDocument.Spread.RequirementManager.UpdateColumns(System.Int32)">
+            <summary>
+            지정한 행의 필수문서표시를 업데이트합니다.
+            </summary>
+            <param name="row">행 인덱스</param>
+        </member>
+        <member name="M:EDocument.Spread.RequirementManager.UpdateColumnVisible">
+            <summary>
+            컬럼의 표시 상태를 업데이트합니다.
+            </summary>
+        </member>
+        <member name="T:EDocument.Spread.AttachmentManager">
+            <summary>
+            첨부문서표시 관리자입니다.
+            </summary>
+        </member>
+        <member name="P:EDocument.Spread.AttachmentManager.PlantCode">
+            <summary>
+            공장코드
+            </summary>
+        </member>
+        <member name="P:EDocument.Spread.AttachmentManager.DisplayDocCtgCd">
+            <summary>
+            문서코드 카테고리
+            </summary>
+        </member>
+        <member name="P:EDocument.Spread.AttachmentManager.DocCtgCd">
+            <summary>
+            문서코드 카테고리
+            </summary>
+        </member>
+        <member name="P:EDocument.Spread.AttachmentManager.AttDocCdsColumn">
+            <summary>
+            첨부문서코드 문자열 컬럼
+            </summary>
+        </member>
+        <member name="P:EDocument.Spread.AttachmentManager.ReqDocCdsColumn">
+            <summary>
+            필수문서코드 문자열 컬럼
+            </summary>
+        </member>
+        <member name="P:EDocument.Spread.AttachmentManager.DocumentColumns">
+            <summary>
+            문서코드 사전(키는 문서코드, 값은 문서종류)
+            </summary>
+        </member>
+        <member name="P:EDocument.Spread.AttachmentManager.HideEmptyColumns">
+            <summary>
+            내용이 없는 컬럼을 숨길지 여부
+            </summary>
+        </member>
+        <member name="M:EDocument.Spread.AttachmentManager.#ctor(FarPoint.Win.Spread.SheetView,System.String,System.String,System.Int32,System.Int32)">
+            <summary>
+            첨부문서표시 관리자 인스턴스를 생성합니다.
+            </summary>
+            <param name="sheet">스프레드 시트</param>
+            <param name="docCtgCd">문서첨부 카테고리</param>
+            <param name="displayDocCtgCd">컬럼을 표시할 문서코드 카테고리(null 또는 빈문자열 지정시 문서코드 전체)</param>
+            <param name="attDocCdsCol">첨부문서 코드문자열 컬럼 인덱스</param>
+            <param name="reqDocCdsCol">필수문서 코드문자열 컬럼 인덱스</param>
+        </member>
+        <member name="M:EDocument.Spread.AttachmentManager.#ctor(FarPoint.Win.Spread.SheetView,System.String,System.String,System.String,System.Int32)">
+            <summary>
+            첨부문서표시 관리자 인스턴스를 생성합니다.
+            </summary>
+            <param name="sheet">스프레드 시트</param>
+            <param name="docCtgCd">문서첨부 카테고리</param>
+            <param name="displayDocCtgCd">컬럼을 표시할 문서코드 카테고리(null 또는 빈문자열 지정시 문서코드 전체)</param>
+            <param name="attDocCdsColName">첨부문서 코드문자열 컬럼 헤더명</param>
+            <param name="reqDocCdsCol">필수문서 코드문자열 컬럼 인덱스</param>
+        </member>
+        <member name="M:EDocument.Spread.AttachmentManager.#ctor(FarPoint.Win.Spread.SheetView,System.String,System.String,System.Int32)">
+            <summary>
+            첨부문서표시 관리자 인스턴스를 생성합니다.
+            </summary>
+            <param name="sheet">스프레드 시트</param>
+            <param name="docCtgCd">문서첨부 카테고리</param>
+            <param name="displayDocCtgCd">컬럼을 표시할 문서코드 카테고리(null 또는 빈문자열 지정시 문서코드 전체)</param>
+            <param name="attDocCdsCol">첨부문서 코드문자열 컬럼 인덱스</param>
+        </member>
+        <member name="M:EDocument.Spread.AttachmentManager.#ctor(FarPoint.Win.Spread.SheetView,System.String,System.String,System.String)">
+            <summary>
+            첨부문서표시 관리자 인스턴스를 생성합니다.
+            </summary>
+            <param name="sheet">스프레드 시트</param>
+            <param name="docCtgCd">문서첨부 카테고리</param>
+            <param name="displayDocCtgCd">컬럼을 표시할 문서코드 카테고리(null 또는 빈문자열 지정시 문서코드 전체)</param>
+            <param name="attDocCdsColName">첨부문서 코드문자열 컬럼 헤더명</param>
+        </member>
+        <member name="M:EDocument.Spread.AttachmentManager.#ctor(FarPoint.Win.Spread.SheetView,System.String,System.String,System.String,System.String)">
+            <summary>
+            첨부문서표시 관리자 인스턴스를 생성합니다.
+            </summary>
+            <param name="sheet">스프레드 시트</param>
+            <param name="docCtgCd">문서첨부 카테고리</param>
+            <param name="displayDocCtgCd">컬럼을 표시할 문서코드 카테고리(null 또는 빈문자열 지정시 문서코드 전체)</param>
+            <param name="attDocCdsColName">첨부문서 코드문자열 컬럼 헤더명</param>
+            <param name="reqDocCdsColName">필수문서 코드문자열 컬럼 헤더명</param>
+        </member>
+        <member name="M:EDocument.Spread.AttachmentManager.AppendColumns">
+            <summary>
+            스프레드에 문서첨부표시 컬럼들을 추가하고 값을 표시합니다.
+            </summary>
+        </member>
+        <member name="M:EDocument.Spread.AttachmentManager.GetCellText(System.Int32,System.String)">
+            <summary>
+            지정한 문서코드의 첨부셀에서 텍스트값을 읽어옵니다.
+            </summary>
+            <param name="row">행 인덱스</param>
+            <param name="docCd">문서코드</param>
+            <returns></returns>
+        </member>
+        <member name="M:EDocument.Spread.AttachmentManager.ReloadData(System.Int32,System.String[])">
+            <summary>
+            지정한 행의 첨부문서코드 문자열을 다리 로드하고 첨부표시를 업데이트합니다.
+            </summary>
+            <param name="row">행 인덱스</param>
+            <param name="keys">첨부키 목록</param>
+        </member>
+        <member name="M:EDocument.Spread.AttachmentManager.UpdateColumns(System.Int32)">
+            <summary>
+            지정한 행의 첨부문서표시를 업데이트합니다.
+            </summary>
+            <param name="row">행 인덱스</param>
+        </member>
+        <member name="M:EDocument.Spread.AttachmentManager.UpdateColumnVisible">
+            <summary>
+            컬럼의 표시 상태를 업데이트합니다.
+            </summary>
+        </member>
+        <member name="T:EDocument.Spread.FileButtonManager">
+            <summary>
+            스프레드의 버튼을 관리합니다.
+            </summary>
+        </member>
+        <member name="T:EDocument.Spread.FileButtonManager.ServerFileType">
+            <summary>업로드 파일 형식</summary>
+        </member>
+        <member name="F:EDocument.Spread.FileButtonManager.sheet">
+            <summary>관리대상시트</summary>
+        </member>
+        <member name="F:EDocument.Spread.FileButtonManager.serverFileDomain">
+            <summary>서버파일 소속영역</summary>
+        </member>
+        <member name="F:EDocument.Spread.FileButtonManager.colFilename">
+            <summary>파일명 컬럼</summary>
+        </member>
+        <member name="F:EDocument.Spread.FileButtonManager.colServerPath">
+            <summary>서버경로 컬럼</summary>
+        </member>
+        <member name="F:EDocument.Spread.FileButtonManager.colServerFilename">
+            <summary>서버파일명 컬럼</summary>
+        </member>
+        <member name="F:EDocument.Spread.FileButtonManager.colFileSelect">
+            <summary>파일선택 버튼 컬럼</summary>
+        </member>
+        <member name="F:EDocument.Spread.FileButtonManager.colFileView">
+            <summary>파일보기 버튼 컬럼</summary>
+        </member>
+        <member name="F:EDocument.Spread.FileButtonManager.colFileDownload">
+            <summary>파일다운로드 버튼 컬럼</summary>
+        </member>
+        <member name="F:EDocument.Spread.FileButtonManager.colDocTypeName">
+            <summary>문서형식 컬럼</summary>
+        </member>
+        <member name="F:EDocument.Spread.FileButtonManager.colDocRevision">
+            <summary>개정번호 컬럼</summary>
+        </member>
+        <member name="F:EDocument.Spread.FileButtonManager.colDocNumber">
+            <summary>문서번호 컬럼</summary>
+        </member>
+        <member name="P:EDocument.Spread.FileButtonManager.ServerFileRoot">
+            <summary>
+            서버파일 루트경로
+            </summary>
+        </member>
+        <member name="P:EDocument.Spread.FileButtonManager.ServerFileDomain">
+            <summary>
+            서버파일 소속영역
+            </summary>
+        </member>
+        <member name="P:EDocument.Spread.FileButtonManager.FileSelectButtonEnabled">
+            <summary>
+            파일선택버튼을 활성화할 것인지 여부
+            </summary>
+        </member>
+        <member name="P:EDocument.Spread.FileButtonManager.FilenameColumnIndex">
+            <summary>
+            원본 파일명 컬럼의 인덱스
+            </summary>
+        </member>
+        <member name="P:EDocument.Spread.FileButtonManager.ServerPathColumnIndex">
+            <summary>
+            서버 경로 컬럼의 인덱스
+            </summary>
+        </member>
+        <member name="P:EDocument.Spread.FileButtonManager.ServerFilenameColumnIndex">
+            <summary>
+            서버 파일명 컬럼의 인덱스
+            </summary>
+        </member>
+        <member name="P:EDocument.Spread.FileButtonManager.FileSelectButtonColumnIndex">
+            <summary>
+            파일선택 버튼 컬럼의 인덱스
+            </summary>
+        </member>
+        <member name="P:EDocument.Spread.FileButtonManager.FileViewButtonColumnIndex">
+            <summary>
+            파일보기 버튼 컬럼의 인덱스
+            </summary>
+        </member>
+        <member name="P:EDocument.Spread.FileButtonManager.FileDownloadButtonColumnIndex">
+            <summary>
+            파일다운로드 버튼 컬럼의 인덱스
+            </summary>
+        </member>
+        <member name="P:EDocument.Spread.FileButtonManager.DocTypeNameColumnIndex">
+            <summary>
+             문서형식명 컬럼의 인덱스
+            </summary>
+        </member>
+        <member name="P:EDocument.Spread.FileButtonManager.DocRevisionColumnIndex">
+            <summary>
+             문서개정번호 컬럼의 인덱스
+            </summary>
+        </member>
+        <member name="P:EDocument.Spread.FileButtonManager.DocNumberColumnIndex">
+            <summary>
+             문서번호 컬럼의 인덱스
+            </summary>
+        </member>
+        <member name="P:EDocument.Spread.FileButtonManager.FileSelectImage">
+            <summary>
+            파일선택 버튼 이미지
+            </summary>
+        </member>
+        <member name="P:EDocument.Spread.FileButtonManager.FileViewImage">
+            <summary>
+            파일보기 버튼 이미지
+            </summary>
+        </member>
+        <member name="P:EDocument.Spread.FileButtonManager.FileDownloadImage">
+            <summary>
+            파일다운로드 버튼 이미지
+            </summary>
+        </member>
+        <member name="P:EDocument.Spread.FileButtonManager.DisabledFileSelectImage">
+            <summary>
+            파일선택 버튼 이미지(Disabled)
+            </summary>
+        </member>
+        <member name="P:EDocument.Spread.FileButtonManager.DisabledFileViewImage">
+            <summary>
+            파일보기 버튼 이미지(Disabled)
+            </summary>
+        </member>
+        <member name="P:EDocument.Spread.FileButtonManager.DisabledFileDownloadImage">
+            <summary>
+            파일다운로드 버튼 이미지(Disabled)
+            </summary>
+        </member>
+        <member name="P:EDocument.Spread.FileButtonManager.MaxUploadFileLength">
+            <summary>
+            업로드할 수 있는 최대 파일 크기
+            </summary>
+        </member>
+        <member name="P:EDocument.Spread.FileButtonManager.OpenFileFilter">
+            <summary>
+            파일열기 대화창에 사용할 필터
+            </summary>
+        </member>
+        <member name="M:EDocument.Spread.FileButtonManager.#ctor(FarPoint.Win.Spread.SheetView,EDocument.Spread.FileButtonManager.ServerFileType)">
+            <summary>
+            디펄트 버튼 이미지로 클래스를 초기화합니다.
+            </summary>
+            <param name="sheet">스프레드 시트</param>
+        </member>
+        <member name="M:EDocument.Spread.FileButtonManager.DeleteTempFiles">
+            <summary>
+            열람을 위해 임시로 다운로드한 파일을 모두 삭제합니다.
+            </summary>
+        </member>
+        <member name="M:EDocument.Spread.FileButtonManager.DownloadFile(System.Int32,System.String,System.Boolean)">
+            <summary>
+            파일을 다운로드합니다.
+            </summary>
+            <param name="row">다운로드 파일의 행 인덱스</param>
+            <param name="filename">다운로드할 로컬 파일명</param>
+            <param name="showResultMessage">성공여부 메시지를 표시할 지 여부</param>
+            <returns>성공여부</returns>
+        </member>
+        <member name="M:EDocument.Spread.FileButtonManager.GetTempFilenamePrefix">
+            <summary>
+            임시파일명의 프리픽스로 사용할 고정된 문자열을 반환합니다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:EDocument.Spread.FileButtonManager.GetAttachedFilename(System.Int32)">
+            <summary>
+            사용자가 첨부한 로컬 파일명을 가져옵니다.
+            </summary>
+            <param name="row">행 인덱스</param>
+            <returns></returns>
+        </member>
+        <member name="M:EDocument.Spread.FileButtonManager.SetAttachedFilename(System.Int32,System.String,System.Boolean)">
+            <summary>
+            첨부파일을 지정합니다.
+            </summary>
+            <param name="row">행 인덱스</param>
+            <param name="filename">경로를 포함한 전체파일명</param>
+            <param name="overwrite">이지 첨부파일이 지정된 경우 덮어쓸지 여부</param>
+            <returns></returns>
+        </member>
+        <member name="M:EDocument.Spread.FileButtonManager.SetAttachedFilename(System.Int32,System.String)">
+            <summary>
+            첨부파일을 지정합니다.
+            </summary>
+            <param name="row">행 인덱스</param>
+            <param name="filename">경로를 포함한 전체파일명</param>
+            <returns></returns>
+        </member>
+        <member name="M:EDocument.Spread.FileButtonManager.SelectUploadFile(System.Int32)">
+            <summary>
+            업로드할 파일을 선택합니다. 파일 열기 대화창이 표시되며 시트에 파일명이 입력됩니다.
+            </summary>
+            <param name="row">자료목록 줄번호</param>
+            <returns>파일이 지정되었는지 여부</returns>
+        </member>
+        <member name="M:EDocument.Spread.FileButtonManager.ShowFileView(System.Int32)">
+            <summary>
+            문서열람창을 띄워 파일을 봅니다.
+            </summary>
+            <param name="row"></param>
+            <returns></returns>
+        </member>
+        <member name="M:EDocument.Spread.FileButtonManager.UpdateButtons">
+            <summary>
+            전체 열에 대해 버튼을 업데이트합니다.
+            </summary>
+        </member>
+        <member name="M:EDocument.Spread.FileButtonManager.UpdateButtons(System.Int32)">
+            <summary>
+            버튼을 업데이트합니다.
+            </summary>
+            <param name="row">대상 줄 인덱스</param>
+        </member>
+        <member name="T:EDocument.DocumentColumnInformation">
+            <summary>
+            문서컬럼 정보
+            </summary>
+        </member>
+        <member name="F:EDocument.DocumentColumnInformation.Name">
+            <summary>문서명</summary>
+        </member>
+        <member name="F:EDocument.DocumentColumnInformation.Visible">
+            <summary>컬럼 표시 여부</summary>
+        </member>
+        <member name="M:EDocument.DocumentColumnInformation.#ctor(System.String)">
+            <summary>
+            문서컬럼 정보를 생성합니다.
+            </summary>
+            <param name="name">문서명</param>
+        </member>
+        <member name="M:EDocument.DocumentColumnInformation.#ctor(System.String,System.Boolean)">
+            <summary>
+            문서컬럼 정보를 생성합니다.
+            </summary>
+            <param name="name">문서명</param>
+            <param name="visible">표시 여부</param>
+        </member>
+        <member name="T:EDocument.UIColors">
+            <summary>
+            색 정의 클래스입니다.
+            </summary>
+        </member>
+        <member name="F:EDocument.UIColors.Discard">
+            <summary>폐기됨 전경색</summary>
+        </member>
+        <member name="F:EDocument.UIColors.Normal">
+            <summary>기본 전경색</summary>
+        </member>
+        <member name="F:EDocument.UIColors.NormalBackground">
+            <summary>기본 배경색</summary>
+        </member>
+        <member name="F:EDocument.UIColors.ReadonlyBackground">
+            <summary>읽기전용 배경색</summary>
+        </member>
+        <member name="F:EDocument.UIColors.RequiredBackground">
+            <summary>필수입력 배경색</summary>
+        </member>
+    </members>
+</doc>

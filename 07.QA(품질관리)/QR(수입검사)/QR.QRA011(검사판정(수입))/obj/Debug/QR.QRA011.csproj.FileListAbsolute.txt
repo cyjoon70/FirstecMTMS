@@ -1,0 +1,12 @@
+D:\Project\Firstec\Source\FIRSTEC\07.QA(품질관리)\QR(수입검사)\QR.QRA011(검사판정(수입))\obj\Debug\QR.QRA011.csproj.AssemblyReference.cache
+D:\Project\Firstec\Source\FIRSTEC\07.QA(품질관리)\QR(수입검사)\QR.QRA011(검사판정(수입))\obj\Debug\QR.QRA011.QRA011.resources
+D:\Project\Firstec\Source\FIRSTEC\07.QA(품질관리)\QR(수입검사)\QR.QRA011(검사판정(수입))\obj\Debug\QR.QRA011.Properties.Resources.resources
+D:\Project\Firstec\Source\FIRSTEC\07.QA(품질관리)\QR(수입검사)\QR.QRA011(검사판정(수입))\obj\Debug\QR.QRA011.QRA011P1.resources
+D:\Project\Firstec\Source\FIRSTEC\07.QA(품질관리)\QR(수입검사)\QR.QRA011(검사판정(수입))\obj\Debug\QR.QRA011.csproj.GenerateResource.cache
+D:\Project\Firstec\Source\FIRSTEC\07.QA(품질관리)\QR(수입검사)\QR.QRA011(검사판정(수입))\obj\Debug\QR.QRA011.dll.licenses
+D:\Project\Firstec\Source\FIRSTEC\07.QA(품질관리)\QR(수입검사)\QR.QRA011(검사판정(수입))\obj\Debug\QR.QRA011.csproj.CoreCompileInputs.cache
+D:\Project\Firstec\Source\FIRSTEC\DLL\QR.QRA011.dll
+D:\Project\Firstec\Source\FIRSTEC\DLL\QR.QRA011.pdb
+D:\Project\Firstec\Source\FIRSTEC\07.QA(품질관리)\QR(수입검사)\QR.QRA011(검사판정(수입))\obj\Debug\QR.QRA011.csproj.CopyComplete
+D:\Project\Firstec\Source\FIRSTEC\07.QA(품질관리)\QR(수입검사)\QR.QRA011(검사판정(수입))\obj\Debug\QR.QRA011.dll
+D:\Project\Firstec\Source\FIRSTEC\07.QA(품질관리)\QR(수입검사)\QR.QRA011(검사판정(수입))\obj\Debug\QR.QRA011.pdb

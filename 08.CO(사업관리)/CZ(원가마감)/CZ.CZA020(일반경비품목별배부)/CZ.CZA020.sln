@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CZ.CZA020", "CZ.CZA020.csproj", "{CA634426-BC8F-433F-904F-4C685A8E2A01}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "SY", "SY", "{5A6241BF-3C09-4BB7-A466-E540D2FC3551}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemBase", "..\..\..\00.SY(시스템관리)\SystemBase\SystemBase.csproj", "{45841E94-E806-4573-A93B-26D50A07EA9C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIForm", "..\..\..\00.SY(시스템관리)\UIForm\UIForm.csproj", "{4EFC693F-1889-404A-B163-DF462EEE98C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E2MAXMenu", "..\..\..\00.SY(시스템관리)\E2MaxMenu\E2MAXMenu.csproj", "{B0808ABE-66D8-4091-AC4E-2A0F0221C107}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WNDW", "..\..\..\00.SY(시스템관리)\WNDW\WNDW.csproj", "{C9088CA0-829D-4845-80C7-CCC057823B75}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA634426-BC8F-433F-904F-4C685A8E2A01}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA634426-BC8F-433F-904F-4C685A8E2A01}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA634426-BC8F-433F-904F-4C685A8E2A01}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA634426-BC8F-433F-904F-4C685A8E2A01}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45841E94-E806-4573-A93B-26D50A07EA9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45841E94-E806-4573-A93B-26D50A07EA9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45841E94-E806-4573-A93B-26D50A07EA9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45841E94-E806-4573-A93B-26D50A07EA9C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EFC693F-1889-404A-B163-DF462EEE98C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EFC693F-1889-404A-B163-DF462EEE98C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EFC693F-1889-404A-B163-DF462EEE98C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EFC693F-1889-404A-B163-DF462EEE98C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B0808ABE-66D8-4091-AC4E-2A0F0221C107}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B0808ABE-66D8-4091-AC4E-2A0F0221C107}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B0808ABE-66D8-4091-AC4E-2A0F0221C107}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B0808ABE-66D8-4091-AC4E-2A0F0221C107}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9088CA0-829D-4845-80C7-CCC057823B75}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C9088CA0-829D-4845-80C7-CCC057823B75}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C9088CA0-829D-4845-80C7-CCC057823B75}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C9088CA0-829D-4845-80C7-CCC057823B75}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{45841E94-E806-4573-A93B-26D50A07EA9C} = {5A6241BF-3C09-4BB7-A466-E540D2FC3551}
+		{4EFC693F-1889-404A-B163-DF462EEE98C9} = {5A6241BF-3C09-4BB7-A466-E540D2FC3551}
+		{B0808ABE-66D8-4091-AC4E-2A0F0221C107} = {5A6241BF-3C09-4BB7-A466-E540D2FC3551}
+		{C9088CA0-829D-4845-80C7-CCC057823B75} = {5A6241BF-3C09-4BB7-A466-E540D2FC3551}
+	EndGlobalSection
+EndGlobal

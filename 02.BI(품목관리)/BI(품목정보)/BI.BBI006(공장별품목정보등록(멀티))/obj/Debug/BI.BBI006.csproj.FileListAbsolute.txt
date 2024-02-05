@@ -1,0 +1,10 @@
+D:\Project\Firstec\Source\FIRSTEC\DLL\BI.BBI006.dll
+D:\Project\Firstec\Source\FIRSTEC\DLL\BI.BBI006.pdb
+D:\Project\Firstec\Source\FIRSTEC\02.BI(품목관리)\BI(품목정보)\BI.BBI006(공장별품목정보등록(멀티))\obj\Debug\BI.BBI006.csproj.AssemblyReference.cache
+D:\Project\Firstec\Source\FIRSTEC\02.BI(품목관리)\BI(품목정보)\BI.BBI006(공장별품목정보등록(멀티))\obj\Debug\BI.BBI006.BBI006.resources
+D:\Project\Firstec\Source\FIRSTEC\02.BI(품목관리)\BI(품목정보)\BI.BBI006(공장별품목정보등록(멀티))\obj\Debug\BI.BBI006.csproj.GenerateResource.cache
+D:\Project\Firstec\Source\FIRSTEC\02.BI(품목관리)\BI(품목정보)\BI.BBI006(공장별품목정보등록(멀티))\obj\Debug\BI.BBI006.dll.licenses
+D:\Project\Firstec\Source\FIRSTEC\02.BI(품목관리)\BI(품목정보)\BI.BBI006(공장별품목정보등록(멀티))\obj\Debug\BI.BBI006.csproj.CoreCompileInputs.cache
+D:\Project\Firstec\Source\FIRSTEC\02.BI(품목관리)\BI(품목정보)\BI.BBI006(공장별품목정보등록(멀티))\obj\Debug\BI.BBI006.csproj.CopyComplete
+D:\Project\Firstec\Source\FIRSTEC\02.BI(품목관리)\BI(품목정보)\BI.BBI006(공장별품목정보등록(멀티))\obj\Debug\BI.BBI006.dll
+D:\Project\Firstec\Source\FIRSTEC\02.BI(품목관리)\BI(품목정보)\BI.BBI006(공장별품목정보등록(멀티))\obj\Debug\BI.BBI006.pdb

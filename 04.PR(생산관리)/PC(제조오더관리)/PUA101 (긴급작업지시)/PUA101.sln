@@ -1,0 +1,86 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PUA101", "PUA101.csproj", "{842781EB-1843-4426-90A7-519EA3321541}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UIForm", "..\..\UIForm\UIForm.csproj", "{2A2C4AD2-F9CB-4945-B055-507D07E8E590}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SystemBase", "..\..\SystemBase\SystemBase.csproj", "{CFC6BD7B-D240-45A4-8865-EF3DD1DE84E6}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MDIPUA101", "..\..\DBMenu\MDIPUA101.csproj", "{F6D29EDA-6B9C-411B-9630-CC5969BD00C5}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WNDW003", "..\..\WNDW\WNDW003 (프로젝트공통팝업)\WNDW003.csproj", "{2FBC951D-CB8D-4FFC-BF66-9D47CC9A34C3}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WNDW002", "..\..\WNDW\WNDW002 (거래처공통팝업)\WNDW002.csproj", "{2595D280-5D4D-4184-8D95-4C14989A2639}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WNDW005", "..\..\WNDW\WNDW005 (공장별품목공통팝업)\WNDW005.csproj", "{4D6AEE61-7971-4A5F-9EA9-B2DD1A169862}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WNDW006", "..\..\WNDW\WNDW006 (제조오더번호공통팝업)\WNDW006.csproj", "{2FBC951D-CB8D-4FFC-BF66-9D47CC9A34C3}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WNDW008", "..\..\WNDW\WNDW008 (제품오더번호공통팝업)\WNDW008.csproj", "{0F0A4A17-8C0A-488F-8CB2-0F17F2F1A97F}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WNDW009", "..\..\WNDW\WNDW009 (검사의뢰번호공통팝업)\WNDW009.csproj", "{7F0CB03A-770E-45BC-B6A3-2F7C7BB17134}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{842781EB-1843-4426-90A7-519EA3321541}.Debug.ActiveCfg = Debug|.NET
+		{842781EB-1843-4426-90A7-519EA3321541}.Debug.Build.0 = Debug|.NET
+		{842781EB-1843-4426-90A7-519EA3321541}.Release.ActiveCfg = Release|.NET
+		{842781EB-1843-4426-90A7-519EA3321541}.Release.Build.0 = Release|.NET
+		{2A2C4AD2-F9CB-4945-B055-507D07E8E590}.Debug.ActiveCfg = Debug|.NET
+		{2A2C4AD2-F9CB-4945-B055-507D07E8E590}.Release.ActiveCfg = Release|.NET
+		{2A2C4AD2-F9CB-4945-B055-507D07E8E590}.Release.Build.0 = Release|.NET
+		{CFC6BD7B-D240-45A4-8865-EF3DD1DE84E6}.Debug.ActiveCfg = Debug|.NET
+		{CFC6BD7B-D240-45A4-8865-EF3DD1DE84E6}.Release.ActiveCfg = Release|.NET
+		{CFC6BD7B-D240-45A4-8865-EF3DD1DE84E6}.Release.Build.0 = Release|.NET
+		{F6D29EDA-6B9C-411B-9630-CC5969BD00C5}.Debug.ActiveCfg = Debug|.NET
+		{F6D29EDA-6B9C-411B-9630-CC5969BD00C5}.Debug.Build.0 = Debug|.NET
+		{F6D29EDA-6B9C-411B-9630-CC5969BD00C5}.Release.ActiveCfg = Release|.NET
+		{F6D29EDA-6B9C-411B-9630-CC5969BD00C5}.Release.Build.0 = Release|.NET
+		{2FBC951D-CB8D-4FFC-BF66-9D47CC9A34C3}.Debug.ActiveCfg = Debug|.NET
+		{2FBC951D-CB8D-4FFC-BF66-9D47CC9A34C3}.Release.ActiveCfg = Release|.NET
+		{2FBC951D-CB8D-4FFC-BF66-9D47CC9A34C3}.Release.Build.0 = Release|.NET
+		{2595D280-5D4D-4184-8D95-4C14989A2639}.Debug.ActiveCfg = Debug|.NET
+		{2595D280-5D4D-4184-8D95-4C14989A2639}.Release.ActiveCfg = Release|.NET
+		{2595D280-5D4D-4184-8D95-4C14989A2639}.Release.Build.0 = Release|.NET
+		{4D6AEE61-7971-4A5F-9EA9-B2DD1A169862}.Debug.ActiveCfg = Debug|.NET
+		{4D6AEE61-7971-4A5F-9EA9-B2DD1A169862}.Release.ActiveCfg = Release|.NET
+		{4D6AEE61-7971-4A5F-9EA9-B2DD1A169862}.Release.Build.0 = Release|.NET
+		{2FBC951D-CB8D-4FFC-BF66-9D47CC9A34C3}.Debug.ActiveCfg = Debug|.NET
+		{2FBC951D-CB8D-4FFC-BF66-9D47CC9A34C3}.Release.ActiveCfg = Release|.NET
+		{2FBC951D-CB8D-4FFC-BF66-9D47CC9A34C3}.Release.Build.0 = Release|.NET
+		{0F0A4A17-8C0A-488F-8CB2-0F17F2F1A97F}.Debug.ActiveCfg = Debug|.NET
+		{0F0A4A17-8C0A-488F-8CB2-0F17F2F1A97F}.Release.ActiveCfg = Release|.NET
+		{0F0A4A17-8C0A-488F-8CB2-0F17F2F1A97F}.Release.Build.0 = Release|.NET
+		{7F0CB03A-770E-45BC-B6A3-2F7C7BB17134}.Debug.ActiveCfg = Debug|.NET
+		{7F0CB03A-770E-45BC-B6A3-2F7C7BB17134}.Debug.Build.0 = Debug|.NET
+		{7F0CB03A-770E-45BC-B6A3-2F7C7BB17134}.Release.ActiveCfg = Release|.NET
+		{7F0CB03A-770E-45BC-B6A3-2F7C7BB17134}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

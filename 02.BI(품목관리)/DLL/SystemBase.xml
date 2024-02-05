@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SystemBase</name>
+    </assembly>
+    <members>
+        <member name="T:SystemBase.AutoConfig">
+            <summary>
+            AutoConfig에 대한 요약 설명입니다.
+            </summary>
+        </member>
+        <member name="T:SystemBase.Base">
+            <summary>
+            Base에 대한 요약 설명입니다.
+            </summary>
+        </member>
+        <member name="M:SystemBase.Base.GantGridSet(PlexityHide.GTP.Gantt,System.Int32,System.String,System.String,System.Double,System.Double,System.String[],System.String[],System.Int32[],System.String[],System.String,System.Single)">
+            <summary>
+            GTP그리드세팅
+            </summary>
+            <param name="BaseGantt">Gantt1</param>
+            <param name="MaxCol">총Col수</param>
+            <param name="MinDt">Dafault로 보여줄 최소일자</param>
+            <param name="MaxDt">Dafault로 보여줄 최대일자</param>
+            <param name="StDt">Dafault로 보여줄 현재날짜(+-) 최소일자, double형식 DateTime.Add() 괄호안의 값임</param>
+            <param name="EdDt">Dafault로 보여줄 현재날짜(+-) 최대일자, double형식 DateTime.Add() 괄호안의 값임</param>
+            <param name="Title">헤더제목, string 배열형식</param>
+            <param name="CellType">Col속성, string 배열형식</param>
+            <param name="Width">Col넓이, int 배열형식</param>
+            <param name="HorzAlign">데이터정렬, string 배열형식(L,C,R)</param>
+            <param name="FontName">폰트 string형식</param>
+            <param name="FontSize">폰트사이즈 float형식</param>
+        </member>
+        <member name="M:SystemBase.Base.CreateDictionary(System.String)">
+            <summary>
+            쿼리 결과로 사전을 생성합니다. 쿼리 결과는 필드가 2개 필요하며 첫 번째가 키, 두 번째가 값이 됩니다.
+            </summary>
+            <param name="query">쿼리</param>
+            <returns>사전</returns>
+        </member>
+        <member name="M:SystemBase.Base.GetCustName(System.String,System.String)">
+            특정일자 기준의 거래처명 가져오기. 첫번째 매개변수:기준일자, 두번째 매개변수:거래처코드
+        </member>
+        <member name="T:SystemBase.ComboMake">
+            <summary>
+            ComboMake에 대한 요약 설명입니다.
+            </summary>
+        </member>
+        <member name="T:SystemBase.Common">
+            <summary>
+            Common에 대한 요약 설명입니다.
+            </summary>
+        </member>
+        <member name="M:SystemBase.DbOpen.CreateDictionary(System.String)">
+            <summary>
+            쿼리 결과로 사전을 생성합니다. 쿼리 결과는 필드가 2개 필요하며 첫 번째가 키, 두 번째가 값이 됩니다.
+            </summary>
+            <param name="query"></param>
+            <returns></returns>
+        </member>
+        <member name="T:SystemBase.FILESAVE">
+            <summary>
+            IMAGE에 대한 요약 설명입니다.
+            </summary>
+        </member>
+        <member name="T:SystemBase.LocalMessages">
+            <program>
+              <date>2004-11-15</date><writer>김재홍</writer>
+            </program>
+            <summary>
+            Application 에서 사용하는 Message의 다국어 처리를 위한 공통모듈을 관리하는 CLASS입니다.
+            </summary>
+        </member>
+        <member name="M:SystemBase.LocalMessages.getMsgString(System.String)">
+            <program>
+              <date>2004-11-15</date><writer>김재홍</writer>
+            </program>
+            
+            <summary>
+            다국어 Resource 정보로부터 MESSAGE를 가져온다.
+            </summary>
+            <param name="strResName">Resource Item Name</param>
+            <returns></returns>
+        </member>
+        <member name="T:SystemBase.LogLevel">
+            <summary>
+            Logger에 대한 요약 설명입니다.
+            </summary>
+        </member>
+        <member name="T:SystemBase.Loggers">
+            <summary>
+            Logger에 대한 요약 설명입니다.
+            </summary>
+        </member>
+        <member name="T:SystemBase.PrintProcess">
+            <summary>
+            SystemBase.PrintProcess pp = new SystemBase.PrintProcess(FILE_NAME);
+            pp.FilePrint();
+            </summary>
+        </member>
+        <member name="M:SystemBase.RawPrinterHelper.SendStringToPrinter(System.String,System.String)">
+            <summary>
+            바코드 출력
+            </summary>
+            <param name="port">"LPT1", "COM1" 등 PORT NAME</param>
+            <param name="szString">출력할 문자열</param>
+            <returns>출력 성공 여부</returns>
+        </member>
+        <member name="M:SystemBase.RawPrinterHelper.GetPortNames">
+            <summary>
+            method for retrieving all available printer ports
+            </summary>
+            <returns>generic list populated with post names (i.e; COM1, LTP1, etc)</returns>
+        </member>
+        <member name="M:SystemBase.RawPrinterHelper.PrintZPL(System.String,System.String)">
+            <summary>
+            바코드 프린팅
+            </summary>
+            <param name="ipAddress">프린터 포트</param>
+            <param name="strZPL">인쇄문자열</param>
+            <returns></returns>
+        </member>
+        <member name="M:SystemBase.RawPrinterHelper.SetPortCombo(C1.Win.C1List.C1Combo)">
+            <summary>
+            프린터포트 ComboBox 설정
+            </summary>
+            <param name="cboPort">포트 ComboBox Control</param>
+        </member>
+        <member name="M:SystemBase.RawPrinterHelper.GetPrinterPort">
+            <summary>
+            프린터 포트 조회
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SystemBase.RawPrinterHelper.SavePrinterPort(System.String)">
+            <summary>
+            프린터 포트 저장
+            </summary>
+            <param name="port">포트</param>
+        </member>
+        <member name="T:SystemBase.SendMail">
+            <summary>
+            SendMail에 대한 요약 설명입니다.
+            </summary>
+        </member>
+        <member name="T:SystemBase.Settings">
+            <summary>
+            Admin Program이 기동할때 필요한 각종 정보를 가져오는 Class이다.
+            생성자가 Static으로 만들어져 있기 때문에 프로그램 기동시 자동으로 모든 세팅값을
+            가져와 세팅을 한다.
+            </summary>
+        </member>
+        <member name="M:SystemBase.Validation.GroupBoxControlsLock(System.Windows.Forms.GroupBox,System.Boolean)">
+            <summary>
+            그룹박스 전체 컨트롤에 대한 Locking 여부
+            <param name="groupBox">그룹박스</param>
+            <param name="LockingFlag">Locking여부</param>
+            </summary>
+        </member>
+        <member name="M:SystemBase.Validation.Control_Check(System.Windows.Forms.GroupBox[],System.String@)">
+            <summary>
+            조회, 저장시 컨트롤 변경 유무 체크
+            <param name="groupBox">groupBox</param>
+            <param name="Data">return 받을 데이터</param>
+            <example>example
+            <code> string strSearchData = "", strSaveData = "";
+            SystemBase.Validation.Control_Check(groupBox1, ref strSearchData); //조회 후 컨트롤 값 저장
+            SystemBase.Validation.Control_Check(groupBox1, ref strSaveData); //저장 전 컨트롤 값 저장
+            if(strSearchData == strSaveData) //저장시 변경된 컨트롤 값이 없다면 
+            {
+                return;
+            }
+            </code>
+            </example>
+            </summary>
+        </member>
+    </members>
+</doc>

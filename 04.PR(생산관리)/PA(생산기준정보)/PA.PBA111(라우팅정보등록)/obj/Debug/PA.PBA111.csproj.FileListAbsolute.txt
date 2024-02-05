@@ -1,0 +1,12 @@
+D:\Project\Firstec\Source\FIRSTEC\DLL\PA.PBA111.dll
+D:\Project\Firstec\Source\FIRSTEC\DLL\PA.PBA111.pdb
+D:\Project\Firstec\Source\FIRSTEC\04.PR(생산관리)\PA(생산기준정보)\PA.PBA111(라우팅정보등록)\obj\Debug\PA.PBA111.PBA111.resources
+D:\Project\Firstec\Source\FIRSTEC\04.PR(생산관리)\PA(생산기준정보)\PA.PBA111(라우팅정보등록)\obj\Debug\PA.PBA111.PBA111P1.resources
+D:\Project\Firstec\Source\FIRSTEC\04.PR(생산관리)\PA(생산기준정보)\PA.PBA111(라우팅정보등록)\obj\Debug\PA.PBA111.Properties.Resources.resources
+D:\Project\Firstec\Source\FIRSTEC\04.PR(생산관리)\PA(생산기준정보)\PA.PBA111(라우팅정보등록)\obj\Debug\PA.PBA111.csproj.GenerateResource.cache
+D:\Project\Firstec\Source\FIRSTEC\04.PR(생산관리)\PA(생산기준정보)\PA.PBA111(라우팅정보등록)\obj\Debug\PA.PBA111.dll.licenses
+D:\Project\Firstec\Source\FIRSTEC\04.PR(생산관리)\PA(생산기준정보)\PA.PBA111(라우팅정보등록)\obj\Debug\PA.PBA111.csproj.CoreCompileInputs.cache
+D:\Project\Firstec\Source\FIRSTEC\04.PR(생산관리)\PA(생산기준정보)\PA.PBA111(라우팅정보등록)\obj\Debug\PA.PBA111.csproj.CopyComplete
+D:\Project\Firstec\Source\FIRSTEC\04.PR(생산관리)\PA(생산기준정보)\PA.PBA111(라우팅정보등록)\obj\Debug\PA.PBA111.dll
+D:\Project\Firstec\Source\FIRSTEC\04.PR(생산관리)\PA(생산기준정보)\PA.PBA111(라우팅정보등록)\obj\Debug\PA.PBA111.pdb
+D:\Project\Firstec\Source\FIRSTEC\04.PR(생산관리)\PA(생산기준정보)\PA.PBA111(라우팅정보등록)\obj\Debug\PA.PBA111.csproj.AssemblyReference.cache

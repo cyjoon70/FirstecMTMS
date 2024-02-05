@@ -1,0 +1,10 @@
+D:\Project\Firstec\Source\FIRSTEC\DLL\BB.BBA001.dll
+D:\Project\Firstec\Source\FIRSTEC\DLL\BB.BBA001.pdb
+D:\Project\Firstec\Source\FIRSTEC\01.BA(기준정보관리)\BB(기준정보관리)\BB.BBA001(공통코드등록)\obj\Debug\BB.BBA001.BBA001.resources
+D:\Project\Firstec\Source\FIRSTEC\01.BA(기준정보관리)\BB(기준정보관리)\BB.BBA001(공통코드등록)\obj\Debug\BB.BBA001.csproj.GenerateResource.cache
+D:\Project\Firstec\Source\FIRSTEC\01.BA(기준정보관리)\BB(기준정보관리)\BB.BBA001(공통코드등록)\obj\Debug\BB.BBA001.dll.licenses
+D:\Project\Firstec\Source\FIRSTEC\01.BA(기준정보관리)\BB(기준정보관리)\BB.BBA001(공통코드등록)\obj\Debug\BB.BBA001.csproj.CoreCompileInputs.cache
+D:\Project\Firstec\Source\FIRSTEC\01.BA(기준정보관리)\BB(기준정보관리)\BB.BBA001(공통코드등록)\obj\Debug\BB.BBA001.csproj.CopyComplete
+D:\Project\Firstec\Source\FIRSTEC\01.BA(기준정보관리)\BB(기준정보관리)\BB.BBA001(공통코드등록)\obj\Debug\BB.BBA001.dll
+D:\Project\Firstec\Source\FIRSTEC\01.BA(기준정보관리)\BB(기준정보관리)\BB.BBA001(공통코드등록)\obj\Debug\BB.BBA001.pdb
+D:\Project\Firstec\Source\FIRSTEC\01.BA(기준정보관리)\BB(기준정보관리)\BB.BBA001(공통코드등록)\obj\Debug\BB.BBA001.csproj.AssemblyReference.cache

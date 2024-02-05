@@ -1,0 +1,12 @@
+D:\Project\Firstec\Source\FIRSTEC\05.MA(구매관리)\MP(발주관리)\MP.MPO504(발주번호별진행조회)\obj\Debug\MP.MPO504.MPO504.resources
+D:\Project\Firstec\Source\FIRSTEC\05.MA(구매관리)\MP(발주관리)\MP.MPO504(발주번호별진행조회)\obj\Debug\MP.MPO504.MPO504P2.resources
+D:\Project\Firstec\Source\FIRSTEC\05.MA(구매관리)\MP(발주관리)\MP.MPO504(발주번호별진행조회)\obj\Debug\MP.MPO504.Properties.Resources.resources
+D:\Project\Firstec\Source\FIRSTEC\05.MA(구매관리)\MP(발주관리)\MP.MPO504(발주번호별진행조회)\obj\Debug\MP.MPO504.csproj.GenerateResource.cache
+D:\Project\Firstec\Source\FIRSTEC\05.MA(구매관리)\MP(발주관리)\MP.MPO504(발주번호별진행조회)\obj\Debug\MP.MPO504.dll.licenses
+D:\Project\Firstec\Source\FIRSTEC\05.MA(구매관리)\MP(발주관리)\MP.MPO504(발주번호별진행조회)\obj\Debug\MP.MPO504.csproj.CoreCompileInputs.cache
+D:\Project\Firstec\Source\FIRSTEC\DLL\MP.MPO504.dll
+D:\Project\Firstec\Source\FIRSTEC\DLL\MP.MPO504.pdb
+D:\Project\Firstec\Source\FIRSTEC\05.MA(구매관리)\MP(발주관리)\MP.MPO504(발주번호별진행조회)\obj\Debug\MP.MPO504.csproj.CopyComplete
+D:\Project\Firstec\Source\FIRSTEC\05.MA(구매관리)\MP(발주관리)\MP.MPO504(발주번호별진행조회)\obj\Debug\MP.MPO504.dll
+D:\Project\Firstec\Source\FIRSTEC\05.MA(구매관리)\MP(발주관리)\MP.MPO504(발주번호별진행조회)\obj\Debug\MP.MPO504.pdb
+D:\Project\Firstec\Source\FIRSTEC\05.MA(구매관리)\MP(발주관리)\MP.MPO504(발주번호별진행조회)\obj\Debug\MP.MPO504.csproj.AssemblyReference.cache

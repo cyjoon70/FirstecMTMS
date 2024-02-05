@@ -1,0 +1,119 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>E2MAXMenu</name>
+    </assembly>
+    <members>
+        <member name="F:E2MAXMenu.Default.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:E2MAXMenu.Default.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:E2MAXMenu.Default.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="T:E2MAXMenu.LoginForm.PWErrorYn">
+            <summary>
+            비밀번호 입력오류처리
+            </summary>
+        </member>
+        <member name="F:E2MAXMenu.LoginForm.PWErrorYn.OK">
+            <summary>OK</summary>
+        </member>
+        <member name="F:E2MAXMenu.LoginForm.PWErrorYn.Error">
+            <summary>Error</summary>
+        </member>
+        <member name="M:E2MAXMenu.LoginForm.#ctor(System.String,System.String,System.String,System.String)">
+            <summary>
+            필수 디자이너 변수입니다.
+            </summary>
+        </member>
+        <member name="M:E2MAXMenu.LoginForm.Login">
+            <summary>
+            사용 중인 모든 리소스를 정리합니다.
+            </summary>
+        </member>
+        <member name="M:E2MAXMenu.LoginForm.PWChange">
+            <summary>
+            비밀번호 변경 처리
+            </summary>
+        </member>
+        <member name="M:E2MAXMenu.LoginForm.PWErrorCount">
+            <summary>
+            비밀번호 오류횟수 관리
+            </summary>
+        </member>
+        <member name="M:E2MAXMenu.LoginForm.PWErrorSkipYn(System.String)">
+            <summary>
+            비밀번호 오류횟수에 의한 Skip 여부
+            </summary>
+        </member>
+        <member name="F:E2MAXMenu.LoginForm.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:E2MAXMenu.LoginForm.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:E2MAXMenu.LoginForm.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
+        <member name="P:E2MAXMenu.Main.StatusBarText">
+            <summary>
+            사용 중인 모든 리소스를 정리합니다.
+            </summary>
+            <summary>
+            상태바 텍스트
+            </summary>
+        </member>
+        <member name="F:E2MAXMenu.Main.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:E2MAXMenu.Main.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:E2MAXMenu.Main.InitializeComponent">
+            <summary>
+            디자이너 지원에 필요한 메서드입니다.
+            이 메서드의 내용을 코드 편집기로 수정하지 마십시오.
+            </summary>
+        </member>
+        <member name="T:E2MAXMenu.Properties.Resources">
+            <summary>
+              지역화된 문자열 등을 찾기 위한 강력한 형식의 리소스 클래스입니다.
+            </summary>
+        </member>
+        <member name="P:E2MAXMenu.Properties.Resources.ResourceManager">
+            <summary>
+              이 클래스에서 사용하는 캐시된 ResourceManager 인스턴스를 반환합니다.
+            </summary>
+        </member>
+        <member name="P:E2MAXMenu.Properties.Resources.Culture">
+            <summary>
+              이 강력한 형식의 리소스 클래스를 사용하여 모든 리소스 조회에 대한 현재 스레드의 CurrentUICulture
+              속성을 재정의합니다.
+            </summary>
+        </member>
+    </members>
+</doc>

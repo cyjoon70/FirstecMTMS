@@ -1,0 +1,362 @@
+﻿#region 작성정보
+/*********************************************************************/
+// 단위업무명 : 부하현황(일자별)
+// 작 성 자 : 권 순 철
+// 작 성 일 : 2013-04-09
+// 작성내용 : 부하현황(일자별) 및 관리
+// 수 정 일 :
+// 수 정 자 :
+// 수정내용 :
+// 비    고 :
+/*********************************************************************/
+#endregion
+
+using System;
+using System.Drawing;
+using System.Collections;
+using System.ComponentModel;
+using System.Windows.Forms;
+using System.Data;
+using System.Data.SqlClient;
+using System.Text.RegularExpressions;
+using C1.Win.C1Chart;
+
+namespace PB.PBC106
+{
+    public partial class PBC106 : UIForm.Buttons
+    {
+        public PBC106()
+        {
+            InitializeComponent();
+        }
+
+        #region Form Load시
+        private void PBC106_Load(object sender, System.EventArgs e)
+        {
+            //필수 체크
+            SystemBase.Validation.GroupBox_Setting(groupBox1);
+
+            SystemBase.ComboMake.C1Combo(cboSch_id, "usp_P_COMMON 'P520', @pCO_CD = '" + SystemBase.Base.gstrCOMCD + "'");
+            dtpStartDT.Text = Convert.ToDateTime(SystemBase.Base.ServerTime("YYMMDD").ToString()).ToShortDateString();      // 2016.03.10. hma 추가: 시작일을 현재일자로 세팅
+            dtpEndDT.Text = Convert.ToDateTime(SystemBase.Base.ServerTime("YYMMDD").ToString()).AddMonths(1).ToShortDateString();
+
+            ChartDataSeriesCollection coll = c1Chart1.ChartGroups[0].ChartData.SeriesList;
+            coll[0].PointData.Clear();
+            coll[1].PointData.Clear();
+            coll[2].PointData.Clear();
+
+            rdoPlot.Tag = Chart2DTypeEnum.XYPlot;
+            rdoBar.Tag = Chart2DTypeEnum.Bar;
+
+            rdoBar.Checked = true;
+            c1Chart1.ChartGroups[0].ChartType = (Chart2DTypeEnum)rdoBar.Tag;
+
+            Axis ax = c1Chart1.ChartArea.AxisX;
+            ax.ValueLabels.Clear();
+        }
+        #endregion
+
+        #region NewExec
+        protected override void NewExec()
+        {
+            SystemBase.Validation.GroupBox_Reset(groupBox1);
+
+            ChartDataSeriesCollection coll = c1Chart1.ChartGroups[0].ChartData.SeriesList;
+            coll[0].PointData.Clear();
+            coll[1].PointData.Clear();
+
+            Axis ax = c1Chart1.ChartArea.AxisX;
+            ax.ValueLabels.Clear();
+        }
+        #endregion
+
+        #region SearchExec() 그리드 조회 로직
+        protected override void SearchExec()
+        {
+            //조회조건 필수 체크
+            if (SystemBase.Validation.GroupBox_SaveSearchValidation(groupBox1) == true)
+            {
+                this.Cursor = Cursors.WaitCursor;
+                try
+                {
+                    string div = "1";
+
+                    if (rdoWeek.Checked == true) div = "2";
+                    else if (rdoMonth.Checked == true) div = "3";
+
+                    string strQuery1 = " usp_PBC106 @pType= 'P030', ";
+                    strQuery1 += " @pSCH_ID='" + cboSch_id.SelectedValue.ToString() + "', ";
+                    strQuery1 += " @pST_DT='" + dtpStartDT.Text + "', ";
+                    strQuery1 += " @pED_DT='" + dtpEndDT.Text + "', ";
+                    strQuery1 += " @pWC_CD='" + txtWORKCENTER_CD.Text + "', ";
+                    strQuery1 += " @pGRES_CD ='" + txtGRES_CD.Text + "',";
+                    strQuery1 += " @pRES_CD ='" + txtGRES_CD.Text + "',";
+                    strQuery1 += " @pDIV ='" + div + "'";
+                    strQuery1 += ", @pCO_CD = '" + SystemBase.Base.gstrCOMCD + "'";		
+
+                    //				DataTable dt = SystemBase.DbOpen.NoTranDataTable(strQuery1);
+                    DataTable dt = SystemBase.DbOpen.TranDataTable2(strQuery1);
+                    if (dt.Rows.Count < 1)      // 2016.03.10. hma 수정: <= 를 < 로 변경.
+                    {
+                        MessageBox.Show(SystemBase.Base.MessageRtn("P0019"));
+
+                        ChartDataSeriesCollection coll = c1Chart1.ChartGroups[0].ChartData.SeriesList;
+                        coll[0].PointData.Clear();
+                        coll[1].PointData.Clear();
+                        coll[2].PointData.Clear();
+
+                        Axis ax = c1Chart1.ChartArea.AxisX;
+                        ax.ValueLabels.Clear();
+                    }
+                    else
+                    {
+                        // initialize chart
+                        c1Chart1.Legend.Visible = true;
+                        c1Chart1.Legend.Compass = CompassEnum.East;
+
+                        //label clear
+                        ChartLabels cl = c1Chart1.ChartLabels;
+                        C1.Win.C1Chart.LabelsCollection clc = cl.LabelsCollection;
+                        clc.Clear();
+
+                        DataView dv = dt.DefaultView;
+                        BindSeries(c1Chart1, 0, dv, "기준능력", "일자");
+                        BindSeries(c1Chart1, 1, dv, "기준+OT능력");
+                        BindSeries(c1Chart1, 2, dv, "부하공수");
+                    }
+                }
+                catch (Exception f)
+                {
+                    SystemBase.Loggers.Log(this.Name, f.ToString());
+                    DialogResult dsMsg = MessageBox.Show(SystemBase.Base.MessageRtn("B0002"), SystemBase.Base.MessageRtn("Z002"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //데이터 조회 중 오류가 발생하였습니다.
+                }
+                this.Cursor = Cursors.Default;
+            }
+        }
+        #endregion
+
+        #region  팝업
+        private void btnWORKCENTER_CD_Click(object sender, System.EventArgs e)
+        {
+            try
+            {
+                string strQuery = " usp_P_COMMON @pType='P042', @pLANG_CD = '" + SystemBase.Base.gstrLangCd + "', @pETC = 'P002', @pCO_CD = '" + SystemBase.Base.gstrCOMCD + "' ";
+                string[] strWhere = new string[] { "@pCOM_CD", "@pCOM_NM" };
+                string[] strSearch = new string[] { txtWORKCENTER_CD.Text, "" };
+                UIForm.FPPOPUP pu = new UIForm.FPPOPUP("P00025", strQuery, strWhere, strSearch, new int[] { 0, 1 }, "작업장 조회");
+                pu.ShowDialog();
+                if (pu.DialogResult == DialogResult.OK)
+                {
+                    Regex rx1 = new Regex("#");
+                    string[] Msgs = rx1.Split(pu.ReturnVal.ToString());
+
+                    txtWORKCENTER_CD.Text = Msgs[0].ToString();
+                    txtWORKCENTER_NM.Text = Msgs[1].ToString();
+                    txtWORKCENTER_CD.Focus();
+                }
+            }
+            catch (Exception f)
+            {
+                SystemBase.Loggers.Log(this.Name, f);
+                MessageBox.Show(SystemBase.Base.MessageRtn("B0002"), SystemBase.Base.MessageRtn("Z0002"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnGRES_Click(object sender, System.EventArgs e)
+        {
+            try
+            {
+                string strQuery = " usp_P_COMMON @pType='P052', @pLANG_CD = '" + SystemBase.Base.gstrLangCd + "', @pCO_CD = '" + SystemBase.Base.gstrCOMCD + "'";
+                string[] strWhere = new string[] { "@pCOM_NM" };
+                string[] strSearch = new string[] { txtGRES_NM.Text };
+                UIForm.FPPOPUP pu = new UIForm.FPPOPUP("P00060", strQuery, strWhere, strSearch, new int[] { 1 }, "자원그룹 조회", true);
+                pu.Width = 500;
+                pu.ShowDialog();
+                if (pu.DialogResult == DialogResult.OK)
+                {
+                    Regex rx1 = new Regex("#");
+                    string[] Msgs = rx1.Split(pu.ReturnVal.ToString());
+
+                    txtGRES_CD.Text = Msgs[0].ToString();
+                    txtGRES_NM.Text = Msgs[1].ToString();
+                }
+            }
+            catch (Exception f)
+            {
+                SystemBase.Loggers.Log("자원그룹 조회 : ", f);
+                MessageBox.Show(f.Message);
+            }
+        }
+
+        private void btnRes_Click(object sender, System.EventArgs e)
+        {
+            try
+            {
+                string strQuery = "";
+                if (txtGRES_CD.Text.Trim() == "")
+                    strQuery = " usp_P_COMMON @pType='P056', @pLANG_CD = '" + SystemBase.Base.gstrLangCd + "', @pCO_CD = '" + SystemBase.Base.gstrCOMCD + "'";
+                else
+                    strQuery = " usp_P_COMMON @pType='P058', @pLANG_CD = '" + SystemBase.Base.gstrLangCd + "', @pETC = '" + txtGRES_CD.Text.Trim() + "', @pCO_CD = '" + SystemBase.Base.gstrCOMCD + "'";
+
+                string[] strWhere = new string[] { "@pCOM_CD", "@pCOM_NM" };
+                string[] strSearch = new string[] { txtGRES_CD.Text, "" };
+                UIForm.FPPOPUP pu = new UIForm.FPPOPUP("P00068", strQuery, strWhere, strSearch, new int[] { 0, 1 }, "자원 조회");
+                pu.Width = 500;
+                pu.ShowDialog();
+                if (pu.DialogResult == DialogResult.OK)
+                {
+                    Regex rx1 = new Regex("#");
+                    string[] Msgs = rx1.Split(pu.ReturnVal.ToString());
+
+                    txtGRES_CD.Text = Msgs[0].ToString();
+                    txtResNm.Text = Msgs[1].ToString();
+                    txtGRES_CD.Focus();
+                }
+            }
+            catch (Exception f)
+            {
+                SystemBase.Loggers.Log(this.Name, f.ToString());
+                MessageBox.Show(SystemBase.Base.MessageRtn("B0050", "자원 팝업"), SystemBase.Base.MessageRtn("Z0002"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        #endregion
+
+        #region  TextChanged
+        private void txtWORKCENTER_CD_TextChanged(object sender, System.EventArgs e)
+        {
+            string strSql = "and LANG_CD = '" + SystemBase.Base.gstrLangCd + "' and MAJOR_CD = 'P002' AND COMP_CODE='" + SystemBase.Base.gstrCOMCD + "' ";
+            txtWORKCENTER_NM.Text = SystemBase.Base.CodeName("MINOR_CD", "CD_NM", "B_COMM_CODE", txtWORKCENTER_CD.Text, strSql);
+        }
+
+        private void txtGRES_CD_TextChanged(object sender, System.EventArgs e)
+        {
+            txtGRES_NM.Text = SystemBase.Base.CodeName("RES_CD", "RES_DIS", "P_RESO_MANAGE", txtGRES_CD.Text, " AND RES_KIND = 'G'  AND USE_YN = 'Y' AND CO_CD='" + SystemBase.Base.gstrCOMCD + "' ");
+        }
+
+        private void txtResCd_TextChanged(object sender, System.EventArgs e)
+        {
+            txtResNm.Text = SystemBase.Base.CodeName("RES_CD", "RES_DIS", "P_RESO_MANAGE", txtGRES_CD.Text, " AND USE_YN = 'Y' AND CO_CD='" + SystemBase.Base.gstrCOMCD + "' ");
+        }
+        #endregion
+
+        #region c1Chart
+        // copy data from a data source to the chart
+        // c1c          chart
+        // series       index of the series to bind (0-based, will add if necessary)
+        // datasource   datasource object (cannot be DataTable, DataView is OK)
+        // field        name of the field that contains the y values
+        // labels       name of the field that contains the x labels
+        private void BindSeries(C1Chart c1c, int series, object dataSource, string field, string labels)
+        {
+            // check data source object
+            ITypedList il = (ITypedList)dataSource;
+            IList list = (IList)dataSource;
+            if (list == null || il == null)
+                throw new ApplicationException("Invalid DataSource object.");
+
+            // add series if necessary
+            ChartDataSeriesCollection coll = c1c.ChartGroups[0].ChartData.SeriesList;
+            while (series >= coll.Count)
+                coll.AddNewSeries();
+
+            // copy series data
+            if (list.Count == 0) return;
+            PointF[] data = (PointF[])Array.CreateInstance(typeof(PointF), list.Count);
+            PropertyDescriptorCollection pdc = il.GetItemProperties(null);
+            PropertyDescriptor pd = pdc[field];
+            if (pd == null)
+                throw new ApplicationException(string.Format("Invalid field name used for Y values ({0}).", field));
+
+            int i;
+            for (i = 0; i < list.Count; i++)
+            {
+                data[i].X = i;
+                try
+                {
+                    data[i].Y = float.Parse(pd.GetValue(list[i]).ToString());
+
+                }
+                catch
+                {
+                    data[i].Y = float.NaN;
+                }
+                coll[series].PointData.CopyDataIn(data);
+                coll[series].Label = field;
+
+
+                // Add Chart Labels
+                //				ChartLabels cl = c1c.ChartLabels;
+                //
+                //				C1.Win.C1Chart.LabelsCollection clc = cl.LabelsCollection;
+                //				C1.Win.C1Chart.Label lab = clc.AddNewLabel();			
+                //				
+                //				lab.Text = SystemBase.Base.Comma2(pd.GetValue(list[i]).ToString()); 
+                //				lab.Style.ForeColor = Color.Black;
+                //				lab.Style.HorizontalAlignment = AlignHorzEnum.Far;
+                //				lab.Style.VerticalAlignment = AlignVertEnum.Center;
+                //				lab.AttachMethod = AttachMethodEnum.DataIndex;
+                //				lab.AttachMethodData.GroupIndex = 0;
+                //				lab.AttachMethodData.SeriesIndex = series;
+                //				lab.AttachMethodData.PointIndex = i;
+                //				lab.Compass = LabelCompassEnum.West;
+                //				lab.Offset = -2;
+                //				lab.Visible = true;
+            }
+
+            // copy series labels
+            if (labels != null && labels.Length > 0)
+            {
+                pd = pdc[labels];
+                if (pd == null)
+                    throw new ApplicationException(string.Format("Invalid field name used for X values ({0}).", labels));
+                Axis ax = c1c.ChartArea.AxisX;
+                ax.AnnotationRotation = -30;
+                ax.ValueLabels.Clear();
+                for (i = 0; i < list.Count; i++)
+                {
+                    string label = pd.GetValue(list[i]).ToString();
+                    ax.ValueLabels.Add(i, label);
+                }
+                ax.AnnoMethod = AnnotationMethodEnum.ValueLabels;
+            }
+        }
+
+
+        private void BindSeries(C1Chart c1c, int series, object dataSource, string field)
+        {
+            BindSeries(c1c, series, dataSource, field, null);
+        }
+        #endregion
+
+        #region 그래프유형선택
+        private void radioChartTypeChanged(object sender, System.EventArgs e)
+        {
+            RadioButton rb = (RadioButton)sender;
+            if (rb.Checked)
+            {
+                Chart2DTypeEnum ct = (Chart2DTypeEnum)rb.Tag;
+                c1Chart1.ChartGroups[0].ChartType = ct;
+            }
+        }
+
+        private void radioDivChanged(object sender, System.EventArgs e)
+        {
+            RadioButton rb = (RadioButton)sender;
+            if (rb.Checked)
+            {
+                // 2016.03.10. hma 수정(Start): 조회유형에 따라 처리되도록 함.
+                //if (rb.Tag.ToString() == "1")
+                if (rb.Name == "rdoDay")
+                {
+                    dtpEndDT.Text = Convert.ToDateTime(dtpStartDT.Text).AddMonths(1).ToShortDateString();
+                }
+                else
+                {
+                    dtpEndDT.Text = Convert.ToDateTime(dtpStartDT.Text).AddMonths(3).ToShortDateString();
+                }
+            }
+        }
+        #endregion
+    }
+}

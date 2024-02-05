@@ -1,0 +1,11 @@
+D:\Project\Firstec\Source\FIRSTEC\DLL\MI.MIM506.dll
+D:\Project\Firstec\Source\FIRSTEC\DLL\MI.MIM506.pdb
+D:\Project\Firstec\Source\FIRSTEC\05.MA(구매관리)\MI(구매입고관리)\MI.MIM506(거래명세서출력)\obj\Debug\MI.MIM506.MIM506.resources
+D:\Project\Firstec\Source\FIRSTEC\05.MA(구매관리)\MI(구매입고관리)\MI.MIM506(거래명세서출력)\obj\Debug\MI.MIM506.Properties.Resources.resources
+D:\Project\Firstec\Source\FIRSTEC\05.MA(구매관리)\MI(구매입고관리)\MI.MIM506(거래명세서출력)\obj\Debug\MI.MIM506.csproj.GenerateResource.cache
+D:\Project\Firstec\Source\FIRSTEC\05.MA(구매관리)\MI(구매입고관리)\MI.MIM506(거래명세서출력)\obj\Debug\MI.MIM506.dll.licenses
+D:\Project\Firstec\Source\FIRSTEC\05.MA(구매관리)\MI(구매입고관리)\MI.MIM506(거래명세서출력)\obj\Debug\MI.MIM506.csproj.CoreCompileInputs.cache
+D:\Project\Firstec\Source\FIRSTEC\05.MA(구매관리)\MI(구매입고관리)\MI.MIM506(거래명세서출력)\obj\Debug\MI.MIM506.csproj.CopyComplete
+D:\Project\Firstec\Source\FIRSTEC\05.MA(구매관리)\MI(구매입고관리)\MI.MIM506(거래명세서출력)\obj\Debug\MI.MIM506.dll
+D:\Project\Firstec\Source\FIRSTEC\05.MA(구매관리)\MI(구매입고관리)\MI.MIM506(거래명세서출력)\obj\Debug\MI.MIM506.pdb
+D:\Project\Firstec\Source\FIRSTEC\05.MA(구매관리)\MI(구매입고관리)\MI.MIM506(거래명세서출력)\obj\Debug\MI.MIM506.csproj.AssemblyReference.cache

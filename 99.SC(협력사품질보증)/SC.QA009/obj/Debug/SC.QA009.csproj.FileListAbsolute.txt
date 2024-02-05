@@ -1,0 +1,10 @@
+D:\Project\Firstec\Source\FIRSTEC\DLL\SC.QA009.dll
+D:\Project\Firstec\Source\FIRSTEC\DLL\SC.QA009.pdb
+D:\Project\Firstec\Source\FIRSTEC\99.SC(협력사품질보증)\SC.QA009\obj\Debug\SC.QA009.QA009P1.resources
+D:\Project\Firstec\Source\FIRSTEC\99.SC(협력사품질보증)\SC.QA009\obj\Debug\SC.QA009.QA009.resources
+D:\Project\Firstec\Source\FIRSTEC\99.SC(협력사품질보증)\SC.QA009\obj\Debug\SC.QA009.csproj.GenerateResource.cache
+D:\Project\Firstec\Source\FIRSTEC\99.SC(협력사품질보증)\SC.QA009\obj\Debug\SC.QA009.dll.licenses
+D:\Project\Firstec\Source\FIRSTEC\99.SC(협력사품질보증)\SC.QA009\obj\Debug\SC.QA009.csproj.CopyComplete
+D:\Project\Firstec\Source\FIRSTEC\99.SC(협력사품질보증)\SC.QA009\obj\Debug\SC.QA009.dll
+D:\Project\Firstec\Source\FIRSTEC\99.SC(협력사품질보증)\SC.QA009\obj\Debug\SC.QA009.pdb
+D:\Project\Firstec\Source\FIRSTEC\99.SC(협력사품질보증)\SC.QA009\obj\Debug\SC.QA009.csproj.CoreCompileInputs.cache

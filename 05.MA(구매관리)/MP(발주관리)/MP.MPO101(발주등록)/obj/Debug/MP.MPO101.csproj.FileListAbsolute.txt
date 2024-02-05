@@ -1,0 +1,15 @@
+D:\Project\Firstec\Source\FIRSTEC\DLL\MP.MPO101.dll
+D:\Project\Firstec\Source\FIRSTEC\DLL\MP.MPO101.pdb
+D:\Project\Firstec\Source\FIRSTEC\05.MA(구매관리)\MP(발주관리)\MP.MPO101(발주등록)\obj\Debug\MP.MPO101.MPO101.resources
+D:\Project\Firstec\Source\FIRSTEC\05.MA(구매관리)\MP(발주관리)\MP.MPO101(발주등록)\obj\Debug\MP.MPO101.MPO101P2.resources
+D:\Project\Firstec\Source\FIRSTEC\05.MA(구매관리)\MP(발주관리)\MP.MPO101(발주등록)\obj\Debug\MP.MPO101.MPO101P1.resources
+D:\Project\Firstec\Source\FIRSTEC\05.MA(구매관리)\MP(발주관리)\MP.MPO101(발주등록)\obj\Debug\MP.MPO101.MPO101P3.resources
+D:\Project\Firstec\Source\FIRSTEC\05.MA(구매관리)\MP(발주관리)\MP.MPO101(발주등록)\obj\Debug\MP.MPO101.MPO101P4.resources
+D:\Project\Firstec\Source\FIRSTEC\05.MA(구매관리)\MP(발주관리)\MP.MPO101(발주등록)\obj\Debug\MP.MPO101.Properties.Resources.resources
+D:\Project\Firstec\Source\FIRSTEC\05.MA(구매관리)\MP(발주관리)\MP.MPO101(발주등록)\obj\Debug\MP.MPO101.csproj.GenerateResource.cache
+D:\Project\Firstec\Source\FIRSTEC\05.MA(구매관리)\MP(발주관리)\MP.MPO101(발주등록)\obj\Debug\MP.MPO101.dll.licenses
+D:\Project\Firstec\Source\FIRSTEC\05.MA(구매관리)\MP(발주관리)\MP.MPO101(발주등록)\obj\Debug\MP.MPO101.csproj.CopyComplete
+D:\Project\Firstec\Source\FIRSTEC\05.MA(구매관리)\MP(발주관리)\MP.MPO101(발주등록)\obj\Debug\MP.MPO101.dll
+D:\Project\Firstec\Source\FIRSTEC\05.MA(구매관리)\MP(발주관리)\MP.MPO101(발주등록)\obj\Debug\MP.MPO101.pdb
+D:\Project\Firstec\Source\FIRSTEC\05.MA(구매관리)\MP(발주관리)\MP.MPO101(발주등록)\obj\Debug\MP.MPO101.csproj.CoreCompileInputs.cache
+D:\Project\Firstec\Source\FIRSTEC\05.MA(구매관리)\MP(발주관리)\MP.MPO101(발주등록)\obj\Debug\MP.MPO101.csproj.AssemblyReference.cache

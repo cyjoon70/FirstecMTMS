@@ -1,0 +1,11 @@
+D:\Project\Firstec\Source\FIRSTEC\DLL\TD.TDQ003.dll
+D:\Project\Firstec\Source\FIRSTEC\DLL\TD.TDQ003.pdb
+D:\Project\Firstec\Source\FIRSTEC\16.TD(추적관리)\TD.TDQ003(공정증빙등록)\obj\Debug\TD.TDQ003.TDQ003.resources
+D:\Project\Firstec\Source\FIRSTEC\16.TD(추적관리)\TD.TDQ003(공정증빙등록)\obj\Debug\TD.TDQ003.Properties.Resources.resources
+D:\Project\Firstec\Source\FIRSTEC\16.TD(추적관리)\TD.TDQ003(공정증빙등록)\obj\Debug\TD.TDQ003.csproj.GenerateResource.cache
+D:\Project\Firstec\Source\FIRSTEC\16.TD(추적관리)\TD.TDQ003(공정증빙등록)\obj\Debug\TD.TDQ003.dll.licenses
+D:\Project\Firstec\Source\FIRSTEC\16.TD(추적관리)\TD.TDQ003(공정증빙등록)\obj\Debug\TD.TDQ003.csproj.CoreCompileInputs.cache
+D:\Project\Firstec\Source\FIRSTEC\16.TD(추적관리)\TD.TDQ003(공정증빙등록)\obj\Debug\TD.TDQ003.csproj.CopyComplete
+D:\Project\Firstec\Source\FIRSTEC\16.TD(추적관리)\TD.TDQ003(공정증빙등록)\obj\Debug\TD.TDQ003.dll
+D:\Project\Firstec\Source\FIRSTEC\16.TD(추적관리)\TD.TDQ003(공정증빙등록)\obj\Debug\TD.TDQ003.pdb
+D:\Project\Firstec\Source\FIRSTEC\16.TD(추적관리)\TD.TDQ003(공정증빙등록)\obj\Debug\TD.TDQ003.csproj.AssemblyReference.cache

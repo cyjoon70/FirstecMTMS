@@ -351,23 +351,27 @@ namespace SC.QA001
 		#region 첨부파일 처리
 		private void btnPopup_Click(object sender, EventArgs e)
         {
-            string strAuth = string.Empty;
-            string strFilsNo = string.Empty;
 
-            if ((txtRegUserId.Text == SystemBase.Base.gstrUserID) || string.IsNullOrEmpty(txtSeq.Text))
-                strAuth = "Y#Y#Y";
-            else
-                strAuth = "N#Y#N";
+            try
+            {
+                
+                if (string.IsNullOrEmpty(txtSeq.Text))
+                {
+                    MessageBox.Show("저장된 공지사항 데이터를 조회 후 등록하시기 바랍니다.", SystemBase.Base.MessageRtn("Z0002"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                
 
-            if (string.IsNullOrEmpty(txtSeq.Text))
-                strFilsNo = iRan.ToString();
-            else
-                strFilsNo = txtSeq.Text;
+                // 첨부파일 팝업 띄움. 
+                QA001P2 pu = new QA001P2("SC01" + txtSeq.Text, txtUserId.Text, true);
+                pu.ShowDialog();
+            }
+            catch (Exception f)
+            {
+                MessageBox.Show(f.ToString(), SystemBase.Base.MessageRtn("Z0002"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
-            UIForm.FileUpDown fileUpDown = new UIForm.FileUpDown("SC01" + strFilsNo, strAuth);
-            fileUpDown.ShowDialog();
-
-			SetValidAddFileAppr();
+            SetValidAddFileAppr();
 
 		}
 		#endregion

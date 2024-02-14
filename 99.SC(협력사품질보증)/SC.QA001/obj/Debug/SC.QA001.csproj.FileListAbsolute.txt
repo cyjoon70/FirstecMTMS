@@ -8,3 +8,5 @@ D:\Project\Firstec\Source\FIRSTEC\99.SC(협력사품질보증)\SC.QA001\obj\Debu
 D:\Project\Firstec\Source\FIRSTEC\99.SC(협력사품질보증)\SC.QA001\obj\Debug\SC.QA001.dll
 D:\Project\Firstec\Source\FIRSTEC\99.SC(협력사품질보증)\SC.QA001\obj\Debug\SC.QA001.pdb
 D:\Project\Firstec\Source\FIRSTEC\99.SC(협력사품질보증)\SC.QA001\obj\Debug\SC.QA001.csproj.CoreCompileInputs.cache
+D:\Project\Firstec\Source\FIRSTEC\99.SC(협력사품질보증)\SC.QA001\obj\Debug\SC.QA001.csproj.AssemblyReference.cache
+D:\Project\Firstec\Source\FIRSTEC\99.SC(협력사품질보증)\SC.QA001\obj\Debug\SC.QA001.QA001P2.resources

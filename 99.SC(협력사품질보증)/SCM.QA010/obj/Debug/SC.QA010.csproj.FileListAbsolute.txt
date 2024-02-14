@@ -1,0 +1,7 @@
+D:\Project\Firstec\Source\DLL\SC.QA010.dll
+D:\Project\Firstec\Source\DLL\SC.QA010.pdb
+D:\Project\Firstec\Source\FIRSTEC\99.SC(협력사품질보증)\SCM.QA010\obj\Debug\SC.QA010.csproj.AssemblyReference.cache
+D:\Project\Firstec\Source\FIRSTEC\99.SC(협력사품질보증)\SCM.QA010\obj\Debug\SC.QA010.csproj.CoreCompileInputs.cache
+D:\Project\Firstec\Source\FIRSTEC\99.SC(협력사품질보증)\SCM.QA010\obj\Debug\SC.QA010.csproj.CopyComplete
+D:\Project\Firstec\Source\FIRSTEC\99.SC(협력사품질보증)\SCM.QA010\obj\Debug\SC.QA010.dll
+D:\Project\Firstec\Source\FIRSTEC\99.SC(협력사품질보증)\SCM.QA010\obj\Debug\SC.QA010.pdb

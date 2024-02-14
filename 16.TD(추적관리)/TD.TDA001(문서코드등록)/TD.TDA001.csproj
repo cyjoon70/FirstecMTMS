@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{CA634426-BC8F-433F-904F-4C685A8E2A01}</ProjectGuid>
+    <ProjectGuid>{1AC49E7B-4ED8-4C58-B3AF-B3EE6C44A320}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>TD.TDA001</RootNamespace>

@@ -114,8 +114,6 @@ namespace SC.QA001
 			txtUserId.Value = ds.Tables[0].Rows[0][12].ToString();			//첨부파일 승인자 ID
 			txtUserNm.Value = ds.Tables[0].Rows[0][13].ToString();			//첨부파일 승인자
 			cdtAPPR_DT.Value = ds.Tables[0].Rows[0][14].ToString();         //첨부파일 승인일
-
-			SetValidAddFileAppr();
 		}
         #endregion
 
@@ -420,7 +418,7 @@ namespace SC.QA001
 		{
 			DataTable dt;
 			string strQuery = string.Empty;
-			strQuery = "SELECT dbo.ufn_GetAddFileCnt('" + SystemBase.Base.gstrCOMCD + "', '" + txtSeq.Text + "')";
+			strQuery = "SELECT dbo.ufn_GetAddFileYN('" + SystemBase.Base.gstrCOMCD + "', 'SC01" + txtSeq.Text + "')";
 
 			dt = SystemBase.DbOpen.NoTranDataTable(strQuery);
 
@@ -430,6 +428,9 @@ namespace SC.QA001
 				{
 					txtUserId.Tag = "파일승인자;1;;";
 					SystemBase.Validation.GroupBox_Setting(groupBox1);
+
+                    if (string.IsNullOrEmpty(txtUserId.Text))
+                        MessageBox.Show("첨부파일이 있으므로 파일 승인자를 지정해주세요.");
 				}
 				else
 				{
@@ -439,5 +440,10 @@ namespace SC.QA001
 			}
 		}
 		#endregion
+
+		private void QA001P1_Shown(object sender, EventArgs e)
+		{
+            SetValidAddFileAppr();
+        }
 	}
 }

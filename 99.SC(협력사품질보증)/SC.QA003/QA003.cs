@@ -201,8 +201,8 @@ namespace SC.QA003
 				// ------------------------------------------------------------------------------------
 				// 입력시 엔터키 문제로, 내용 수정을 위하여 상태를 바꿈. 반드시 배포시에는 주석 처리
 				// ------------------------------------------------------------------------------------
-				txtCORR_RESULT.Tag = "시정조치 확인평가;1;;";
-				btnAppr1.Tag = "";
+				//txtCORR_RESULT.Tag = "시정조치 확인평가;1;;";
+				//btnAppr1.Tag = "";
 				// ------------------------------------------------------------------------------------
 			}
 
@@ -269,6 +269,24 @@ namespace SC.QA003
 					strGAuth = "S"; // 승인권자
 				}
 			}
+		}
+
+		// 부서장 사번 조회
+		private string GetEmpNo(string cd)
+		{
+			string strReturn = string.Empty;
+			DataTable dt;
+			string strQuery = string.Empty;
+			strQuery = "SELECT TOP 1 REL_CD2 FROM B_COMM_CODE WHERE COMP_CODE = '" + SystemBase.Base.gstrCOMCD + "' AND MAJOR_CD = 'Q005' AND MINOR_CD = '" + cd + "'";
+
+			dt = SystemBase.DbOpen.NoTranDataTable(strQuery);
+
+			if (dt != null)
+			{
+				strReturn = dt.Rows[0][0].ToString();
+			}
+
+			return strReturn;
 		}
 		#endregion
 
@@ -593,7 +611,11 @@ namespace SC.QA003
                 {
                     try
                     {
-						if (txtREG_PERSON.Text != SystemBase.Base.gstrUserID && strGAuth != "S" && txtDEPT_PERSON.Text != SystemBase.Base.gstrUserID)
+						if (txtREG_PERSON.Text == SystemBase.Base.gstrUserID || strGAuth == "S" || txtDEPT_PERSON.Text == SystemBase.Base.gstrUserID || GetEmpNo(txtDEPT_PERSON.Text) == SystemBase.Base.gstrUserID)
+						{
+
+						}
+						else
 						{
 							Trans.Rollback();
 							MSGCode = "내용 수정 권한이 없습니다.";
@@ -626,8 +648,6 @@ namespace SC.QA003
                         strQuery = strQuery + ", @pCOMP_CODE = '" + SystemBase.Base.gstrCOMCD + "' ";
                         strQuery = strQuery + ", @pCORR_NO			= '" + txtCORR_NO.Text + "' ";              // 시정조치번호
                         strQuery = strQuery + ", @pACTION_TYPE		= '" + cboACTION_TYPE.SelectedValue + "' "; // 발행유형
-                        strQuery = strQuery + ", @pREG_DEPT			= '" + SystemBase.Base.gstrDEPTNM + "' ";   // 발행부서
-                        strQuery = strQuery + ", @pREG_PERSON		= '" + SystemBase.Base.gstrUserID + "' ";   // 발행인
                         strQuery = strQuery + ", @pREG_DT			= '" + dtREG_DT.Text + "' ";                // 발행일
                         strQuery = strQuery + ", @pCOMP_REQ_DT		= '" + dtCOMP_REQ_DT.Text + "' ";           // 완료요구일
                         strQuery = strQuery + ", @pTITLE			= '" + txtTITLE.Text.Replace("'", "''") + "' ";                // 제목

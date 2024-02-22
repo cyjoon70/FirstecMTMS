@@ -1,0 +1,11 @@
+D:\Project\Firstec\Source\FIRSTEC\DLL\BI.BBI001.dll
+D:\Project\Firstec\Source\FIRSTEC\DLL\BI.BBI001.pdb
+D:\Project\Firstec\Source\FIRSTEC\02.BI(품목관리)\BI(품목정보)\BI.BBI001(품목정보등록)\obj\Debug\BI.BBI001.csproj.AssemblyReference.cache
+D:\Project\Firstec\Source\FIRSTEC\02.BI(품목관리)\BI(품목정보)\BI.BBI001(품목정보등록)\obj\Debug\BI.BBI001.BBI001.resources
+D:\Project\Firstec\Source\FIRSTEC\02.BI(품목관리)\BI(품목정보)\BI.BBI001(품목정보등록)\obj\Debug\BI.BBI001.Properties.Resources.resources
+D:\Project\Firstec\Source\FIRSTEC\02.BI(품목관리)\BI(품목정보)\BI.BBI001(품목정보등록)\obj\Debug\BI.BBI001.csproj.GenerateResource.cache
+D:\Project\Firstec\Source\FIRSTEC\02.BI(품목관리)\BI(품목정보)\BI.BBI001(품목정보등록)\obj\Debug\BI.BBI001.dll.licenses
+D:\Project\Firstec\Source\FIRSTEC\02.BI(품목관리)\BI(품목정보)\BI.BBI001(품목정보등록)\obj\Debug\BI.BBI001.csproj.CoreCompileInputs.cache
+D:\Project\Firstec\Source\FIRSTEC\02.BI(품목관리)\BI(품목정보)\BI.BBI001(품목정보등록)\obj\Debug\BI.BBI001.csproj.CopyComplete
+D:\Project\Firstec\Source\FIRSTEC\02.BI(품목관리)\BI(품목정보)\BI.BBI001(품목정보등록)\obj\Debug\BI.BBI001.dll
+D:\Project\Firstec\Source\FIRSTEC\02.BI(품목관리)\BI(품목정보)\BI.BBI001(품목정보등록)\obj\Debug\BI.BBI001.pdb

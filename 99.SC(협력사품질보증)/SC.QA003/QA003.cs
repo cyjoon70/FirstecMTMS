@@ -105,7 +105,7 @@ namespace SC.QA003
             {
                 if (strGAuth == "S")    // 최종 승인권자
                 {
-                    SystemBase.Validation.GroupBoxControlsLock(groupBox3, true);
+                    SystemBase.Validation.GroupBoxControlsLock(groupBox3, false);
                     SystemBase.Validation.GroupBoxControlsLock(groupBox5, true);
 					SystemBase.Validation.GroupBoxControlsLock(groupBox7, true);
 					SystemBase.Validation.GroupBoxControlsLock(groupBox6, false);

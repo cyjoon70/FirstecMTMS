@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <StartArguments>ST:1.254.70.73:MTMS_20230725:fs:vjtmxpr%400904</StartArguments>
+    <StartArguments>ST:1.254.70.73:MTMS_FT:fs:vjtmxpr%400904</StartArguments>
   </PropertyGroup>
 </Project>

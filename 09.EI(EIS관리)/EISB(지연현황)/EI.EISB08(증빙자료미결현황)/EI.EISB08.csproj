@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{CA634426-BC8F-433F-904F-4C685A8E2A01}</ProjectGuid>
+    <ProjectGuid>{D0304DF9-D5CD-413F-9AB3-6B71C9EC9131}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>EI.EISB08</RootNamespace>

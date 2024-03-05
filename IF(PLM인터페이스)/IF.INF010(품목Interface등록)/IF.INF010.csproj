@@ -5,7 +5,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{CA634426-BC8F-433F-904F-4C685A8E2A01}</ProjectGuid>
+    <ProjectGuid>{9541D8F5-8185-45FF-B211-348A8694EBC9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IF.INF010</RootNamespace>
@@ -18,7 +18,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\DLL\</OutputPath>
+    <OutputPath>..\..\DLL\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -108,14 +108,6 @@
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="SystemBase, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\DLL\SystemBase.dll</HintPath>
-    </Reference>
-    <Reference Include="UIForm, Version=1.0.0.0, Culture=neutral, processorArchitecture=x86">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\DLL\UIForm.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="INF010.cs">
@@ -130,6 +122,16 @@
     <EmbeddedResource Include="INF010.resx">
       <DependentUpon>INF010.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\00.SY%28시스템관리%29\SystemBase\SystemBase.csproj">
+      <Project>{45841e94-e806-4573-a93b-26d50a07ea9c}</Project>
+      <Name>SystemBase</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\00.SY%28시스템관리%29\UIForm\UIForm.csproj">
+      <Project>{4efc693f-1889-404a-b163-df462eee98c9}</Project>
+      <Name>UIForm</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

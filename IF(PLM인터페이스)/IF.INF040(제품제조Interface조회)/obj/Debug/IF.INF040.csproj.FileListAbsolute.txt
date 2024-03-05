@@ -1,0 +1,12 @@
+D:\Project\Firstec\Source\DLL\IF.INF040.dll
+D:\Project\Firstec\Source\DLL\IF.INF040.pdb
+D:\Project\Firstec\Source\FIRSTEC\IF(PLM인터페이스)\IF.INF040(제품제조Interface조회)\obj\Debug\IF.INF040.csproj.AssemblyReference.cache
+D:\Project\Firstec\Source\FIRSTEC\IF(PLM인터페이스)\IF.INF040(제품제조Interface조회)\obj\Debug\IF.INF040.INF040.resources
+D:\Project\Firstec\Source\FIRSTEC\IF(PLM인터페이스)\IF.INF040(제품제조Interface조회)\obj\Debug\IF.INF040.csproj.GenerateResource.cache
+D:\Project\Firstec\Source\FIRSTEC\IF(PLM인터페이스)\IF.INF040(제품제조Interface조회)\obj\Debug\IF.INF040.dll.licenses
+D:\Project\Firstec\Source\FIRSTEC\IF(PLM인터페이스)\IF.INF040(제품제조Interface조회)\obj\Debug\IF.INF040.csproj.CoreCompileInputs.cache
+D:\Project\Firstec\Source\FIRSTEC\IF(PLM인터페이스)\IF.INF040(제품제조Interface조회)\obj\Debug\IF.INF040.csproj.CopyComplete
+D:\Project\Firstec\Source\FIRSTEC\IF(PLM인터페이스)\IF.INF040(제품제조Interface조회)\obj\Debug\IF.INF040.dll
+D:\Project\Firstec\Source\FIRSTEC\IF(PLM인터페이스)\IF.INF040(제품제조Interface조회)\obj\Debug\IF.INF040.pdb
+D:\Project\Firstec\Source\FIRSTEC\DLL\IF.INF040.dll
+D:\Project\Firstec\Source\FIRSTEC\DLL\IF.INF040.pdb

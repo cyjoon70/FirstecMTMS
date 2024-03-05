@@ -1,0 +1,13 @@
+D:\Project\Firstec\Source\DLL\IF.INF050.dll
+D:\Project\Firstec\Source\DLL\IF.INF050.pdb
+D:\Project\Firstec\Source\FIRSTEC\IF(PLM인터페이스)\IF.INF050(구매요청Interface조회)\obj\Debug\IF.INF050.csproj.AssemblyReference.cache
+D:\Project\Firstec\Source\FIRSTEC\IF(PLM인터페이스)\IF.INF050(구매요청Interface조회)\obj\Debug\IF.INF050.Properties.Resources.resources
+D:\Project\Firstec\Source\FIRSTEC\IF(PLM인터페이스)\IF.INF050(구매요청Interface조회)\obj\Debug\IF.INF050.INF050.resources
+D:\Project\Firstec\Source\FIRSTEC\IF(PLM인터페이스)\IF.INF050(구매요청Interface조회)\obj\Debug\IF.INF050.csproj.GenerateResource.cache
+D:\Project\Firstec\Source\FIRSTEC\IF(PLM인터페이스)\IF.INF050(구매요청Interface조회)\obj\Debug\IF.INF050.dll.licenses
+D:\Project\Firstec\Source\FIRSTEC\IF(PLM인터페이스)\IF.INF050(구매요청Interface조회)\obj\Debug\IF.INF050.csproj.CoreCompileInputs.cache
+D:\Project\Firstec\Source\FIRSTEC\IF(PLM인터페이스)\IF.INF050(구매요청Interface조회)\obj\Debug\IF.INF050.csproj.CopyComplete
+D:\Project\Firstec\Source\FIRSTEC\IF(PLM인터페이스)\IF.INF050(구매요청Interface조회)\obj\Debug\IF.INF050.dll
+D:\Project\Firstec\Source\FIRSTEC\IF(PLM인터페이스)\IF.INF050(구매요청Interface조회)\obj\Debug\IF.INF050.pdb
+D:\Project\Firstec\Source\FIRSTEC\DLL\IF.INF050.dll
+D:\Project\Firstec\Source\FIRSTEC\DLL\IF.INF050.pdb

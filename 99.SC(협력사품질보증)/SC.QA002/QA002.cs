@@ -279,6 +279,12 @@ namespace SC.QA002
 								SystemBase.Base.GridHeadIndex(GHIdx1, "검사확정여부") + "|3"
 								+ "#" + SystemBase.Base.GridHeadIndex(GHIdx1, "검사계획일정") + "|3");
 						}
+
+						if (fpSpread1.Sheets[0].Cells[i, SystemBase.Base.GridHeadIndex(GHIdx1, "검사의뢰 취소여부")].Text == "True")
+						{
+							fpSpread1.Sheets[0].Rows[i].BackColor = Color.Red;
+							fpSpread1.Sheets[0].Rows[i].ForeColor = Color.White;
+						}
 					}
 					
 				}
@@ -306,6 +312,9 @@ namespace SC.QA002
 					this.Cursor = Cursors.WaitCursor;
 
 					string ERRCode = "WR", MSGCode = "P0000"; //처리할 내용이 없습니다.
+					string strGbn = string.Empty;
+					string MSGErr = string.Empty;
+
 					SqlConnection dbConn = SystemBase.DbOpen.DBCON();
 					SqlCommand cmd = dbConn.CreateCommand();
 					SqlTransaction Trans = dbConn.BeginTransaction(IsolationLevel.ReadCommitted);
@@ -323,7 +332,24 @@ namespace SC.QA002
 
 								if (strHead.Length > 0)
 								{
-									string strSql = " usp_SC002 @pTYPE = 'U1' ";
+									switch (strHead)
+									{
+										case "U": strGbn = "U1"; break;
+										case "I": strGbn = "I1"; break;
+										case "D": strGbn = "D1"; break;
+										default: strGbn = ""; break;
+									}
+
+									if (fpSpread1.Sheets[0].Cells[i, SystemBase.Base.GridHeadIndex(GHIdx1, "상태")].Text == "검사완료"
+											&& strGbn == "D1")
+									{
+										Trans.Rollback();
+										ERRCode = "IN-ER";
+										MSGErr = (i + 1).ToString() + " 행 : 검사완료된 건은 검사의뢰 취소(삭제)할 수 없습니다.";
+										goto Exit;
+									}
+
+									string strSql = " usp_SCM032 @pTYPE = '" + strGbn + "' ";
 									strSql += ", @pCOMP_CODE = '" + SystemBase.Base.gstrCOMCD + "' ";
 									strSql += ", @pPO_NO = '" + fpSpread1.Sheets[0].Cells[i, SystemBase.Base.GridHeadIndex(GHIdx1, "발주번호")].Text + "' ";
 									strSql += ", @pPO_SEQ = '" + fpSpread1.Sheets[0].Cells[i, SystemBase.Base.GridHeadIndex(GHIdx1, "발주순번")].Text + "' ";
@@ -390,6 +416,10 @@ namespace SC.QA002
 					else if (ERRCode == "ER")
 					{
 						MessageBox.Show(SystemBase.Base.MessageRtn(MSGCode), SystemBase.Base.MessageRtn("Z0002"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+					}
+					else if (ERRCode == "IN-ER")
+					{
+						MessageBox.Show(SystemBase.Base.MessageRtn(MSGErr), SystemBase.Base.MessageRtn("Z0002"), MessageBoxButtons.OK, MessageBoxIcon.Error);
 					}
 					else
 					{

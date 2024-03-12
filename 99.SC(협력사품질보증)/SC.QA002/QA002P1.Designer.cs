@@ -39,10 +39,7 @@
 			this.c1Label20 = new C1.Win.C1Input.C1Label();
 			this.dtsDAY_TO = new C1.Win.C1Input.C1DateEdit();
 			this.dtsDAY_FR = new C1.Win.C1Input.C1DateEdit();
-			this.GridCommGroupBox.SuspendLayout();
-			this.GridCommPanel.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.fpSpread1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.fpSpread1_Sheet1)).BeginInit();
+			this.butExcel = new C1.Win.C1Input.C1Button();
 			this.panButton1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.BtnDel)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.BtnHelp)).BeginInit();
@@ -67,45 +64,22 @@
 			((System.ComponentModel.ISupportInitialize)(this.dtsDAY_FR)).BeginInit();
 			this.SuspendLayout();
 			// 
-			// GridCommGroupBox
-			// 
-			this.GridCommGroupBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
-			this.GridCommGroupBox.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.GridCommGroupBox.Location = new System.Drawing.Point(0, 0);
-			this.GridCommGroupBox.Size = new System.Drawing.Size(1177, 401);
-			// 
-			// GridCommPanel
-			// 
-			this.GridCommPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.GridCommPanel.Location = new System.Drawing.Point(0, 126);
-			this.GridCommPanel.Size = new System.Drawing.Size(1177, 401);
-			// 
-			// fpSpread1
-			// 
-			this.fpSpread1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
-			this.fpSpread1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.fpSpread1.Location = new System.Drawing.Point(3, 21);
-			this.fpSpread1.Size = new System.Drawing.Size(1171, 377);
-			// 
-			// fpSpread1_Sheet1
-			// 
-			this.fpSpread1_Sheet1.SheetName = "Sheet1";
-			// 
 			// panButton1
 			// 
-			this.panButton1.Size = new System.Drawing.Size(1177, 64);
+			this.panButton1.Size = new System.Drawing.Size(751, 64);
 			// 
 			// panel1
 			// 
 			this.panel1.Controls.Add(this.groupBox1);
-			this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel1.Location = new System.Drawing.Point(0, 64);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(1177, 62);
+			this.panel1.Size = new System.Drawing.Size(751, 107);
 			this.panel1.TabIndex = 18;
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.butExcel);
 			this.groupBox1.Controls.Add(this.btnsCUST);
 			this.groupBox1.Controls.Add(this.txtsCUST_NM);
 			this.groupBox1.Controls.Add(this.txtsCUST_CD);
@@ -117,7 +91,7 @@
 			this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.groupBox1.Location = new System.Drawing.Point(0, 0);
 			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(1177, 62);
+			this.groupBox1.Size = new System.Drawing.Size(751, 107);
 			this.groupBox1.TabIndex = 0;
 			this.groupBox1.TabStop = false;
 			// 
@@ -241,22 +215,29 @@
 			this.dtsDAY_FR.VerticalAlign = C1.Win.C1Input.VerticalAlignEnum.Middle;
 			this.dtsDAY_FR.VisibleButtons = C1.Win.C1Input.DropDownControlButtonFlags.DropDown;
 			// 
+			// butExcel
+			// 
+			this.butExcel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("butExcel.BackgroundImage")));
+			this.butExcel.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.butExcel.Location = new System.Drawing.Point(301, 63);
+			this.butExcel.Name = "butExcel";
+			this.butExcel.Size = new System.Drawing.Size(104, 25);
+			this.butExcel.TabIndex = 89;
+			this.butExcel.Text = "엑셀 출력";
+			this.butExcel.UseVisualStyleBackColor = true;
+			this.butExcel.Click += new System.EventHandler(this.butExcel_Click);
+			// 
 			// QA002P1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1177, 527);
+			this.ClientSize = new System.Drawing.Size(751, 171);
 			this.Controls.Add(this.panel1);
 			this.Name = "QA002P1";
 			this.Text = "QA002P1";
 			this.Load += new System.EventHandler(this.QA002P1_Load);
 			this.Controls.SetChildIndex(this.panButton1, 0);
 			this.Controls.SetChildIndex(this.panel1, 0);
-			this.Controls.SetChildIndex(this.GridCommPanel, 0);
-			this.GridCommGroupBox.ResumeLayout(false);
-			this.GridCommPanel.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.fpSpread1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.fpSpread1_Sheet1)).EndInit();
 			this.panButton1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.BtnDel)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.BtnHelp)).EndInit();
@@ -280,7 +261,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.dtsDAY_TO)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.dtsDAY_FR)).EndInit();
 			this.ResumeLayout(false);
-			this.PerformLayout();
 
 		}
 
@@ -296,5 +276,6 @@
 		private C1.Win.C1Input.C1TextBox txtsCUST_NM;
 		private C1.Win.C1Input.C1TextBox txtsCUST_CD;
 		private C1.Win.C1Input.C1Label c1Label2;
+		private C1.Win.C1Input.C1Button butExcel;
 	}
 }

@@ -1304,5 +1304,97 @@
             the contents of this method with the code editor.
             </summary>
         </member>
+        <member name="F:WNDW.WNDWS01.GwStatus">
+            <summary>
+            파일 업로드 권한
+            </summary>
+        </member>
+        <member name="F:WNDW.WNDWS01.docNoReqs">
+            <summary>문서코드별 문서번호 유무</summary>
+        </member>
+        <member name="F:WNDW.WNDWS01.buttonManager">
+            <summary>첨부파일목록 파일버튼 관리자</summary>
+        </member>
+        <member name="F:WNDW.WNDWS01.attachmentManager">
+            <summary>첨부문서표시 관리자</summary>
+        </member>
+        <member name="M:WNDW.WNDWS01.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.String,System.String)">
+            <summary>
+            생성자
+            </summary>
+            <param name="strAttKey"></param>
+            <param name="strAttKey1"></param>
+            <param name="strAttKey2"></param>
+            <param name="strAttKey3"></param>
+            <param name="strAttKey4"></param>
+            <param name="APPR_ID"></param>
+            <param name="GW_STATUS"></param>파일 권한
+            <param name="strRandNo"></param>
+            <param name="strTitle"></param>
+        </member>
+        <member name="M:WNDW.WNDWS01.ViewDeleteTempFiles">
+            <summary>
+            임시로 다운로드한 파일을 모두 삭제합니다.
+            </summary>
+        </member>
+        <member name="M:WNDW.WNDWS01.ViewGetTempFilenamePrefix">
+            <summary>
+            임시파일명의 프리픽스로 사용할 고정된 문자열을 반환합니다.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WNDW.WNDWS01.WNDWS01_Load(System.Object,System.EventArgs)">
+            <summary>
+            Form Load
+            </summary>
+        </member>
+        <member name="M:WNDW.WNDWS01.SearchExec">
+            <summary>
+            조회
+            </summary>        
+        </member>
+        <member name="M:WNDW.WNDWS01.GetAuth">
+            <summary>
+            
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:WNDW.WNDWS01.RowInsExec">
+            <summary>
+            행 추가
+            </summary>
+        </member>
+        <member name="M:WNDW.WNDWS01.DelExec">
+            <summary>
+            행 삭제
+            </summary>
+        </member>
+        <member name="M:WNDW.WNDWS01.SaveExec">
+            <summary>
+            저장
+            </summary>
+        </member>
+        <member name="M:WNDW.WNDWS01.fpSpread1_ChangeEvent(System.Int32,System.Int32)">
+            <summary>
+            그리드 Change 이벤트
+            </summary>
+        </member>
+        <member name="F:WNDW.WNDWS01.components">
+            <summary>
+            Required designer variable.
+            </summary>
+        </member>
+        <member name="M:WNDW.WNDWS01.Dispose(System.Boolean)">
+            <summary>
+            Clean up any resources being used.
+            </summary>
+            <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        </member>
+        <member name="M:WNDW.WNDWS01.InitializeComponent">
+            <summary>
+            Required method for Designer support - do not modify
+            the contents of this method with the code editor.
+            </summary>
+        </member>
     </members>
 </doc>

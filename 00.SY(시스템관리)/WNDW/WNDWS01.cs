@@ -1,17 +1,4 @@
-﻿#region 작성정보
-/*********************************************************************/
-// 단위업무명: 지출증빙등록
-// 작 성 자  : 한 미 애
-// 작 성 일  : 2021-12-02
-// 작성내용  : 전표에 대한 지출증빙문서를 등록한다.
-// 수 정 일  :
-// 수 정 자  :
-// 수정내용  :
-// 비    고  :
-/*********************************************************************/
-#endregion
-
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -30,14 +17,25 @@ using EDocument.Extensions.FpSpreadExtension;
 using EDocument.Network;
 using EDocument.Spread;
 
-namespace SC.QA001
+namespace WNDW
 {
-    public partial class QA001P2 : UIForm.FPCOMM1
-    {
+	public partial class WNDWS01 : UIForm.FPCOMM1
+	{
         #region Field
-        string NoticeSeq = string.Empty;
+        string AttKey = string.Empty;
+        string AttKey1 = string.Empty;
+        string AttKey2 = string.Empty;
+        string AttKey3 = string.Empty;
+        string AttKey4 = string.Empty;
         string ApprId = string.Empty;
+        string RandNo = string.Empty;
+        string Titles = string.Empty;
+
+        /// <summary>
+        /// 파일 업로드 권한
+        /// </summary>
         bool GwStatus = true;
+
         const string docCtgCd = "SCM";  //SCM
 
         // 디테일 그리드 컬럼(문서 목록)
@@ -66,18 +64,37 @@ namespace SC.QA001
         #endregion
 
         # region Initialize
-        public QA001P2()
+        public WNDWS01()
         {
             InitializeComponent();
         }
 
-        public QA001P2(string NOTICE_SEQ, string APPR_ID, bool GW_STATUS) : this() 
+        /// <summary>
+        /// 생성자
+        /// </summary>
+        /// <param name="strAttKey"></param>
+        /// <param name="strAttKey1"></param>
+        /// <param name="strAttKey2"></param>
+        /// <param name="strAttKey3"></param>
+        /// <param name="strAttKey4"></param>
+        /// <param name="APPR_ID"></param>
+        /// <param name="GW_STATUS"></param>파일 권한
+        /// <param name="strRandNo"></param>
+        /// <param name="strTitle"></param>
+        public WNDWS01(string strAttKey, string strAttKey1, string strAttKey2, string strAttKey3, string strAttKey4, 
+                        string APPR_ID, bool GW_STATUS, string strRandNo, string strTitle) : this()
         {
-            this.NoticeSeq = NOTICE_SEQ;
+            this.AttKey = strAttKey;
+            this.AttKey1 = strAttKey1;
+            this.AttKey2 = strAttKey2;
+            this.AttKey3 = strAttKey3;
+            this.AttKey4 = strAttKey4;
             this.ApprId = APPR_ID;
             this.GwStatus = GW_STATUS;
+            this.RandNo = strRandNo;
+            this.Titles = strTitle;
 
-            this.Size = new System.Drawing.Size(1240, 785);
+            this.Size = new System.Drawing.Size(1240, 650);
         }
         #endregion
 
@@ -108,15 +125,18 @@ namespace SC.QA001
         /// <summary>
         /// Form Load
         /// </summary>
-        private void QA001P2_Load(object sender, System.EventArgs e)
+        private void WNDWS01_Load(object sender, System.EventArgs e)
         {
             try
             {
-                UIForm.Buttons.ReButton("010111010001", BtnNew, BtnSearch, BtnRCopy, BtnRowIns, BtnCancel, BtnDel, BtnDelete, BtnInsert, BtnExcel, BtnPrint, BtnHelp, BtnClose);
-                this.Text = "공지사항 첨부파일";
-                this.Width = 1180;
-                this.Height = 530;
+                if (GwStatus)
+                    UIForm.Buttons.ReButton("010111010001", BtnNew, BtnSearch, BtnRCopy, BtnRowIns, BtnCancel, BtnDel, BtnDelete, BtnInsert, BtnExcel, BtnPrint, BtnHelp, BtnClose);
+                else
+                    UIForm.Buttons.ReButton("010000000001", BtnNew, BtnSearch, BtnRCopy, BtnRowIns, BtnCancel, BtnDel, BtnDelete, BtnInsert, BtnExcel, BtnPrint, BtnHelp, BtnClose);
 
+
+                this.Text = this.Titles + " 첨부파일";
+                
                 G1Etc[SystemBase.Base.GridHeadIndex(GHIdx1, "문서종류")] = SystemBase.ComboMake.ComboOnGrid("usp_T_DOC_CODE @pTYPE = 'S1', @pDOC_CTG_CD = 'SCM', @pCO_CD = '" + SystemBase.Base.gstrCOMCD + "'", 0); // 문서종류
 
                 UIForm.FPMake.grdCommSheet(fpSpread1, null, G1Head1, G1Head2, G1Head3, G1Width, G1Align, G1Type, G1Color, G1Etc, G1HeadCnt, false, false, 0, 0);
@@ -148,8 +168,6 @@ namespace SC.QA001
                     DocNumberColumnIndex = colDocNo,
                 };
 
-                //picDoc.SizeMode = PictureBoxSizeMode.AutoSize;      // 2022.02.23 hma 추가
-
                 SearchExec();
             }
             catch (Exception f)
@@ -163,14 +181,26 @@ namespace SC.QA001
         /// </summary>        
         protected override void SearchExec()
         {
+            string query = string.Empty;
+
             this.Cursor = Cursors.WaitCursor;
 
             try
             {
-                string query = "usp_T_DOC 'S1'"
-                    + ", @pDOC_CTG_CD = 'SCM'"
-                    + ", @pCO_CD = '" + SystemBase.Base.gstrCOMCD + "'"
-                    + ", @pATT_KEY = '" + this.NoticeSeq + "'";
+                if (string.IsNullOrEmpty(this.AttKey))
+                {
+                    query = "usp_T_DOC 'ST1'"
+                    + ", @pDOC_CTG_CD   = 'SCM'"
+                    + ", @pCO_CD        = '" + SystemBase.Base.gstrCOMCD + "'"
+                    + ", @pTMP_NO       = '" + this.RandNo + "'";
+                }
+                else
+                {
+                    query = "usp_T_DOC 'S1'"
+                    + ", @pDOC_CTG_CD   = 'SCM'"
+                    + ", @pCO_CD        = '" + SystemBase.Base.gstrCOMCD + "'"
+                    + ", @pATT_KEY      = '" + this.AttKey + "'";
+                }
 
                 UIForm.FPMake.grdCommSheet(fpSpread1, query, G1Head1, G1Head2, G1Head3, G1Width, G1Align, G1Type, G1Color, G1Etc, G1HeadCnt, false, false, 0, 0);
                 buttonManager.UpdateButtons(); // 버튼 업데이트
@@ -188,22 +218,31 @@ namespace SC.QA001
             this.Cursor = Cursors.Default;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <returns></returns>
+        private bool GetAuth()
+		{
+            bool bResult = true;
+
+            if (!GwStatus)
+            {
+                MessageBox.Show("권한이 없습니다.");
+                bResult = false;
+            }
+
+            return bResult; 
+        }
 
         /// <summary>
         /// 행 추가
         /// </summary>
         protected override void RowInsExec()
         {
-            // 2022.04.19. hma 수정(Start): 승인 상태 전표에 증빙 추가는 가능하게 요청하여 결재상태 체크 부분 주석 처리함.
-            // 2022.03.22. hma 수정: 반려 상태인 경우 문서 수정하여 재상신 할수도 있으므로 반려 상태는 제외함.
-            //if (cboGwStatus.SelectedValue.ToString() == "APPR")     // || cboGwStatus.SelectedValue.ToString() == "REJECT")
-            //{
-            //    MessageBox.Show("결재 승인된 건이므로 지출증빙을 수정할 수 없습니다.");
-            //    return;
-            //}
-            // 2022.04.19. hma 수정(End)
+			if (!GetAuth()) return;
 
-            SheetView sheet = fpSpread1.ActiveSheet;
+			SheetView sheet = fpSpread1.ActiveSheet;
             fpSpread1.Focus();
 
             UIForm.FPMake.RowInsert(fpSpread1); // 행추가
@@ -217,12 +256,14 @@ namespace SC.QA001
         /// 행 삭제
         /// </summary>
         protected override void DelExec()
-        {            
+        {
+            if (!GetAuth()) return;
+
             SheetView sheet = fpSpread1.ActiveSheet;
             if (sheet.RowCount < 1) return;
             CellRange[] ranges = sheet.GetSelections();
-            if (ranges.Length == 0) return;    
-            
+            if (ranges.Length == 0) return;
+
             base.DelExec();
         }
 
@@ -231,6 +272,8 @@ namespace SC.QA001
         /// </summary>
         protected override void SaveExec()
         {
+            if (!GetAuth()) return;
+
             SheetView sheet = fpSpread1.ActiveSheet;        // 2022.04.19. hma 수정: 선언 위치 이동
 
             //SheetView sheet = fpSpread1.ActiveSheet;      // 2022.04.19. hma 수정: 선언 위치를 위로 이동하고 여기는 주석 처리
@@ -254,7 +297,7 @@ namespace SC.QA001
                     string strHead = fpSpread1.Sheets[0].RowHeader.Cells[row, 0].Text;
                     if (string.IsNullOrEmpty(strHead)) continue;
 
-                    string strGbn = "";
+                    string strGbn = string.Empty;
                     switch (strHead)
                     {
                         case "U": strGbn = "U1"; break;
@@ -277,36 +320,44 @@ namespace SC.QA001
                     }
                     else
                     {
-                        // 2022.05.20. hma 수정(Start): 대문자 확장자도 처리되도록 함.
-                        //if (!(Path.GetExtension(sheet.Cells[row, colOrgFnm].Text).Equals(".pdf")))
-                        /*
-                        if (!(Path.GetExtension(sheet.Cells[row, colOrgFnm].Text).ToUpper().Equals(".PDF")))
-                        {
-                            MessageBox.Show("PDF파일만 업로드 가능합니다.", SystemBase.Base.MessageRtn("Z0002"), MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                            Trans.Rollback();
-                            resultCode = "WR";
-                            goto Exit;
-                        }
-                        */
-
                         string query = "usp_T_DOC @pTYPE = '" + strGbn + "'";
                         if (strHead == "I") // 새로 추가
+                        {
                             query += ", @pCO_CD = '" + SystemBase.Base.gstrCOMCD + "'"
-                                + ", @pPLANT_CD = '" + SystemBase.Base.gstrPLANT_CD + "' "
-                                + ", @pDOC_CTG_CD = '" + docCtgCd + "'"
-                                + ", @pATT_KEY = '" + this.NoticeSeq + "'"
-                                + ", @pATT_KEY1 = '" + this.NoticeSeq + "'"
-                                + ", @pDOC_CD = '" + sheet.Cells[row, colDocCd].Text + "'"     //txtDocCode.Text + "'";
-                                + ", @pFST_IN = 'Y'"
-                                + ", @pAPPR_ID = '" + this.ApprId + "'";
+                                    + ", @pPLANT_CD = '" + SystemBase.Base.gstrPLANT_CD + "' "
+                                    + ", @pDOC_CTG_CD = '" + docCtgCd + "'"
+                                    + ", @pDOC_CD = '" + sheet.Cells[row, colDocCd].Text + "'"     //txtDocCode.Text + "'";
+                                    + ", @pFST_IN = 'Y'"
+                                    + ", @pAPPR_ID = '" + this.ApprId + "'"
+                                    + ", @pREMARK = '" + sheet.Cells[row, colRemark].Text + "'"
+                                    + ", @pIN_ID = '" + SystemBase.Base.gstrUserID + "'"
+                                    + ", @pUP_ID = '" + SystemBase.Base.gstrUserID + "'";
 
+                            // 부모 키 값 생성이전 첨부파일을 동시에 저장하기 위함
+                            if (string.IsNullOrEmpty(this.AttKey))
+                            {
+                                query += ", @pATT_KEY = '" + this.RandNo + "'"
+                                    + ", @pATT_KEY1 = '" + this.RandNo + "'"
+                                    + ", @pATT_KEY2 = '" + this.AttKey2 + "'"
+                                    + ", @pATT_KEY3 = '" + this.AttKey3 + "'"
+                                    + ", @pATT_KEY4 = '" + this.AttKey4 + "'"
+                                    + ", @pTMP_NO = '" + this.RandNo + "'";
+                            }
+                            else
+                            {
+                                query += ", @pATT_KEY = '" + this.AttKey + "'"
+                                    + ", @pATT_KEY1 = '" + this.AttKey1 + "'"
+                                    + ", @pATT_KEY2 = '" + this.AttKey2 + "'"
+                                    + ", @pATT_KEY3 = '" + this.AttKey3 + "'"
+                                    + ", @pATT_KEY4 = '" + this.AttKey4 + "'";
+                            }
+                        }
                         else // 내용 변경
-                            query += ", @pDOC_ID = " + sheet.Cells[row, colDocId].Text;
-
-                        query += ", @pDOC_NO = '" + sheet.Cells[row, colDocNo].Text + "'"
-                                + ", @pREV_NO = '" + sheet.Cells[row, colRevNo].Text + "'"
-                                + ", @pREMARK = '" + sheet.Cells[row, colRemark].Text + "'"
-                                + ", @pUP_ID = '" + SystemBase.Base.gstrUserID + "'";
+						{
+                            query += ", @pDOC_ID = '" + sheet.Cells[row, colDocId].Text + "'"
+                                    + ", @pREMARK = '" + sheet.Cells[row, colRemark].Text + "'"
+                                    + ", @pUP_ID = '" + SystemBase.Base.gstrUserID + "'";
+                        }
 
                         // 문서정보 저장
                         DataSet ds = SystemBase.DbOpen.TranDataSet(query, dbConn, Trans);
@@ -397,8 +448,8 @@ namespace SC.QA001
         }
         #endregion
 
-        #region QA001P2_FormClosing(): 증빙문서저장여부 체크해서 증빙문서건수 리턴
-        private void QA001P2_FormClosing(object sender, FormClosingEventArgs e)
+        #region WNDWS01_FormClosing(): 증빙문서저장여부 체크해서 증빙문서건수 리턴
+        private void WNDWS01_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (strSaveFlag == "Y")      // 증빙문서 저장을 한경우
             {
@@ -410,8 +461,7 @@ namespace SC.QA001
             }
         }
         #endregion
-        
-        #endregion
 
+        #endregion
     }
 }

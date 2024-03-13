@@ -61,7 +61,7 @@ namespace SC.QA001
         private void SetInit()
         {
             Random randomObj = new Random();
-            iRan = randomObj.Next(100000, 999999);
+            iRan = randomObj.Next(100000000, 999999999);
 
             txtRegUser.Value = SystemBase.Base.gstrUserName;
             dtRegDt.Text = SystemBase.Base.ServerTime("YYMMDD");
@@ -120,7 +120,7 @@ namespace SC.QA001
         #region SaveExec()
         protected override void SaveExec()
         {
-            string ERRCode = "ER", MSGCode = "";
+            string ERRCode = "ER", MSGCode = "", SEQ = "";
 
             SqlConnection dbConn = SystemBase.DbOpen.DBCON();
             SqlCommand cmd = dbConn.CreateCommand();
@@ -153,17 +153,38 @@ namespace SC.QA001
                         strQuery = strQuery + ", @pCONTENTS ='" + txtContents.Text + "' ";
 						strQuery = strQuery + ", @pFILE_APPR ='" + txtUserId.Text + "' ";
 						strQuery = strQuery + ", @pIN_ID = '" + SystemBase.Base.gstrUserID + "'";
-                        strQuery = strQuery + ", @pFILES_NO = '" + "SC01" + iRan.ToString() + "'";
+                        strQuery = strQuery + ", @pFILES_NO = '" + iRan.ToString() + "'";
                         
 
                         DataSet ds = SystemBase.DbOpen.TranDataSet(strQuery, dbConn, Trans);
                         ERRCode = ds.Tables[0].Rows[0][0].ToString();
                         MSGCode = ds.Tables[0].Rows[0][1].ToString();
+                        SEQ = ds.Tables[0].Rows[0][2].ToString();
 
                         if (ERRCode == "ER")
                         {
                             Trans.Rollback();
                             goto Exit;  // ER 코드 Return시 점프
+                        }
+                        else // 임시저장된 첨부파일 키 값 업데이트
+						{
+                            strQuery = "";
+                            strQuery = " usp_SC001 @pTYPE = 'U2' ";
+                            strQuery = strQuery + ", @pCOMP_CODE = '" + SystemBase.Base.gstrCOMCD + "' ";
+                            strQuery = strQuery + ", @pFILES_NO = '" + iRan.ToString() + "' ";
+                            strQuery = strQuery + ", @pSEQ = '" + SEQ + "' ";
+
+                            DataSet ds2 = SystemBase.DbOpen.TranDataSet(strQuery, dbConn, Trans);
+                            ERRCode = ds2.Tables[0].Rows[0][0].ToString();
+                            MSGCode = ds2.Tables[0].Rows[0][1].ToString();
+
+                            if (ERRCode == "ER")
+                            {
+                                Trans.Rollback();
+                                goto Exit;  // ER 코드 Return시 점프
+                            }
+
+                            Trans.Commit();
                         }
                     }
                     catch (Exception ex)
@@ -173,17 +194,13 @@ namespace SC.QA001
                         MSGCode = "P0001";
                         goto Exit;  // ER 코드 Return시 점프
                     }
-                    Trans.Commit();
-
+                    
                 Exit:
                     dbConn.Close();
                     MessageBox.Show(SystemBase.Base.MessageRtn(MSGCode));
 
                     if (ERRCode != "")
                         Dispose(true);
-
-
-
                 }
                 else if (Gubun == "R" && txtRegUser.Text == SystemBase.Base.gstrUserName)
                 {
@@ -220,10 +237,9 @@ namespace SC.QA001
                             Trans.Rollback();
                             goto Exit;  // ER 코드 Return시 점프
                         }
-                        else
-                        {
 
-                        }
+                        Trans.Commit();
+
                     }
                     catch (Exception ex)
                     {
@@ -232,14 +248,12 @@ namespace SC.QA001
                         MSGCode = "P0001";
                         goto Exit;  // ER 코드 Return시 점프
                     }
-                    Trans.Commit();
 
                 Exit:
                     dbConn.Close();
                     MessageBox.Show(SystemBase.Base.MessageRtn(MSGCode));
                     if (ERRCode != "")
                         Dispose(true);
-
                 }
             }
 
@@ -281,7 +295,7 @@ namespace SC.QA001
                     {
                         string strQuery = "";
                         strQuery = " usp_SC001 @pTYPE = 'D1' ";
-                        strQuery = strQuery + ", @pSeq =" + txtSeq.Text + "";
+                        strQuery = strQuery + ", @pSEQ =" + txtSeq.Text + "";
                         strQuery = strQuery + ", @pCOMP_CODE = '" + SystemBase.Base.gstrCOMCD + "' ";
 
                         DataSet ds = SystemBase.DbOpen.TranDataSet(strQuery, dbConn, Trans);
@@ -293,10 +307,8 @@ namespace SC.QA001
                             Trans.Rollback();
                             goto Exit;	// ER 코드 Return시 점프
                         }
-                        else
-                        {
 
-                        }
+                        Trans.Commit();
                     }
                     catch (Exception ex)
                     {
@@ -305,7 +317,6 @@ namespace SC.QA001
                         MSGCode = "P0001";
                         goto Exit;	// ER 코드 Return시 점프
                     }
-                    Trans.Commit();
 
                 Exit:
                     dbConn.Close();
@@ -349,19 +360,18 @@ namespace SC.QA001
 		#region 첨부파일 처리
 		private void btnPopup_Click(object sender, EventArgs e)
         {
+            bool bAuth = true;
 
             try
             {
-                
-                if (string.IsNullOrEmpty(txtSeq.Text))
+                // 첨부파일 팝업 권한
+                if (txtRegUserId.Text != SystemBase.Base.gstrUserID && Gubun != "W") 
                 {
-                    MessageBox.Show("저장된 공지사항 데이터를 조회 후 등록하시기 바랍니다.", SystemBase.Base.MessageRtn("Z0002"), MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    return;
+                    bAuth = false; 
                 }
-                
 
-                // 첨부파일 팝업 띄움. 
-                QA001P2 pu = new QA001P2("SC01" + txtSeq.Text, txtUserId.Text, true);
+                // 첨부파일 팝업 띄움.
+                WNDWS01 pu = new WNDWS01(txtSeq.Text, txtSeq.Text, "", "", "", txtUserId.Text, bAuth, iRan.ToString(), "공지사항");
                 pu.ShowDialog();
             }
             catch (Exception f)
@@ -418,7 +428,7 @@ namespace SC.QA001
 		{
 			DataTable dt;
 			string strQuery = string.Empty;
-			strQuery = "SELECT dbo.ufn_GetAddFileYN('" + SystemBase.Base.gstrCOMCD + "', 'SC01" + txtSeq.Text + "')";
+			strQuery = "SELECT dbo.ufn_GetAddFileYN('" + SystemBase.Base.gstrCOMCD + "', '" + txtSeq.Text + "', 'SCMNO', '" + iRan.ToString() + "')";
 
 			dt = SystemBase.DbOpen.NoTranDataTable(strQuery);
 

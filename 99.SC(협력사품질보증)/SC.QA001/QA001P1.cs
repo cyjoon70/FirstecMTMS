@@ -18,8 +18,8 @@ namespace SC.QA001
         private string Gubun;
         private string Seq;
 
-        // 파일 임시저장을 위한 Random number
-        int iRan = 0;
+        // 파일 임시저장을 위한 number
+        string strRan = string.Empty;
         #endregion
 
         #region 생성자
@@ -60,8 +60,7 @@ namespace SC.QA001
 
         private void SetInit()
         {
-            Random randomObj = new Random();
-            iRan = randomObj.Next(100000000, 999999999);
+            strRan = Regex.Replace(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"), @"[^0-9a-zA-Z가-힣]", "");
 
             txtRegUser.Value = SystemBase.Base.gstrUserName;
             dtRegDt.Text = SystemBase.Base.ServerTime("YYMMDD");
@@ -153,7 +152,7 @@ namespace SC.QA001
                         strQuery = strQuery + ", @pCONTENTS ='" + txtContents.Text + "' ";
 						strQuery = strQuery + ", @pFILE_APPR ='" + txtUserId.Text + "' ";
 						strQuery = strQuery + ", @pIN_ID = '" + SystemBase.Base.gstrUserID + "'";
-                        strQuery = strQuery + ", @pFILES_NO = '" + iRan.ToString() + "'";
+                        strQuery = strQuery + ", @pFILES_NO = '" + strRan + "'";
                         
 
                         DataSet ds = SystemBase.DbOpen.TranDataSet(strQuery, dbConn, Trans);
@@ -171,7 +170,7 @@ namespace SC.QA001
                             strQuery = "";
                             strQuery = " usp_SC001 @pTYPE = 'U2' ";
                             strQuery = strQuery + ", @pCOMP_CODE = '" + SystemBase.Base.gstrCOMCD + "' ";
-                            strQuery = strQuery + ", @pFILES_NO = '" + iRan.ToString() + "' ";
+                            strQuery = strQuery + ", @pFILES_NO = '" + strRan + "' ";
                             strQuery = strQuery + ", @pSEQ = '" + SEQ + "' ";
 
                             DataSet ds2 = SystemBase.DbOpen.TranDataSet(strQuery, dbConn, Trans);
@@ -371,7 +370,7 @@ namespace SC.QA001
                 }
 
                 // 첨부파일 팝업 띄움.
-                WNDWS01 pu = new WNDWS01(txtSeq.Text, txtSeq.Text, "", "", "", txtUserId.Text, bAuth, iRan.ToString(), "공지사항");
+                WNDWS01 pu = new WNDWS01(txtSeq.Text, txtSeq.Text, "", "", "", txtUserId.Text, bAuth, strRan, "공지사항");
                 pu.ShowDialog();
             }
             catch (Exception f)
@@ -428,7 +427,7 @@ namespace SC.QA001
 		{
 			DataTable dt;
 			string strQuery = string.Empty;
-			strQuery = "SELECT dbo.ufn_GetAddFileYN('" + SystemBase.Base.gstrCOMCD + "', '" + txtSeq.Text + "', 'SCMNO', '" + iRan.ToString() + "')";
+			strQuery = "SELECT dbo.ufn_GetAddFileYN('" + SystemBase.Base.gstrCOMCD + "', '" + txtSeq.Text + "', 'SCMNO', '" + strRan + "')";
 
 			dt = SystemBase.DbOpen.NoTranDataTable(strQuery);
 

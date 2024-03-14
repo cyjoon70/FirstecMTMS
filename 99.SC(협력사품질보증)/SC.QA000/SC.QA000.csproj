@@ -134,6 +134,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\00.SY%28시스템관리%29\EDocument\EDocument.csproj">
+      <Project>{65634ed7-0fea-49fd-a4a1-9f9673d8e5f9}</Project>
+      <Name>EDocument</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\00.SY%28시스템관리%29\SystemBase\SystemBase.csproj">
       <Project>{45841e94-e806-4573-a93b-26d50a07ea9c}</Project>
       <Name>SystemBase</Name>

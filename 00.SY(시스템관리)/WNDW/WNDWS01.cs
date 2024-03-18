@@ -451,14 +451,10 @@ namespace WNDW
         #region WNDWS01_FormClosing(): 증빙문서저장여부 체크해서 증빙문서건수 리턴
         private void WNDWS01_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (strSaveFlag == "Y")      // 증빙문서 저장을 한경우
-            {
-                RtnStr("Y", iDocCnt.ToString());
-            }
+            if (fpSpread1.Sheets[0].Rows.Count > 0)
+                RtnStr("Y", fpSpread1.Sheets[0].Rows.Count.ToString());
             else
-            {
                 RtnStr("N", "");
-            }
         }
         #endregion
 

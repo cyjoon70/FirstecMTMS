@@ -166,13 +166,28 @@ namespace SC.QA002
 		#region 그리드 이벤트
 		protected override void fpButtonClick(int Row, int Column)
 		{
-			string strNo = string.Empty;
-			strNo = fpSpread1.Sheets[0].Cells[Row, SystemBase.Base.GridHeadIndex(GHIdx1, "SCM일련번호")].Text;
+			string strPoNo = string.Empty;
+			string strPoSeq = string.Empty;
+			string strInspSeq = string.Empty;
 
-			if (Column == SystemBase.Base.GridHeadIndex(GHIdx1, "증빙_2"))
+			try
 			{
-				UIForm.FileUpDown fileUpDown = new UIForm.FileUpDown("SC02" + strNo, "N#Y#N");
-				fileUpDown.ShowDialog();
+				// 첨부파일
+				if (Column == SystemBase.Base.GridHeadIndex(GHIdx1, "증빙_2"))
+				{
+					strPoNo = fpSpread1.Sheets[0].Cells[Row, SystemBase.Base.GridHeadIndex(GHIdx1, "발주번호")].Value.ToString();
+					strPoSeq = fpSpread1.Sheets[0].Cells[Row, SystemBase.Base.GridHeadIndex(GHIdx1, "발주순번")].Value.ToString();
+					strInspSeq = fpSpread1.Sheets[0].Cells[Row, SystemBase.Base.GridHeadIndex(GHIdx1, "검사의뢰순번")].Value.ToString();
+
+					// 첨부파일 팝업 띄움.
+					WNDWS01 pu = new WNDWS01(strPoNo + "/" + strPoSeq + "/" + strInspSeq, strPoNo, strPoSeq, strInspSeq, "", "", false, "", "검사의뢰");
+					pu.ShowDialog();
+				}
+			}
+			catch (Exception f)
+			{
+				SystemBase.Loggers.Log(this.Name, f.ToString());
+				DialogResult dsMsg = MessageBox.Show(SystemBase.Base.MessageRtn("B0002"), SystemBase.Base.MessageRtn("Z0002"), MessageBoxButtons.OK, MessageBoxIcon.Error);//데이터 조회 중 오류가 발생하였습니다.
 			}
 		}
 
@@ -183,25 +198,18 @@ namespace SC.QA002
 
 			try
 			{
-				if (Column == SystemBase.Base.GridHeadIndex(GHIdx1, "검사(의뢰)수량") || Column == SystemBase.Base.GridHeadIndex(GHIdx1, "합격수량"))
+				if (Column == SystemBase.Base.GridHeadIndex(GHIdx1, "검사(의뢰)수량") || Column == SystemBase.Base.GridHeadIndex(GHIdx1, "불량수량"))
 				{
 					dInspQty = Convert.ToDecimal(fpSpread1.Sheets[0].Cells[Row, SystemBase.Base.GridHeadIndex(GHIdx1, "검사(의뢰)수량")].Value);
-					dRejQty = Convert.ToDecimal(fpSpread1.Sheets[0].Cells[Row, SystemBase.Base.GridHeadIndex(GHIdx1, "합격수량")].Value);
-					fpSpread1.Sheets[0].Cells[Row, SystemBase.Base.GridHeadIndex(GHIdx1, "불량수량")].Value = dInspQty - dRejQty;
+					dRejQty = Convert.ToDecimal(fpSpread1.Sheets[0].Cells[Row, SystemBase.Base.GridHeadIndex(GHIdx1, "불량수량")].Value);
+					fpSpread1.Sheets[0].Cells[Row, SystemBase.Base.GridHeadIndex(GHIdx1, "합격수량")].Value = dInspQty - dRejQty;
+
+					if (dRejQty > 0)
+						fpSpread1.Sheets[0].Cells[Row, SystemBase.Base.GridHeadIndex(GHIdx1, "판정")].Value = "R";
+					else
+						fpSpread1.Sheets[0].Cells[Row, SystemBase.Base.GridHeadIndex(GHIdx1, "판정")].Value = "A";
 				}
 
-				if (fpSpread1.Sheets[0].Cells[Row, SystemBase.Base.GridHeadIndex(GHIdx1, "검사확정여부")].Text == "True")
-				{
-					// readonly
-					UIForm.FPMake.grdReMake(fpSpread1, Row,
-						 SystemBase.Base.GridHeadIndex(GHIdx1, "검사예정일") + "|1");
-				}
-				else if (fpSpread1.Sheets[0].Cells[Row, SystemBase.Base.GridHeadIndex(GHIdx1, "검사확정여부")].Text == "False")
-				{
-					// 일반
-					UIForm.FPMake.grdReMake(fpSpread1, Row,
-						 SystemBase.Base.GridHeadIndex(GHIdx1, "검사예정일") + "|0");
-				}
 			}
 			catch (Exception f)
 			{

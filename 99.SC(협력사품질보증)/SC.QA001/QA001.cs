@@ -8,6 +8,9 @@ using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
+/// <summary>
+/// 공지사항
+/// </summary>
 namespace SC.QA001
 {
     public partial class QA001 : UIForm.FPCOMM1

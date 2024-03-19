@@ -10,6 +10,9 @@ using WNDW;
 using System.Text.RegularExpressions;
 using System.Data.SqlClient;
 
+/// <summary>
+/// 변경점
+/// </summary>
 namespace SC.QA007
 {
 	public partial class QA007 : UIForm.FPCOMM1

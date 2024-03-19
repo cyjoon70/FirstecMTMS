@@ -11,6 +11,9 @@ using System.Text.RegularExpressions;
 using System.Data.SqlClient;
 using System.IO;
 
+/// <summary>
+/// 시정조치
+/// </summary>
 namespace SC.QA003
 {
     public partial class QA003 : UIForm.FPCOMM1

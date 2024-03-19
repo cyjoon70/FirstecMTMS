@@ -16,6 +16,9 @@ using EDocument.Extensions.FpSpreadExtension;
 using EDocument.Network;
 using EDocument.Spread;
 
+/// <summary>
+/// 첨부파일 승인
+/// </summary>
 namespace SC.QA010
 {
 	public partial class QA010 : UIForm.FPCOMM1

@@ -10,7 +10,9 @@ using WNDW;
 using System.Text.RegularExpressions;
 using System.Data.SqlClient;
 
-
+/// <summary>
+/// 협력사 품질등급 관리
+/// </summary>
 namespace SC.QA009
 {
 	public partial class QA009 : UIForm.FPCOMM1

@@ -10,6 +10,9 @@ using WNDW;
 using System.Text.RegularExpressions;
 using System.Data.SqlClient;
 
+/// <summary>
+/// 부적합품관리
+/// </summary>
 namespace SC.QA008
 {
 	public partial class QA008 : UIForm.FPCOMM1

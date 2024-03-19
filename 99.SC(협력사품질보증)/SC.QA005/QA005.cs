@@ -11,6 +11,9 @@ using System.Text.RegularExpressions;
 using System.Data.SqlClient;
 using SC.QA004;
 
+/// <summary>
+/// 품질보증계획서
+/// </summary>
 namespace SC.QA005
 {
 	public partial class QA005 : UIForm.FPCOMM1

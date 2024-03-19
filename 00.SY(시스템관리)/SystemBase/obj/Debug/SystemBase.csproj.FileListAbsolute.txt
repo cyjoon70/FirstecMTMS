@@ -5,3 +5,4 @@ D:\Project\Firstec\Source\FIRSTEC\00.SY(시스템관리)\SystemBase\obj\Debug\Sy
 D:\Project\Firstec\Source\FIRSTEC\00.SY(시스템관리)\SystemBase\obj\Debug\SystemBase.dll
 D:\Project\Firstec\Source\FIRSTEC\00.SY(시스템관리)\SystemBase\obj\Debug\SystemBase.pdb
 D:\Project\Firstec\Source\FIRSTEC\00.SY(시스템관리)\SystemBase\obj\Debug\SystemBase.csproj.CoreCompileInputs.cache
+D:\Project\Firstec\Source\FIRSTEC\00.SY(시스템관리)\SystemBase\obj\Debug\SystemBase.csproj.AssemblyReference.cache

@@ -370,16 +370,15 @@ namespace SC.QA001
                 }
 
                 // 첨부파일 팝업 띄움.
-                WNDWS01 pu = new WNDWS01(txtSeq.Text, txtSeq.Text, "", "", "", txtUserId.Text, bAuth, strRan, "공지사항");
+                WNDWS01 pu = new WNDWS01(txtSeq.Text, txtSeq.Text, "", "", "", txtUserId.Text, bAuth, strRan, "공지사항", "SCMNO");
                 pu.ShowDialog();
+
+                SetValidAddFileAppr();
             }
             catch (Exception f)
             {
                 MessageBox.Show(f.ToString(), SystemBase.Base.MessageRtn("Z0002"), MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            SetValidAddFileAppr();
-
 		}
 		#endregion
 
@@ -450,9 +449,11 @@ namespace SC.QA001
 		}
 		#endregion
 
+		#region Form 이벤트
 		private void QA001P1_Shown(object sender, EventArgs e)
 		{
             SetValidAddFileAppr();
         }
+		#endregion
 	}
 }

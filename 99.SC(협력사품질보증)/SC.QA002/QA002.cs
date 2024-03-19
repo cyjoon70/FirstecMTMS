@@ -180,7 +180,7 @@ namespace SC.QA002
 					strInspSeq = fpSpread1.Sheets[0].Cells[Row, SystemBase.Base.GridHeadIndex(GHIdx1, "검사의뢰순번")].Value.ToString();
 
 					// 첨부파일 팝업 띄움.
-					WNDWS01 pu = new WNDWS01(strPoNo + "/" + strPoSeq + "/" + strInspSeq, strPoNo, strPoSeq, strInspSeq, "", "", false, "", "검사의뢰");
+					WNDWS01 pu = new WNDWS01(strPoNo + "/" + strPoSeq + "/" + strInspSeq, strPoNo, strPoSeq, strInspSeq, "", "", false, "", "검사의뢰", "SCMRE");
 					pu.ShowDialog();
 				}
 			}

@@ -21,6 +21,9 @@ namespace SC.QA004
 
 		// 권한
 		string strGAuth = string.Empty;
+
+		// 파일 임시저장을 위한 number
+		string strRan = string.Empty;
 		#endregion
 
 		#region 생성자
@@ -43,6 +46,8 @@ namespace SC.QA004
 
 			// 진행상태 콤보박스 세팅
 			SystemBase.ComboMake.C1Combo(cbosSTATUS, "usp_SC003 @pType='C1', @pMAJOR_CD = 'SC120', @pREL_CD1 = 'SC004', @pCOMP_CODE = '" + SystemBase.Base.gstrCOMCD + "'", 3);
+
+			strRan = Regex.Replace(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"), @"[^0-9a-zA-Z가-힣]", "");
 
 			GetAuth();
 			SetInit();
@@ -91,12 +96,6 @@ namespace SC.QA004
 			SystemBase.Validation.GroupBoxControlsLock(groupBox2, false);
 			SystemBase.Validation.GroupBoxControlsLock(groupBox3, false);
 			SystemBase.Validation.GroupBoxControlsLock(groupBox4, false);
-
-			// 첨부파일 처리
-			if (string.IsNullOrEmpty(txtpISS_SEQ.Text))
-				btnFiles.Enabled = false;
-			else
-				btnFiles.Enabled = true;
 
 			// 회신은 scm에서 하므로 lock 처리
 			SystemBase.Validation.GroupBoxControlsLock(groupBox3, true);
@@ -356,21 +355,16 @@ namespace SC.QA004
 		#region 첨부파일
 		private void btnFiles_Click(object sender, EventArgs e)
 		{
-			string strAuth = string.Empty;
-
-			if (string.IsNullOrEmpty(txtpISS_SEQ.Text))
-			{
-				MessageBox.Show("먼저 이슈를 등록해주세요.");
-				return;
-			}
+			bool bAuth = true;
 
 			if (chkAPPROVAL_Y.Checked)
-				strAuth = "N#Y#N";
-			else
-				strAuth = "Y#Y#Y";
+				bAuth = false;
 
-			UIForm.FileUpDown fileUpDown = new UIForm.FileUpDown("SC04" + txtpISS_SEQ.Text, strAuth);
-			fileUpDown.ShowDialog();
+			// 첨부파일 팝업 띄움.
+			WNDWS01 pu = new WNDWS01(txtpISS_SEQ.Text, txtpISS_SEQ.Text, "", "", "", txtFileApprId.Text, bAuth, strRan, "이슈관리", "SCMIS");
+			pu.ShowDialog();
+
+			SetValidAddFileAppr();
 		}
 		#endregion
 
@@ -518,6 +512,7 @@ namespace SC.QA004
 					chkAPPROVAL_N.Checked = true;
 
 				SetCondition();
+				SetValidAddFileAppr();
 			}
 			catch (Exception f)
 			{
@@ -594,8 +589,6 @@ namespace SC.QA004
 					strQuery = strQuery + ", @pUP_ID		= '" + SystemBase.Base.gstrUserID + "' ";   // 수정자
 					strQuery = strQuery + ", @pFILE_APPR	= '" + txtFileApprId.Text + "' ";           // 첨부파일 승인자
 
-
-
 					DataSet ds = SystemBase.DbOpen.TranDataSet(strQuery, dbConn, Trans);
 					ERRCode = ds.Tables[0].Rows[0][0].ToString();
 					MSGCode = ds.Tables[0].Rows[0][1].ToString();
@@ -609,6 +602,25 @@ namespace SC.QA004
 					{
 						Trans.Rollback();
 						goto Exit;  // ER 코드 Return시 점프
+					}
+					else
+					{
+						strQuery = "";
+						strQuery = " usp_SC004 @pTYPE = 'UF'";
+						strQuery = strQuery + ", @pCOMP_CODE	= '" + SystemBase.Base.gstrCOMCD + "' ";
+						strQuery = strQuery + ", @pISS_SEQ		= '" + IssSeq + "' ";                       // 시정조치번호
+						strQuery = strQuery + ", @pFILE_APPR	= '" + txtFileApprId.Text + "' ";           // 첨부파일 승인자
+						strQuery = strQuery + ", @pFILES_NO		= '" + strRan + "' ";                       // 첨부파일 임시 FILES_NO
+
+						DataSet ds2 = SystemBase.DbOpen.TranDataSet(strQuery, dbConn, Trans);
+						ERRCode = ds2.Tables[0].Rows[0][0].ToString();
+						MSGCode = ds2.Tables[0].Rows[0][1].ToString();
+
+						if (ERRCode == "ER")
+						{
+							Trans.Rollback();
+							goto Exit;  // ER 코드 Return시 점프
+						}
 					}
 				}
 				catch (Exception ex)
@@ -932,6 +944,34 @@ namespace SC.QA004
 		{
 			if (chkAPPROVAL_N.Checked)
 				chkAPPROVAL_Y.Checked = false;
+		}
+		#endregion
+
+		#region 첨부파일 유무에 따라 파일 승인자 필수값 처리
+		private void SetValidAddFileAppr()
+		{
+			DataTable dt;
+			string strQuery = string.Empty;
+			strQuery = "SELECT dbo.ufn_GetAddFileYN('" + SystemBase.Base.gstrCOMCD + "', '" + txtpISS_SEQ.Text + "', 'SCMIS', '" + strRan + "')";
+
+			dt = SystemBase.DbOpen.NoTranDataTable(strQuery);
+
+			if (dt != null)
+			{
+				if (dt.Rows[0][0].ToString() == "Y")
+				{
+					txtFileApprId.Tag = "파일승인자;1;;";
+					SystemBase.Validation.GroupBox_Setting(groupBox2);
+
+					if (string.IsNullOrEmpty(txtFileApprId.Text))
+						MessageBox.Show("첨부파일이 있으므로 파일 승인자를 지정해주세요.");
+				}
+				else
+				{
+					txtFileApprId.Tag = "";
+					SystemBase.Validation.GroupBox_Setting(groupBox2);
+				}
+			}
 		}
 		#endregion
 	}

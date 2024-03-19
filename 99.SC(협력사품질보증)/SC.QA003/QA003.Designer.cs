@@ -65,6 +65,9 @@
 			this.btnFST_PERSON = new C1.Win.C1Input.C1Button();
 			this.txtFST_PERSON_NM = new C1.Win.C1Input.C1TextBox();
 			this.groupBox4 = new System.Windows.Forms.GroupBox();
+			this.panel6 = new System.Windows.Forms.Panel();
+			this.chkADD_BAD_Y = new C1.Win.C1Input.C1CheckBox();
+			this.chkADD_BAD_N = new C1.Win.C1Input.C1CheckBox();
 			this.c1Label22 = new C1.Win.C1Input.C1Label();
 			this.txtCUST_DEPT = new C1.Win.C1Input.C1TextBox();
 			this.c1Label9 = new C1.Win.C1Input.C1Label();
@@ -127,9 +130,6 @@
 			this.txtDEPT_PERSON_NM = new C1.Win.C1Input.C1TextBox();
 			this.c1Label19 = new C1.Win.C1Input.C1Label();
 			this.txtDEPT_REMARKS = new C1.Win.C1Input.C1TextBox();
-			this.panel6 = new System.Windows.Forms.Panel();
-			this.chkADD_BAD_Y = new C1.Win.C1Input.C1CheckBox();
-			this.chkADD_BAD_N = new C1.Win.C1Input.C1CheckBox();
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
 			this.cbosSTATUS = new C1.Win.C1List.C1Combo();
 			this.c1Label1 = new C1.Win.C1Input.C1Label();
@@ -192,6 +192,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.txtFST_PERSON)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtFST_PERSON_NM)).BeginInit();
 			this.groupBox4.SuspendLayout();
+			this.panel6.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.c1Label22)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtCUST_DEPT)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.c1Label9)).BeginInit();
@@ -248,7 +249,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.txtDEPT_PERSON_NM)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.c1Label19)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtDEPT_REMARKS)).BeginInit();
-			this.panel6.SuspendLayout();
 			this.groupBox1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.cbosSTATUS)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.c1Label1)).BeginInit();
@@ -287,8 +287,8 @@
 			// 
 			this.fpSpread1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)));
 			this.fpSpread1.Dock = System.Windows.Forms.DockStyle.Fill;
-			this.fpSpread1.Location = new System.Drawing.Point(3, 16);
-			this.fpSpread1.Size = new System.Drawing.Size(549, 649);
+			this.fpSpread1.Location = new System.Drawing.Point(3, 21);
+			this.fpSpread1.Size = new System.Drawing.Size(549, 644);
 			this.fpSpread1.SelectionChanged += new FarPoint.Win.Spread.SelectionChangedEventHandler(this.fpSpread1_SelectionChanged);
 			// 
 			// fpSpread1_Sheet1
@@ -297,7 +297,7 @@
 			// 
 			// panButton1
 			// 
-			this.panButton1.Size = new System.Drawing.Size(1364, 64);
+			this.panButton1.Size = new System.Drawing.Size(1479, 64);
 			// 
 			// panel1
 			// 
@@ -308,7 +308,7 @@
 			this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
 			this.panel1.Location = new System.Drawing.Point(555, 64);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(809, 781);
+			this.panel1.Size = new System.Drawing.Size(924, 781);
 			this.panel1.TabIndex = 18;
 			// 
 			// pnlAll
@@ -825,6 +825,35 @@
 			this.groupBox4.Size = new System.Drawing.Size(846, 366);
 			this.groupBox4.TabIndex = 145;
 			this.groupBox4.TabStop = false;
+			// 
+			// panel6
+			// 
+			this.panel6.Controls.Add(this.chkADD_BAD_Y);
+			this.panel6.Controls.Add(this.chkADD_BAD_N);
+			this.panel6.Location = new System.Drawing.Point(304, 282);
+			this.panel6.Name = "panel6";
+			this.panel6.Size = new System.Drawing.Size(115, 21);
+			this.panel6.TabIndex = 149;
+			// 
+			// chkADD_BAD_Y
+			// 
+			this.chkADD_BAD_Y.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.chkADD_BAD_Y.Location = new System.Drawing.Point(8, 1);
+			this.chkADD_BAD_Y.Name = "chkADD_BAD_Y";
+			this.chkADD_BAD_Y.Size = new System.Drawing.Size(53, 19);
+			this.chkADD_BAD_Y.TabIndex = 75;
+			this.chkADD_BAD_Y.Text = "Yes";
+			this.chkADD_BAD_Y.Value = null;
+			// 
+			// chkADD_BAD_N
+			// 
+			this.chkADD_BAD_N.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.chkADD_BAD_N.Location = new System.Drawing.Point(65, 1);
+			this.chkADD_BAD_N.Name = "chkADD_BAD_N";
+			this.chkADD_BAD_N.Size = new System.Drawing.Size(47, 19);
+			this.chkADD_BAD_N.TabIndex = 76;
+			this.chkADD_BAD_N.Text = "No";
+			this.chkADD_BAD_N.Value = null;
 			// 
 			// c1Label22
 			// 
@@ -1782,35 +1811,6 @@
 			this.txtDEPT_REMARKS.Tag = null;
 			this.txtDEPT_REMARKS.DoubleClick += new System.EventHandler(this.txtDEPT_REMARKS_DoubleClick);
 			// 
-			// panel6
-			// 
-			this.panel6.Controls.Add(this.chkADD_BAD_Y);
-			this.panel6.Controls.Add(this.chkADD_BAD_N);
-			this.panel6.Location = new System.Drawing.Point(304, 282);
-			this.panel6.Name = "panel6";
-			this.panel6.Size = new System.Drawing.Size(115, 21);
-			this.panel6.TabIndex = 149;
-			// 
-			// chkADD_BAD_Y
-			// 
-			this.chkADD_BAD_Y.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.chkADD_BAD_Y.Location = new System.Drawing.Point(8, 1);
-			this.chkADD_BAD_Y.Name = "chkADD_BAD_Y";
-			this.chkADD_BAD_Y.Size = new System.Drawing.Size(53, 19);
-			this.chkADD_BAD_Y.TabIndex = 75;
-			this.chkADD_BAD_Y.Text = "Yes";
-			this.chkADD_BAD_Y.Value = null;
-			// 
-			// chkADD_BAD_N
-			// 
-			this.chkADD_BAD_N.BorderStyle = System.Windows.Forms.BorderStyle.None;
-			this.chkADD_BAD_N.Location = new System.Drawing.Point(65, 1);
-			this.chkADD_BAD_N.Name = "chkADD_BAD_N";
-			this.chkADD_BAD_N.Size = new System.Drawing.Size(47, 19);
-			this.chkADD_BAD_N.TabIndex = 76;
-			this.chkADD_BAD_N.Text = "No";
-			this.chkADD_BAD_N.Value = null;
-			// 
 			// groupBox1
 			// 
 			this.groupBox1.BackColor = System.Drawing.Color.White;
@@ -2131,9 +2131,9 @@
 			// 
 			// QA003
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1364, 845);
+			this.ClientSize = new System.Drawing.Size(1479, 845);
 			this.Controls.Add(this.splitter1);
 			this.Controls.Add(this.panel1);
 			this.Name = "QA003";
@@ -2188,6 +2188,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.txtFST_PERSON)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtFST_PERSON_NM)).EndInit();
 			this.groupBox4.ResumeLayout(false);
+			this.panel6.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.c1Label22)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtCUST_DEPT)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.c1Label9)).EndInit();
@@ -2244,7 +2245,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.txtDEPT_PERSON_NM)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.c1Label19)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.txtDEPT_REMARKS)).EndInit();
-			this.panel6.ResumeLayout(false);
 			this.groupBox1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.cbosSTATUS)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.c1Label1)).EndInit();

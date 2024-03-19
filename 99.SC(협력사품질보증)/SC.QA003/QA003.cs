@@ -20,8 +20,8 @@ namespace SC.QA003
 		// 승인 권한
 		string strGAuth = string.Empty;
 
-        // 파일 임시저장을 위한 Random number
-        int iRan = 0;
+		// 파일 임시저장을 위한 number
+		string strRan = string.Empty;
 		#endregion
 
 		#region 생성자
@@ -63,10 +63,9 @@ namespace SC.QA003
             SystemBase.Validation.GroupBox_Setting(groupBox5);
             SystemBase.Validation.GroupBox_Setting(groupBox6);
 
-            Random randomObj = new Random();
-            iRan = randomObj.Next(100000, 999999);
-            
-            txtREG_DEPT.Value = SystemBase.Base.gstrDEPTNM;
+			strRan = Regex.Replace(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"), @"[^0-9a-zA-Z가-힣]", "");
+
+			txtREG_DEPT.Value = SystemBase.Base.gstrDEPTNM;
 			txtREG_PERSON_NM.Value = SystemBase.Base.gstrUserName;
 			txtREG_PERSON.Value = SystemBase.Base.gstrUserID;
 
@@ -83,13 +82,7 @@ namespace SC.QA003
 		// 조건에 따라 LOCK 처리
 		private void SetCondition(bool bOnLoad)
 		{
-
-			// 첨부파일 처리
-			if (string.IsNullOrEmpty(txtCORR_NO.Text))
-				btnAddFiles.Enabled = false;
-			else
-				btnAddFiles.Enabled = true;
-
+						
 			SetGroupbox5("0");
 			SetGroupbox6("0");
 			SetGroupbox7("0");
@@ -512,6 +505,7 @@ namespace SC.QA003
 
 				
 				SetCondition(false);
+				SetValidAddFileAppr();
 
 			}
 			catch (Exception f)
@@ -565,19 +559,19 @@ namespace SC.QA003
 						string strQuery = "";
                         strQuery = " usp_SC003 @pTYPE = 'I1' ";
                         strQuery = strQuery + ", @pCOMP_CODE = '" + SystemBase.Base.gstrCOMCD + "' ";
-                        strQuery = strQuery + ", @pCORR_NO			= '" + txtCORR_NO.Text + "' ";              // 시정조치번호
-                        strQuery = strQuery + ", @pACTION_TYPE		= '" + cboACTION_TYPE.SelectedValue + "' "; // 발행유형
-                        strQuery = strQuery + ", @pREG_DEPT			= '" + txtREG_DEPT.Text + "' ";   // 발행부서
-                        strQuery = strQuery + ", @pREG_PERSON		= '" + txtREG_PERSON.Text + "' ";   // 발행인
-                        strQuery = strQuery + ", @pREG_DT			= '" + dtREG_DT.Text + "' ";                // 발행일
-                        strQuery = strQuery + ", @pCOMP_REQ_DT		= '" + dtCOMP_REQ_DT.Text + "' ";           // 완료요구일
-                        strQuery = strQuery + ", @pTITLE			= '" + txtTITLE.Text.Replace("'", "''") + "' ";                // 제목
-                        strQuery = strQuery + ", @pREQ_MSG			= '" + txtREQ_MSG.Text.Replace("'", "''") + "' ";              // 조치요구내용
-                        strQuery = strQuery + ", @pDEPT_PERSON		= '" + txtDEPT_PERSON.Text + "' ";          // 발행부서장
-                        strQuery = strQuery + ", @pDEPT_REMARKS		= '" + txtDEPT_REMARKS.Text.Replace("'", "''") + "' ";         // 발행부서장 의견
-                        strQuery = strQuery + ", @pCUST_CD			= '" + txtCUST_CD.Text + "' ";              // 협력업체코드
-						strQuery = strQuery + ", @pFILE_APPR		= '" + txtFileApprId.Text + "' ";			// 첨부파일 승인자
-                        strQuery = strQuery + ", @pFILES_NO		    = '" + iRan.ToString() + "' ";			    // 첨부파일 임시 FILES_NO
+                        strQuery = strQuery + ", @pCORR_NO			= '" + txtCORR_NO.Text + "' ";							// 시정조치번호
+                        strQuery = strQuery + ", @pACTION_TYPE		= '" + cboACTION_TYPE.SelectedValue + "' ";				// 발행유형
+                        strQuery = strQuery + ", @pREG_DEPT			= '" + txtREG_DEPT.Text + "' ";							// 발행부서
+                        strQuery = strQuery + ", @pREG_PERSON		= '" + txtREG_PERSON.Text + "' ";						// 발행인
+                        strQuery = strQuery + ", @pREG_DT			= '" + dtREG_DT.Text + "' ";							// 발행일
+                        strQuery = strQuery + ", @pCOMP_REQ_DT		= '" + dtCOMP_REQ_DT.Text + "' ";						// 완료요구일
+                        strQuery = strQuery + ", @pTITLE			= '" + txtTITLE.Text.Replace("'", "''") + "' ";			// 제목
+                        strQuery = strQuery + ", @pREQ_MSG			= '" + txtREQ_MSG.Text.Replace("'", "''") + "' ";		// 조치요구내용
+                        strQuery = strQuery + ", @pDEPT_PERSON		= '" + txtDEPT_PERSON.Text + "' ";						// 발행부서장
+                        strQuery = strQuery + ", @pDEPT_REMARKS		= '" + txtDEPT_REMARKS.Text.Replace("'", "''") + "' ";	// 발행부서장 의견
+                        strQuery = strQuery + ", @pCUST_CD			= '" + txtCUST_CD.Text + "' ";							// 협력업체코드
+						strQuery = strQuery + ", @pFILE_APPR		= '" + txtFileApprId.Text + "' ";						// 첨부파일 승인자
+                        strQuery = strQuery + ", @pFILES_NO		    = '" + strRan + "' ";									// 첨부파일 임시 FILES_NO
                         
 
                         DataSet ds = SystemBase.DbOpen.TranDataSet(strQuery, dbConn, Trans);
@@ -590,6 +584,25 @@ namespace SC.QA003
                             Trans.Rollback();
                             goto Exit;  // ER 코드 Return시 점프
                         }
+						else
+						{
+							strQuery = "";
+							strQuery = " usp_SC003 @pTYPE = 'UF'";
+							strQuery = strQuery + ", @pCOMP_CODE	= '" + SystemBase.Base.gstrCOMCD + "' ";
+							strQuery = strQuery + ", @pCORR_NO		= '" + CorrNo + "' ";						// 시정조치번호
+							strQuery = strQuery + ", @pFILE_APPR	= '" + txtFileApprId.Text + "' ";			// 첨부파일 승인자
+							strQuery = strQuery + ", @pFILES_NO		= '" + strRan + "' ";						// 첨부파일 임시 FILES_NO
+
+							DataSet ds2 = SystemBase.DbOpen.TranDataSet(strQuery, dbConn, Trans);
+							ERRCode = ds2.Tables[0].Rows[0][0].ToString();
+							MSGCode = ds2.Tables[0].Rows[0][1].ToString();
+
+							if (ERRCode == "ER")
+							{
+								Trans.Rollback();
+								goto Exit;  // ER 코드 Return시 점프
+							}
+						}
                     }
                     catch (Exception ex)
                     {
@@ -763,7 +776,6 @@ namespace SC.QA003
                     dbConn.Close();
                     MessageBox.Show(SystemBase.Base.MessageRtn(MSGCode));
 					SystemBase.Validation.GroupBox_Reset(groupBox2);
-					btnAddFiles.Enabled = false;
 					SelectExec("");
 
             }
@@ -836,25 +848,46 @@ namespace SC.QA003
 		#region 첨부파일 처리
 		private void btnAddFiles_Click(object sender, EventArgs e)
 		{
-			string strAuth = string.Empty;
-            string strFilsNo = string.Empty;
-            						
-			if (chkFST_APPROVAL_Y.Checked)
+			try
 			{
-                strAuth = "N#Y#N"; 
+				// 첨부파일 팝업 띄움.
+				WNDWS01 pu = new WNDWS01(txtCORR_NO.Text, txtCORR_NO.Text, "", "", "", txtFileApprId.Text, true, strRan, "시정조치", "SCMCA");
+				pu.ShowDialog();
+
+				SetValidAddFileAppr();
 			}
-			else
+			catch (Exception f)
 			{
-				strAuth = "Y#Y#Y";
-            }
+				MessageBox.Show(f.ToString(), SystemBase.Base.MessageRtn("Z0002"), MessageBoxButtons.OK, MessageBoxIcon.Error);
+			}
+		}
+		#endregion
 
-            if (string.IsNullOrEmpty(txtCORR_NO.Text))
-                strFilsNo = iRan.ToString();
-            else
-                strFilsNo = txtCORR_NO.Text;
+		#region 첨부파일 유무에 따라 파일 승인자 필수값 처리
+		private void SetValidAddFileAppr()
+		{
+			DataTable dt;
+			string strQuery = string.Empty;
+			strQuery = "SELECT dbo.ufn_GetAddFileYN('" + SystemBase.Base.gstrCOMCD + "', '" + txtCORR_NO.Text + "', 'SCMCA', '" + strRan + "')";
 
-            UIForm.FileUpDown fileUpDown = new UIForm.FileUpDown(strFilsNo, strAuth);
-			fileUpDown.ShowDialog();
+			dt = SystemBase.DbOpen.NoTranDataTable(strQuery);
+
+			if (dt != null)
+			{
+				if (dt.Rows[0][0].ToString() == "Y")
+				{
+					txtFileApprId.Tag = "파일승인자;1;;";
+					SystemBase.Validation.GroupBox_Setting(groupBox3);
+
+					if (string.IsNullOrEmpty(txtFileApprId.Text))
+						MessageBox.Show("첨부파일이 있으므로 파일 승인자를 지정해주세요.");
+				}
+				else
+				{
+					txtFileApprId.Tag = "";
+					SystemBase.Validation.GroupBox_Setting(groupBox3);
+				}
+			}
 		}
 		#endregion
 
@@ -1472,5 +1505,6 @@ namespace SC.QA003
 			return bReturn;
 		}
 		#endregion
+		
 	}
 }

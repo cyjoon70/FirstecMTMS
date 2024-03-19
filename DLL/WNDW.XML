@@ -1318,7 +1318,7 @@
         <member name="F:WNDW.WNDWS01.attachmentManager">
             <summary>첨부문서표시 관리자</summary>
         </member>
-        <member name="M:WNDW.WNDWS01.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.String,System.String)">
+        <member name="M:WNDW.WNDWS01.#ctor(System.String,System.String,System.String,System.String,System.String,System.String,System.Boolean,System.String,System.String,System.String)">
             <summary>
             생성자
             </summary>

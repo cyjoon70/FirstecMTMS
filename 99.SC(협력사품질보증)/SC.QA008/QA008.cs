@@ -297,8 +297,8 @@ namespace SC.QA008
 		#region 첨부파일
 		private void btnFiles_Click(object sender, EventArgs e)
 		{
-			UIForm.FileUpDown fileUpDown = new UIForm.FileUpDown("SC08" + txtSEQ.Text, "N#Y#N");
-			fileUpDown.ShowDialog();
+			WNDWS01 pu = new WNDWS01(txtSEQ.Text, txtSEQ.Text, "", "", "", "", false, "", "부적합품관리", "SCMNP");
+			pu.ShowDialog();
 		}
 		#endregion
 

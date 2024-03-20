@@ -146,15 +146,40 @@ namespace SC.QA007
 		#region 첨부파일
 		private void btnFiles_Click(object sender, EventArgs e)
 		{
-			string strCRUD = string.Empty;
+			bool bAuth = true;
 
-			if (txtMGT_STATUS.Text == "승인")
-				strCRUD = "N#Y#N";
-			else
-				strCRUD = "Y#Y#Y";
+			if (txtMGT_STATUS.Text == "승인") bAuth = false;
 
-			UIForm.FileUpDown fileUpDown = new UIForm.FileUpDown(txtMGT_NO.Text, strCRUD);
-			fileUpDown.ShowDialog();
+			WNDWS01 pu = new WNDWS01(txtMGT_NO.Text, txtMGT_NO.Text, "", "", "", txtUserId.Text, bAuth, "", "변경점", "SCMCH");
+			pu.ShowDialog();
+
+			SetValidAddFileAppr();
+		}
+
+		private void SetValidAddFileAppr()
+		{
+			DataTable dt;
+			string strQuery = string.Empty;
+			strQuery = "SELECT dbo.ufn_GetAddFileYN('" + SystemBase.Base.gstrCOMCD + "', '" + txtMGT_NO.Text + "', 'SCMIS', '')";
+
+			dt = SystemBase.DbOpen.NoTranDataTable(strQuery);
+
+			if (dt != null)
+			{
+				if (dt.Rows[0][0].ToString() == "Y")
+				{
+					txtUserId.Tag = "파일승인자;1;;";
+					SystemBase.Validation.GroupBox_Setting(groupBox3);
+
+					if (string.IsNullOrEmpty(txtUserId.Text))
+						MessageBox.Show("첨부파일이 있으므로 파일 승인자를 지정해주세요.");
+				}
+				else
+				{
+					txtUserId.Tag = "";
+					SystemBase.Validation.GroupBox_Setting(groupBox3);
+				}
+			}
 		}
 		#endregion
 

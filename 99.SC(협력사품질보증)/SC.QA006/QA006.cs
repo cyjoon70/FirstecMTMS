@@ -21,6 +21,9 @@ namespace SC.QA006
 
         #region 변수
         string strGAuth = string.Empty; // 원래는 승인권자 변수였으나, 특수공정은 승인권자가 없으므로 선행 저장 체크 변수로 사용
+
+		// 파일 임시저장을 위한 number
+		string strRan = string.Empty;
 		#endregion
 
 		#region 생성자
@@ -50,9 +53,10 @@ namespace SC.QA006
 			SystemBase.ComboMake.C1Combo(cboAPP_STATUS, "usp_SC006 @pType='C1', @pMAJOR_CD = 'SC120', @pREL_CD1 = 'SC006', @pCOMP_CODE = '" + SystemBase.Base.gstrCOMCD + "'", 9);
 
             SystemBase.ComboMake.C1Combo(cboEST_TYPE, "usp_B_COMMON @pType='COMM', @pCODE = 'SC180', @pLANG_CD = '" + SystemBase.Base.gstrLangCd.ToString() + "', @pCO_CD='" + SystemBase.Base.gstrCOMCD + "'", 9);
-            
 
-            SetInit();
+			strRan = Regex.Replace(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"), @"[^0-9a-zA-Z가-힣]", "");
+
+			SetInit();
 		}
 
 		private void SetInit()
@@ -323,25 +327,50 @@ namespace SC.QA006
 		#region 첨부파일
 		private void btnFiles_Click(object sender, EventArgs e)
 		{
-			string strCRUD = string.Empty;
+			bool bAuth = true;
 
 			if (cboAPP_STATUS.Text == "승인")
-				strCRUD = "N#Y#N";
+				bAuth = false;
 			else
 			{
-				if (chkEST_TECH_RESULT_Y.Checked)
-					strCRUD = "Y#Y#Y";
-				else
+				if (!chkEST_TECH_RESULT_Y.Checked)
 				{
 					if (!string.IsNullOrEmpty(cdtAPPR_DT.Text))
-						strCRUD = "N#Y#N";
-					else
-						strCRUD = "Y#Y#Y";
+							bAuth = false;
 				}
 			}					   		
 
-			UIForm.FileUpDown fileUpDown = new UIForm.FileUpDown(txtAPPLICATION_NO.Text, strCRUD);
-			fileUpDown.ShowDialog();
+			// 첨부파일 팝업 띄움.
+			WNDWS01 pu = new WNDWS01(txtAPPLICATION_NO.Text, txtAPPLICATION_NO.Text, "", "", "", txtUserId.Text, bAuth, strRan, "특수공정", "SCMSP");
+			pu.ShowDialog();
+
+			SetValidAddFileAppr();
+		}
+
+		private void SetValidAddFileAppr()
+		{
+			DataTable dt;
+			string strQuery = string.Empty;
+			strQuery = "SELECT dbo.ufn_GetAddFileYN('" + SystemBase.Base.gstrCOMCD + "', '" + txtAPPLICATION_NO.Text + "', 'SCMSP', '" + strRan + "')";
+
+			dt = SystemBase.DbOpen.NoTranDataTable(strQuery);
+
+			if (dt != null)
+			{
+				if (dt.Rows[0][0].ToString() == "Y")
+				{
+					txtUserId.Tag = "파일승인자;1;;";
+					SystemBase.Validation.GroupBox_Setting(groupBox4);
+
+					if (string.IsNullOrEmpty(txtUserId.Text))
+						MessageBox.Show("첨부파일이 있으므로 파일 승인자를 지정해주세요.");
+				}
+				else
+				{
+					txtUserId.Tag = "";
+					SystemBase.Validation.GroupBox_Setting(groupBox4);
+				}
+			}
 		}
 		#endregion
 
@@ -504,6 +533,8 @@ namespace SC.QA006
 				cdtAPPR_DT.Value = dt.Rows[0]["APPR_DT"].ToString();					// 승인일
 
 				SetCondition();
+
+				SetValidAddFileAppr();
 			}
 			catch (Exception f)
 			{

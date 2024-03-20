@@ -194,14 +194,16 @@ namespace WNDW
                     query = "usp_T_DOC 'ST1'"
                     + ", @pDOC_CTG_CD   = 'SCM'"
                     + ", @pCO_CD        = '" + SystemBase.Base.gstrCOMCD + "'"
-                    + ", @pTMP_NO       = '" + this.RandNo + "'";
+                    + ", @pTMP_NO       = '" + this.RandNo + "'"
+                    + ", @pDOC_CD       = '" + this.DocCd + "'";
                 }
                 else
                 {
-                    query = "usp_T_DOC 'S1'"
+                    query = "usp_T_DOC 'ST1'"
                     + ", @pDOC_CTG_CD   = 'SCM'"
                     + ", @pCO_CD        = '" + SystemBase.Base.gstrCOMCD + "'"
-                    + ", @pATT_KEY      = '" + this.AttKey + "'";
+                    + ", @pATT_KEY      = '" + this.AttKey + "'"
+                    + ", @pDOC_CD       = '" + this.DocCd + "'";
                 }
 
                 UIForm.FPMake.grdCommSheet(fpSpread1, query, G1Head1, G1Head2, G1Head3, G1Width, G1Align, G1Type, G1Color, G1Etc, G1HeadCnt, false, false, 0, 0);

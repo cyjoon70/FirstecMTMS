@@ -342,8 +342,8 @@ namespace SC.QA005
 		#region 첨부파일
 		private void btnFiles_Click(object sender, EventArgs e)
 		{
-			UIForm.FileUpDown fileUpDown = new UIForm.FileUpDown("SC05" + txtpSEQ.Text, "N#Y#N");
-			fileUpDown.ShowDialog();
+			WNDWS01 pu = new WNDWS01(txtpSEQ.Text, txtpSEQ.Text, "", "", "", "", false, "", "품질보증계획서", "SCMQD");
+			pu.ShowDialog();
 		}
 		#endregion
 

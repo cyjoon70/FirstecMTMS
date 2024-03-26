@@ -626,7 +626,7 @@ namespace SC.QA008
 					strQuery = strQuery + ", @sSEQ = '" + txtSEQ.Text + "' ";						// 일련번호
 					strQuery = strQuery + ", @pAPPROVAL_ID = '" + txtAPPROVAL_ID.Text + "' ";		// 협력사코드
 					strQuery = strQuery + ", @pAPPROVAL_DT = '" + cdtAPPROVAL_DT.Text + "' ";		// 사업코드
-					strQuery = strQuery + ", @pREMARKS = '" + txtREMARKS.Text + "' ";				// 발행자
+					strQuery = strQuery + ", @pREMARKS = '" + txtREMARKS.Text.Replace("'", "''") + "' ";				// 발행자
 					strQuery = strQuery + ", @pUP_ID = '" + SystemBase.Base.gstrUserID + "' ";      // 수정자
 
 					if (chkAPPROVAL_Y.Checked)

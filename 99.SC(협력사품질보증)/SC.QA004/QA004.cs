@@ -701,7 +701,7 @@ namespace SC.QA004
 					strQuery = strQuery + ", @sISS_SEQ		= '" + txtpISS_SEQ.Text + "' ";				// 일련번호
 					strQuery = strQuery + ", @pFST_PERSON	= '" + txtpFST_PERSON.Text + "' ";			// 승인자
 					strQuery = strQuery + ", @pAPPROVAL_DT	= '" + cdtpAPPROVAL_DT.Text + "' ";			// 승인일
-					strQuery = strQuery + ", @pREMARKS		= '" + txtpREMARKS.Text + "' ";				// 비고
+					strQuery = strQuery + ", @pREMARKS		= '" + txtpREMARKS.Text.Replace("'", "''") + "' ";				// 비고
 					strQuery = strQuery + ", @pUP_ID		= '" + SystemBase.Base.gstrUserID + "' ";   // 수정자
 
 					if (chkAPPROVAL_Y.Checked)

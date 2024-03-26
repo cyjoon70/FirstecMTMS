@@ -1129,8 +1129,8 @@ namespace SC.QA003
 						strQuery = strQuery + ", @pFST_PERSON		= '" + txtFST_PERSON.Text + "' ";           // 퍼스텍 담당자
 						strQuery = strQuery + ", @pAPPROVAL_YN		= '" + strAPPROVAL_YN + "' ";               // 승인여부
 						strQuery = strQuery + ", @pAPPROVAL_DT		= '" + dtAPPROVAL_DT.Text + "' ";           // 처리일
-						strQuery = strQuery + ", @pCORR_RESULT		= '" + txtCORR_RESULT.Text + "' ";          // 시정조치 확인결과
-						strQuery = strQuery + ", @pCORR_EFFECTS		= '" + txtCORR_EFFECTS.Text + "' ";         // 조치사항 효과성 확인
+						strQuery = strQuery + ", @pCORR_RESULT		= '" + txtCORR_RESULT.Text.Replace("'","''") + "' ";          // 시정조치 확인결과
+						strQuery = strQuery + ", @pCORR_EFFECTS		= '" + txtCORR_EFFECTS.Text.Replace("'", "''") + "' ";         // 조치사항 효과성 확인
 						strQuery = strQuery + ", @pCORR_EFFECTS_DT	= '" + dtCORR_EFFECTS_DT.Text + "' ";       // 확인일
 						strQuery = strQuery + ", @pUP_ID			= '" + SystemBase.Base.gstrUserID + "' ";   // 수정자
 					}
@@ -1176,7 +1176,7 @@ namespace SC.QA003
 						strQuery = strQuery + ", @pFST_APPROVAL		= '" + txtFST_APPROVAL.Text + "' ";         // 퍼스텍 승인자                      
 						strQuery = strQuery + ", @pFST_APPROVAL_YN	= '" + strFST_APPROVAL_YN + "' ";           // 승인여부                           
 						strQuery = strQuery + ", @pFST_APPR_DT		= '" + dtFST_APPR_DT.Text + "' ";           // 승인일                             
-						strQuery = strQuery + ", @pFINAL_REMARKS	= '" + txtFINAL_REMARKS.Text + "' ";        // 최종 의견                          
+						strQuery = strQuery + ", @pFINAL_REMARKS	= '" + txtFINAL_REMARKS.Text.Replace("'", "''") + "' ";        // 최종 의견                          
 						strQuery = strQuery + ", @pUP_ID			= '" + SystemBase.Base.gstrUserID + "' ";   // 수정자     
 					}
 

@@ -148,8 +148,8 @@ namespace SC.QA001
                         strQuery = strQuery + ", @pOPEN_CUST_CD = '" + txtCustCd.Text +"' ";
                         strQuery = strQuery + ", @pREG_DT = '" + dtRegDt.Text + "' ";
                         strQuery = strQuery + ", @pEXPIRE_DT = '" + dtLimitDt.Text +"' ";
-                        strQuery = strQuery + ", @pTITLE ='" + txtTitle.Text + "' ";
-                        strQuery = strQuery + ", @pCONTENTS ='" + txtContents.Text + "' ";
+                        strQuery = strQuery + ", @pTITLE ='" + txtTitle.Text.Replace("'", "''") + "' ";
+                        strQuery = strQuery + ", @pCONTENTS ='" + txtContents.Text.Replace("'", "''") + "' ";
 						strQuery = strQuery + ", @pFILE_APPR ='" + txtUserId.Text + "' ";
 						strQuery = strQuery + ", @pIN_ID = '" + SystemBase.Base.gstrUserID + "'";
                         strQuery = strQuery + ", @pFILES_NO = '" + strRan + "'";
